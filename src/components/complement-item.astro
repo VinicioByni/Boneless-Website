@@ -1,0 +1,97 @@
+---
+import bonelessImg from  '../resources/default_boneless.jpg';
+
+export type ItemQtyPrices= {
+    itemPrice: string
+    itemQuantity: string
+}
+
+interface Props {
+    itemTitle: string
+    itemDescription: string
+    itemQtyPrice: ItemQtyPrices[]
+}
+
+const { itemTitle, itemDescription, itemQtyPrice } = Astro.props;
+---
+
+<div class="complement-item">
+    <div class="item-info-container">
+        <div class="item-info-">
+            <h4>{itemTitle}</h4>
+        <p class="item-description">{itemDescription}</p>
+        </div>
+        <div class="item-quantity-price">
+            {itemQtyPrice.map(item => (
+                <p>{item.itemQuantity} - <span class="menu-price-symbol">$</span>{item.itemPrice}</p>
+            ))}
+        </div>
+    </div>
+    <div class="item-img">
+    </div>
+    <img src={bonelessImg.src}></img>
+</div>
+
+<style>
+    .complement-item {
+        padding: 1rem;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        max-width: 380px;
+        width: 100%;
+        border-radius: 8px;
+        border: 2px solid var(--text-color);
+        color: var(--text-contrast-color);
+        overflow: hidden;
+        position: relative;
+    }
+    .menu-price-symbol {
+        font-size: 1rem;
+    }
+    .item-info-container {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 100%;
+        
+    }
+    .item-description {
+        margin-bottom: 12px;
+    }
+    .item-quantity-price {
+
+    }
+    .item-img {
+        flex: 1;
+        min-width: auto;
+        min-height: 100%;
+        display: flex;
+        
+    }
+    .complement-item img {
+        position: absolute;
+        border: 2px solid var(--text-color);
+        border-top-left-radius: 999px;
+        border-bottom-left-radius: 999px;
+        right: -10%;
+        height: 100%;
+        width: auto;
+    }
+    h4 {
+        font-weight: 500;
+        font-size: 1.75rem;
+    }
+    p {
+        font-weight: 400;
+        font-size: 1rem; 
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        align-self: center;
+    }
+</style>
