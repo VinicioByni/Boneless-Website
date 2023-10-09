@@ -9,13 +9,10 @@ import ComboItem from '../components/combo-item.astro';
 import waves from '../assets/waves.svg'
 import Location from '../assets/Location.png'
 import bonelessImg from  '../resources/default_boneless.jpg';
-import example_2 from '../resources/example_2.jpg'
-import example_3 from '../resources/example_3.jpg'
-import example_4 from '../resources/example_4.jpg'
-import example_5 from '../resources/example_5.jpg'
-import example_6 from '../resources/example_6.jpg'
 
 import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
+import boneless_img from '../assets/testImages/quality-boneless-ranch.jpg'
+import fries_img from '../assets/testImages/fries.webp'
 ---
 
 <Layout title="Boneless Crave">
@@ -92,10 +89,12 @@ import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
 				<section id="menu-boneless-section" class="menu-section">
 					<h3 class="menu-section-title">Boneless</h3>
 					<p class="menu-section-description">!Disfruta de nuestros Boneless!</p>
+
+
 					<div class="menu-items-container">	
 						<div class="main-menu-item">
 							<div class="main-menu-item-img">
-								<img src={example_4.src}></img>
+								<Image src={boneless_img} alt="Deliciosos Boneless con salsa ranch"></Image>
 							</div>
 							<div class="main-menu-item-info">
 								<h4>Boneless</h4>
@@ -105,6 +104,9 @@ import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
 							</div>	
 						</div>
 					</div>
+
+
+
 					<div class="menu-items-container">
 						<SauceItem name="BBQ" isHot={false} color="#601c14"></SauceItem>
 						<SauceItem name="Lemon-Pepper" isHot={false} color="#a2c11c"></SauceItem>
@@ -113,25 +115,19 @@ import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
 						<SauceItem name="Buffalo" isHot={true} color="#ff5722"></SauceItem>
 					</div>
 				</section>
-				<section id="menu-complementos-section" class="menu-section">
+				<section class="menu-section">
 					<h3 class="menu-section-title">Complementos</h3>
 					<p class="menu-section-description">!Disfruta de nuestra deliciosa selección de complementos!</p>
 					<div class="menu-items-container">
 						<ComplementItem 
 							itemTitle='Papas Fritas'
 							itemDescription='Papas a la francesa'
-							itemQtyPrice={ [{itemQuantity:'250gr',itemPrice: '100'}, {itemQuantity:'350gr',itemPrice: '150'}] }>
+							itemQtyPrice={ [{itemQuantity:'250gr',itemPrice: '100'}, {itemQuantity:'350gr',itemPrice: '150'}] }
+							itemImage={fries_img}
+							itemImageAlt="Menjores papas a la francesa en Chihuahua">
 						</ComplementItem>
-						<ComplementItem 
-							itemTitle='Aros de Cebolla'
-							itemDescription='Deliciosos aros de cebolla empanizados'
-							itemQtyPrice={ [{itemQuantity:'250gr',itemPrice: '100'}, {itemQuantity:'350gr',itemPrice: '150'}] }>
-						</ComplementItem>
-						<ComplementItem 
-							itemTitle='Oreos fritos'
-							itemDescription='¡Animate a probar los deliciosos oreos fritos!'
-							itemQtyPrice={ [{itemQuantity:'250gr',itemPrice: '100'}, {itemQuantity:'350gr',itemPrice: '150'}] }>
-						</ComplementItem>
+					
+
 					</div>
 				</section>
 				<section id="menu-combos-section" class="menu-section">
@@ -143,20 +139,20 @@ import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
 							comboItems='Boneless + Papas Fritas' 
 							comboPrice={200} 
 							comboDescription='250 gr de boneless más 150 gr de papas a la francesa' 
-							comboImg={example_2}>
+							comboImg={boneless_img}>
 						</ComboItem>
 						<ComboItem 
 							comboName='Combo #2' 
 							comboItems='Boneless + Papas Fritas + Oreo Frito' 
 							comboPrice={250} 
 							comboDescription='250 gr de boneless más 150 gr de papas a la francesa y 1 oreo frito' 
-							comboImg={example_6}>
+							comboImg={boneless_img}>
 						</ComboItem>
 						<ComboItem comboName='Combo #3' 
 							comboItems='Boneless + Aros de Cebolla + Oreo Frito' 
 							comboPrice={200} 
 							comboDescription='250 gr de boneless más 150 gr de Aros de Cebolla' 
-							comboImg={example_3}>
+							comboImg={boneless_img}>
 						</ComboItem>
 					</div>
 				</section>
@@ -254,6 +250,77 @@ import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
 	}
 </script>
 <style define:vars={{waves}}>
+
+	.main-menu-item {
+		--border-radius: 24px;
+
+		display: flex;
+		gap: 4px;
+
+		max-width: 550px;
+	}
+	.main-menu-item-img {
+		border: 2px solid var(--text-color);
+		border-top-left-radius: var(--border-radius);
+		border-bottom-left-radius: var(--border-radius);
+
+		overflow: hidden;
+		width: 45%;
+	}
+	.main-menu-item-img img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 1/1;
+		object-fit: cover;
+		object-position: center;
+	}
+	.main-menu-item-info {
+		background-color: var(--primary-color);
+		color: var(--secondary-color);
+
+		border: 2px solid var(--text-color);
+		border-top-right-radius: var(--border-radius);
+		border-bottom-right-radius: var(--border-radius);
+		padding: 12px;
+
+		width: calc(55% - 4px);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: start;
+		text-align: start;
+	}
+	.main-menu-item-info h4 {
+		font-size: var(--font-size-large);
+	}
+	.main-menu-item-description {
+		font-size: var(--font-size-medium);
+	}
+	.menu-price-symbol {
+		font-size: var(--font-size-large);
+	}
+	@media(max-width: 992px) {
+		.main-menu-item {
+			flex-direction: column;
+
+			max-height: 550px;
+		}
+		.main-menu-item-img {
+			border-top-right-radius: var(--border-radius);
+			border-bottom-left-radius: 0;
+
+			width: auto;
+		}
+		.main-menu-item-info {
+			border-bottom-left-radius: var(--border-radius);
+
+			border-top-right-radius: 0;
+
+			width: auto;
+		}
+	}
+	
 	main {
 		display: flex;
 		align-items: center;
@@ -633,7 +700,7 @@ import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
 	.menu-section-description {
 		
 	}
-	.main-menu-item {
+	/*.main-menu-item {
 		display: flex;
 		background-color: var(--primary-color);
 		border-radius: 20px;
@@ -658,7 +725,7 @@ import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
 		height: 120%;
 		border-radius: 999px;
 		border: 2px solid var(--text-color);
-	}
+	}*/
 	.menu-items-container {
 		display: flex;
 		flex-wrap: wrap;
