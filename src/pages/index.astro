@@ -6,9 +6,8 @@ import ComplementItem from '../components/complement-item.astro';
 import SauceItem from '../components/sauce-item.astro'; 
 import ComboItem from '../components/combo-item.astro';
 
-import waves from '../assets/waves.svg'
+
 import Location from '../assets/Location.png'
-import bonelessImg from  '../resources/default_boneless.jpg';
 
 import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
 import boneless_img from '../assets/testImages/quality-boneless-ranch.jpg'
@@ -17,16 +16,12 @@ import fries_img from '../assets/testImages/fries.webp'
 
 <Layout title="Boneless Crave">
 	<main>
-
 		<div class="hero-container">
 			<section class="hero-section">
 				<div class="headline-container">
 					<h1 class="headline">Tu <span class="headline-highlight">antojo</span>, <br>nuestra <span class="headline-highlight">pasión</span></h1>
 					<p class="sub-headline">Saboréa las Combinaciones Perfectas</p>
 					<div class="hero-call-to-action">
-						<a class="hero-menu-call-to-action" href="#menu">
-							Explorar menú
-						</a>
 						<a class="hero-order-call-to-action" href="#call-to-action">
 							Ordenar
 						</a>
@@ -35,10 +30,10 @@ import fries_img from '../assets/testImages/fries.webp'
 				<div class="hero-image-container-border">
 					<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hero-image-blob">
 						<path fill="#FDC90B" d="M42.8,-75.6C52.8,-68.5,56.2,-51.4,62.7,-37.2C69.1,-23,78.6,-11.5,82.9,2.5C87.2,16.4,86.2,32.8,77.8,43.7C69.4,54.5,53.5,59.9,39.3,60.9C25.1,62,12.6,58.7,-1.8,61.8C-16.1,64.9,-32.2,74.3,-43.9,71.8C-55.6,69.3,-62.8,54.9,-69.6,40.9C-76.5,26.9,-82.9,13.5,-84.6,-1C-86.2,-15.4,-83.1,-30.8,-73.4,-39.8C-63.7,-48.8,-47.5,-51.4,-34.1,-56.6C-20.8,-61.7,-10.4,-69.4,3,-74.7C16.4,-79.9,32.9,-82.7,42.8,-75.6Z" transform="translate(100 100)" />
-						</svg>
-						<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hero-image-blob">
-							<path fill="#42050A" d="M28.2,-50.6C37.5,-43.5,46.6,-37.8,58.2,-29.6C69.9,-21.4,84.1,-10.7,84,0C84,10.7,69.7,21.3,61.4,35.3C53.1,49.4,50.9,66.8,41.7,75.4C32.4,83.9,16.2,83.4,2,80.1C-12.3,76.7,-24.6,70.3,-34.4,62.1C-44.1,53.9,-51.3,43.8,-61.4,33.2C-71.5,22.5,-84.4,11.3,-84.5,-0.1C-84.6,-11.4,-72,-22.8,-63.3,-35.9C-54.7,-49.1,-50.1,-63.9,-40.2,-70.7C-30.3,-77.5,-15.2,-76.2,-2.8,-71.2C9.5,-66.3,18.9,-57.7,28.2,-50.6Z" transform="translate(100 100)" />
-							</svg>
+					</svg>
+					<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hero-image-blob">
+						<path fill="#AC202B" d="M28.2,-50.6C37.5,-43.5,46.6,-37.8,58.2,-29.6C69.9,-21.4,84.1,-10.7,84,0C84,10.7,69.7,21.3,61.4,35.3C53.1,49.4,50.9,66.8,41.7,75.4C32.4,83.9,16.2,83.4,2,80.1C-12.3,76.7,-24.6,70.3,-34.4,62.1C-44.1,53.9,-51.3,43.8,-61.4,33.2C-71.5,22.5,-84.4,11.3,-84.5,-0.1C-84.6,-11.4,-72,-22.8,-63.3,-35.9C-54.7,-49.1,-50.1,-63.9,-40.2,-70.7C-30.3,-77.5,-15.2,-76.2,-2.8,-71.2C9.5,-66.3,18.9,-57.7,28.2,-50.6Z" transform="translate(100 100)" />
+					</svg>
 
 					<div class="hero-image-container">
 						<Image src={hero_img} alt="Mejores boneless de chihuahua CUU" loading="lazy"></Image>
@@ -46,17 +41,9 @@ import fries_img from '../assets/testImages/fries.webp'
 				</div>
 				<div id="hero-scroll-down" class="hero-scroll-down-container">
 					<a class="hero-scroll-down" href="#hero-scroll-down">
-						<svg class="hero-scroll-down-svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"   fill="none" stroke-linecap="round" stroke-linejoin="round">
-							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-							<path d="M12 5l0 14" />
-							<path d="M18 13l-6 6" />
-							<path d="M6 13l6 6" />
-						  </svg>
+							Explorar menú
 					</a>
 				</div>
-				
-
-				
 				{/*<div class="gallery-container">
 					<div class="gallery-grid">
 						<a class="a-one"><GalleryImage image={bonelessImg} svgHeight='35px' svgWidth='35px'></GalleryImage></a>
@@ -66,24 +53,11 @@ import fries_img from '../assets/testImages/fries.webp'
 						<a class="a-five"><GalleryImage image={example_5} svgHeight='35px' svgWidth='35px'></GalleryImage></a>
 						<a class="a-six"><GalleryImage image={example_6} svgHeight='40px' svgWidth='40px'></GalleryImage></a>
 					</div>
-				</div>*/}
-
-				
+				</div>*/}	
 			</section>
 		</div>
-		<div id="aboutUs" class="aboutUs-container">
-			<section class="aboutUs-section">
-				<div class="aboutUs">
-					<h2><span class="hightlight">Boneless</span> Crave</h2>
-					<p>
-						¡Bienvenido a Boneless Crave, el destino perfecto para los amantes de los boneless! Nuestro compromiso va más allá de los boneless, 
-						extendiéndose a nuestros acompañamientos y complementos, ya que son generosos, sabrosos y elaborados con el mismo detalle que a nuestros boneless. 
-					</p>
-				</div>		
-			</section>
-			
-		</div>
-		<div id="menu" class="menu-container">
+		
+		{/*<div id="menu" class="menu-container">
 			<div class="menu-sections-container">
 				<h2 class="menu-title">Menú</h2> 
 				<section id="menu-boneless-section" class="menu-section">
@@ -157,6 +131,35 @@ import fries_img from '../assets/testImages/fries.webp'
 					</div>
 				</section>
 			</div>
+		</div>*/}
+		<div id="menu" class="menu-container">
+			<h2 class="section-title">Menú</h2>
+			<div class="menu-section-container">
+				<section class="menu-section">
+					<h2>Especialidades</h2>
+					<div class="item">
+						<Image src={boneless_img} alt="Mejores boneless de chihuahua con aderezo ranch"></Image>
+						<div class="description">
+							<h3>Boneless</h3>
+							<p>Boneless bañados en una de nuestras deliciosas salsas</p>
+							<p class="price">250gr - $140</p>
+						</div>
+					</div>
+				</section>
+			</div>
+			
+		</div>
+		<div id="aboutUs" class="aboutUs-container">
+			<section class="aboutUs-section">
+				<div class="aboutUs">
+					<h2><span class="hightlight">Boneless</span> Crave</h2>
+					<p>
+						¡Bienvenido a Boneless Crave, el destino perfecto para los amantes de los boneless! Nuestro compromiso va más allá de los boneless, 
+						extendiéndose a nuestros acompañamientos y complementos, ya que son generosos, sabrosos y elaborados con el mismo detalle que a nuestros boneless. 
+					</p>
+				</div>		
+			</section>
+			
 		</div>
 		<div id="location" class="location-container">
 			<section class="location-section">
@@ -214,19 +217,6 @@ import fries_img from '../assets/testImages/fries.webp'
 				</ul>
 			</section>
 		</div>
-		<div id="hours" class="hours-container">
-			<div class="hours">
-				<h2>Horarios</h2>
-				<section>
-					<h3>De Lunes a Sabado</h3>
-					<p>13:00 pm - 21:00 pm</p>
-				</section>
-				<section>
-					<h3>Domingo</h3>
-				<p>13:00 pm - 20:00 pm</p>
-				</section>
-			</div>
-		</div>
 	</main>
 </Layout>
 
@@ -249,8 +239,167 @@ import fries_img from '../assets/testImages/fries.webp'
 		img?.addEventListener('load', loaded)
 	}
 </script>
-<style define:vars={{waves}}>
+<style >
+	.menu-container {
+		padding-block: var(--section-padding-large);
+		width: 100%;
 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.menu-container .section-title {
+		font-size: var(--font-size-headline);
+		font-weight: var(--font-weight-large);
+
+		background-color: var(--secondary-color);
+		color: var(--text-contrast-color);
+
+		padding-inline: var(--spacing-700);
+		padding-block: var(--spacing-300);
+		display: inline;
+
+		border-radius: 25px;
+	}
+	.menu-section-container {
+		--wave-color: white;
+		--wave-height: 20px;
+		--wave-width: calc(var(--wave-height) * 8);
+
+		width: 100%;
+
+		background-color: var(--secondary-color-accent);
+
+		margin-block: var(--section-margin-medium);
+		padding-block: var(--section-padding-medium);
+
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.menu-section-container::before, .menu-section-container::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		height: var(--wave-height);
+		background: var(--wave-color);
+		-webkit-mask-image: url('../assets/Waves/waves.svg');
+		-webkit-mask-size: var(--wave-width) var(--wave-height);
+		mask-image: url('../assets/Waves/waves.svg');
+
+		width: 100%;
+	}
+	.menu-section-container::before {
+		top: 0;
+	}
+	.menu-section-container::after { 
+		bottom: 0;
+		transform: rotate(.5turn);
+	}
+	.menu-section {
+		width: min(1300px,(100% - 1rem));
+		margin-bottom: var(--section-margin-small);
+	}
+	.menu-section h2 {
+		color: var(--text-contrast-color);
+		font-size: var(--font-size-x-large);
+
+		text-align: center;
+
+		margin-bottom: var(--section-margin-small);
+	}
+	.menu-section .item {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+
+		padding-inline: var(--spacing-700);
+
+		color: var(--text-contrast-color);
+	}
+	.menu-section .item > * {
+		flex: 1;
+	}
+	.menu-section .item img{
+		width: 30%;
+		height: auto;
+		aspect-ratio: 1/1;
+		object-fit: cover;
+		object-position: center;
+
+		border-radius: 36px;
+		box-shadow: 2px 2px 3px black;
+	}
+	.menu-section .item .description {
+		text-align: end;
+	}
+	.menu-section .item .description h3{
+		border-bottom: 1px solid var(--primary-color);
+
+		font-size: var(--font-size-subheadline);
+	}
+	.menu-section .item .description .price{
+		font-weight: var(--font-weight-medium);
+		font-size: var(--font-size-large);
+	}
+	/*
+	.menu-container {
+		--wave-color: white;
+		--wave-height: 20px;
+		--wave-width: calc(var(--wave-height) * 8);
+		padding-block: var(--section-padding-large);
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		background-color: var(--secondary-color);
+		position: relative;
+	}
+	.menu-container::before, .menu-container::after {
+		content: '';
+		position: absolute;
+
+		height: var(--wave-height);
+		background: var(--wave-color);
+		-webkit-mask-image: url('../assets/Waves/waves.svg');
+		-webkit-mask-size: var(--wave-width) var(--wave-height);
+		mask-image: url('../assets/Waves/waves.svg');
+		width: 100%;
+	}
+	.menu-container::before {
+		top: 0;
+	}
+	.menu-container::after { 
+		bottom: 0;
+		transform: rotate(.5turn);
+	}
+	.menu-title {
+		background: var(--accent-color);
+		border-radius: 24px;
+		padding-block: var(--section-padding-small);
+		text-align: center;
+		font-size: 4rem;
+		font-weight: 700;
+		color: var(--secondary-color);
+	}
+	.menu-sections-container {
+		width:  min(1300px,(100% - 1rem));;
+	}
+	.menu-section {
+		display: flex;
+		flex-direction: column;
+		padding-inline: 16px;
+		padding-top: var(--section-padding-medium);
+	}
+	.menu-section-title {
+		font-size: 3rem;
+		font-weight: 600;
+		text-decoration-color: #f59e0b;
+		text-decoration-line: underline;
+		text-decoration-thickness: 3px;
+		text-underline-offset: 5px;
+	}
 	.main-menu-item {
 		--border-radius: 24px;
 
@@ -320,6 +469,19 @@ import fries_img from '../assets/testImages/fries.webp'
 			width: auto;
 		}
 	}
+	.menu-section-description {
+		
+	}
+	.menu-items-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 8px;
+		margin-block: 24px;
+	}*/
+
+
+
 	
 	main {
 		display: flex;
@@ -398,11 +560,10 @@ import fries_img from '../assets/testImages/fries.webp'
 		margin-top: 0px;
 		margin-bottom: 1rem;
 		line-height: 70px;
-		color: var(--text-main-color);
 	}
 	.headline-highlight {
 		font-family: 'Laila';
-		font-weight: 700;
+		font-weight: var(--font-weight-large);
 		color: var(--primary-color);
 	}
 	.sub-headline {
@@ -411,18 +572,7 @@ import fries_img from '../assets/testImages/fries.webp'
 		margin: 0px;
 		color: var(--text-main-color);
 	}
-	#instagram-svg, #facebook-svg{
-		stroke: var(--primary-color);
-		fill: var(--background-color);
-	}
-	#uber-eats-svg {
-		stroke: var(--primary-color);
-		fill: var(--primary-color);
-	}
-	#didi-food-svg {
-		stroke: var(--primary-color);
-		fill: var(--primary-color);
-	}
+
 	.hero-call-to-action {
 		margin-top: var(--spacing-500);
 		display: flex;
@@ -449,14 +599,14 @@ import fries_img from '../assets/testImages/fries.webp'
 		font-size: var(--font-size-medium);
 	}
 	.hero-order-call-to-action {
-		padding-block: 16px;
-		padding-inline: 20px;
-		background-color: var(--background-color);
+		padding-block: var(--spacing-300);
+		padding-inline: var(--spacing-700);
+		background-color: var(--primary-color);
 		border-radius: 999px;
 		border: 3px solid var(--primary-color);
 		color: var(--text-color);
-		font-weight: 700;
-		font-size: var(--font-size-medium);
+		font-weight: var(--font-weight-large);
+		font-size: var(--font-size-large);
 	}
 	.hero-image-container-border {
 		width: 90%;
@@ -501,16 +651,20 @@ import fries_img from '../assets/testImages/fries.webp'
 	}
 	.hero-scroll-down-container {
 		position: absolute;
-		width: 50px;
-		height: 50px;
-		bottom: 10px;
+		bottom: 50px;
 		/* padding for <a href="" scroll purposes to appear above the hero scroll down svg */
 		padding-top: 70px;
 	}
-	.hero-scroll-down svg {
-		stroke: var(--secondary-color);
-		stroke-width: 2px;
+	.hero-scroll-down-container a {
+		border: 2px solid var(--primary-color);
+		border-radius: 6px;
+
+		padding-inline: var(--spacing-300);
+		padding-block: var(--spacing-200);
+
+
 	}
+
 
 	/*.gallery-container {
 		margin: 0;
@@ -583,156 +737,12 @@ import fries_img from '../assets/testImages/fries.webp'
 		font-size: var(--font-size-medium);
 		font-weight: var(--font-weight-small);
 	}
-	.hours {
-		flex: 1;
-		max-width: 400px;
-		width: 100%;
-		min-height: 425px;
-		height: 100%;
-		border: 2px solid var(--secondary-color);
-		border-radius: 8px;
-		padding-block: 12px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-	}
-	.hours section {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.hours h2 {
-		font-size: var(--font-size-subheadline);
-		font-weight: 500;
-		position: relative;
-	}
-	.hours h2::after {
-		content: '';
-		height: 3px;
-		position: absolute;
-		background-color: var(--accent-color);
-		bottom: calc(-1 * var(--spacing-100));
-		left: 0;
-		width: 100%;
-	}
-	.hours h3 {
-		font-weight: var(--font-weight-medium);
-		align-self: center;
-	}
-	@media (max-width: 992px) {
-		.aboutUs-section {
-			flex-direction: column;
-			align-items: center;
-			text-align: start;
-			gap: 3rem;
-		}
-		.aboutUs {
-			max-width: calc(100% - 1rem);
-		}
 
-		.aboutUs h2 {
-			text-align: start;
-		}
-		
-
-
-	}
 	
 
 
 
-	/* Menu */
-	.menu-container {
-		--wave-color: var(--background-color);
-		--wave-height: 20px;
-		--wave-width: calc(var(--wave-height) * 8);
-		padding-block: var(--section-padding-large);
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		background-color: var(--secondary-color);
-		position: relative;
-	}
-	.menu-container::before, .menu-container::after {
-		content: '';
-		position: absolute;
-		height: var(--wave-height);
-		background: var(--wave-color);
-		-webkit-mask-image: url('../assets/waves.svg');
-		-webkit-mask-size: var(--wave-width) var(--wave-height);
-		mask-image: url('../assets/waves.svg');
-		width: 100%;
-	}
-	.menu-container::before {
-		top: 0;
-	}
-	.menu-container::after { 
-		bottom: 0;
-		transform: rotate(.5turn);
-	}
-	.menu-title {
-		background: var(--accent-color);
-		border-radius: 24px;
-		padding-block: var(--section-padding-small);
-		text-align: center;
-		font-size: 4rem;
-		font-weight: 700;
-		color: var(--secondary-color);
-	}
-	.menu-sections-container {
-		width:  min(1300px,(100% - 1rem));;
-	}
-	.menu-section {
-		display: flex;
-		flex-direction: column;
-		padding-inline: 16px;
-		padding-top: var(--section-padding-medium);
-	}
-	.menu-section-title {
-		font-size: 3rem;
-		font-weight: 600;
-		text-decoration-color: #f59e0b;
-		text-decoration-line: underline;
-		text-decoration-thickness: 3px;
-		text-underline-offset: 5px;
-	}
-	.menu-section-description {
-		
-	}
-	/*.main-menu-item {
-		display: flex;
-		background-color: var(--primary-color);
-		border-radius: 20px;
-		border: 2px solid var(--text-color);
-		padding: 12px;
-		color: var(--text-contrast-color);
-	}
-	.main-menu-item h4{
-		font-size: 3rem;
-	}
-	.main-menu-item .main-menu-item-description {
-		font-size: 1rem;
-	}
-	.main-menu-item-img {
-		position: relative;
-		width: 40%;
-	}
-	.main-menu-item-img img {
-		position: absolute;
-		bottom: -10%;
-		right: 10%;
-		height: 120%;
-		border-radius: 999px;
-		border: 2px solid var(--text-color);
-	}*/
-	.menu-items-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 8px;
-		margin-block: 24px;
-	}
+	
 	
 
 	/* Call to action */

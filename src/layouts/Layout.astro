@@ -44,8 +44,6 @@ const { title } = Astro.props;
 				<button aria-label="Navigation menu toggle" aria-expanded="false" class="primary-nav-toggle" type="button"></button>
 			</div>
 		</header>
-		<div class="nav-waves">
-		</div>
 		
 		<slot />
 	</body>
@@ -204,16 +202,16 @@ const { title } = Astro.props;
 
 	:root {
 		/* Colors */
-		--text-color: #ffe4e4;
-		--text-contrast-color: #1E0202;
-		--background-color: #AC202B;
+		--text-color: #1E0202;
+		--text-contrast-color: #fceff0;
+		--background-color: white;
 		--background-thin-color: #ce4651;
 		--footer-background-color: #211f20;
 		--background-transparent-color: #ac202c83;
 
-		--primary-color: #FDC90B;
-		--secondary-color: #42050A;
-		--secondary-blurry-color: #42050ac5;
+		--primary-color:  #FDC90B;
+		--secondary-color: #AC202B;
+		--secondary-color-accent: #42050A;
 
 		--bbq-color: #42050A;
 		--chipotle-color: ;
@@ -221,7 +219,7 @@ const { title } = Astro.props;
 		--mango-habanero-color: ;
 		--jalapeño-color: ;
 		
-		--accent-color: #E6B505;
+		--accent-color: #42050a;
 
 		--static: rgba(255, 255, 255, 0.15);
 		--linear-gradient: linear-gradient(-20deg,var(--static),var(--secondary-color)),linear-gradient(45deg,var(--accent-color),var(--primary-color) 80%);
@@ -253,6 +251,7 @@ const { title } = Astro.props;
 		--font-size-small: 1.125rem;
 		--font-size-medium: 1.25rem;
 		--font-size-large: 1.5rem;
+		--font-size-x-large: 3rem;
 
 		/* Font weights */
 		--font-weight-thin: 400;
@@ -306,30 +305,13 @@ const { title } = Astro.props;
 	header {
 		position: sticky;
 		top: 0;
-		z-index: 9999;
+		z-index: 4;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: transparent;
+		background-color: var(--secondary-color);
 		color: var(--text-color);
 	}
-	.nav-waves {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 1;
-		width: 100%;
-		height: 150px;
-		line-height: 0;
-		background-image: url('../assets/Waves/wave-top.svg');
-		background-repeat: repeat;
-	}
-	.nav-waves svg {
-		width: 112px;
-		height: 42.9px;
-	}
-
-
 
 	.hightlight {
 		color: var(--primary-color);
@@ -345,22 +327,24 @@ const { title } = Astro.props;
 		font-size: var(--font-size-small);
 		margin-block: var(--spacing-200);
 		max-height: 50px;
+		color: var(--text-contrast-color)
 	}
 
 	.nav-call-to-action {
 		padding-block: var(--spacing-200);
-		padding-inline: var(--spacing-400);
-		background-color: var(--background-color);
+		padding-inline: var(--spacing-500);
+
+		background-color: var(--primary-color);
 		color: var(--text-color);
+
 		border-radius: 999px;
 		border: 3px solid var(--primary-color);
+
 		font-weight: var(--font-weight-large);
+
 		transition: background-color, color 200ms ease;
 	}
-	.nav-call-to-action:hover {
-		background-color: var(--primary-color);
-		color: var(--text-contrast-color);
-	}
+
 	.primary-nav {
 		display: flex;
 		align-items: center;
@@ -380,7 +364,7 @@ const { title } = Astro.props;
 		position: absolute;
 		bottom: 4px;
 		left: 0;
-		background-color: var(--accent-color);
+		background-color: var(--primary-color);
 		transition: width 250ms ease;
 	}
 	.nav-custom-a:hover::before {
@@ -391,6 +375,7 @@ const { title } = Astro.props;
 	}
 	@media (max-width: 992px) {
 		.primary-nav{
+			z-index: 9999;
 			flex-direction: column;
 			position: fixed;
 			inset: 0 0 0 30%;
