@@ -1,4 +1,5 @@
 ---
+import wave from '../assets/Waves/svg-path.svg'
 interface Props {
 	title: string;
 }
@@ -43,6 +44,9 @@ const { title } = Astro.props;
 				<button aria-label="Navigation menu toggle" aria-expanded="false" class="primary-nav-toggle" type="button"></button>
 			</div>
 		</header>
+		<div class="nav-waves">
+		</div>
+		
 		<slot />
 	</body>
 	<footer>
@@ -211,6 +215,12 @@ const { title } = Astro.props;
 		--secondary-color: #42050A;
 		--secondary-blurry-color: #42050ac5;
 
+		--bbq-color: #42050A;
+		--chipotle-color: ;
+		--buffalo-color: ;
+		--mango-habanero-color: ;
+		--jalapeño-color: ;
+		
 		--accent-color: #E6B505;
 
 		--static: rgba(255, 255, 255, 0.15);
@@ -277,7 +287,7 @@ const { title } = Astro.props;
 		
 	}
 	body {
-		background-color: var(--background-color);
+		background-color: white;
 		position: relative;
 	}
 	code {
@@ -300,10 +310,27 @@ const { title } = Astro.props;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: var(--background-color);
-		border-bottom: 1px solid var(--background-thin-color);
+		background-color: transparent;
 		color: var(--text-color);
 	}
+	.nav-waves {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 150px;
+		line-height: 0;
+		background-image: url('../assets/Waves/wave-top.svg');
+		background-repeat: repeat;
+	}
+	.nav-waves svg {
+		width: 112px;
+		height: 42.9px;
+	}
+
+
+
 	.hightlight {
 		color: var(--primary-color);
 	}
