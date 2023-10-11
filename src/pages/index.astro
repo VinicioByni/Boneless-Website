@@ -134,7 +134,7 @@ import fries_img from '../assets/testImages/fries.webp'
 		</div>*/}
 		<div id="menu" class="menu-container">
 			<h2 class="section-title">Menú</h2>
-			<div class="menu-section-container">
+			<div class="menu-section-container waves">
 				<section class="menu-section">
 					<h2>Especialidades</h2>
 					<div class="item">
@@ -146,6 +146,24 @@ import fries_img from '../assets/testImages/fries.webp'
 						</div>
 					</div>
 				</section>
+				<section class="menu-section">
+					<h2>Salsas</h2>
+					<div class="sauces-container">
+						<SauceItem class="bbq-color" name="BBQ" isHot={false}></SauceItem>
+						<SauceItem class="lemon-pepper-color" name="Lemon Pepper" isHot={false}></SauceItem>
+						<SauceItem class="jalapeño-color" name="Jalapeño" isHot={true}></SauceItem>
+						<SauceItem class="buffalo-color" name="Buffalo" isHot={true}></SauceItem>
+						<SauceItem class="mango-habanero-color" name="Mango Habanero" isHot={true}></SauceItem>
+					</div>
+				</section>
+			</div>
+
+			<div class="menu-section-sauces waves">
+
+				<h3 class="bbq">BBQ</h3>
+				<h3 class="buffalo">Buffalo</h3>
+				<h3 class="mango-habanero">Mango Habanero</h3>
+
 			</div>
 			
 		</div>
@@ -240,6 +258,16 @@ import fries_img from '../assets/testImages/fries.webp'
 	}
 </script>
 <style >
+	.sauces-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+
+
 	.menu-container {
 		padding-block: var(--section-padding-large);
 		width: 100%;
@@ -254,6 +282,7 @@ import fries_img from '../assets/testImages/fries.webp'
 
 		background-color: var(--secondary-color);
 		color: var(--text-contrast-color);
+		box-shadow: 2px 2px 2px black;
 
 		padding-inline: var(--spacing-700);
 		padding-block: var(--spacing-300);
@@ -262,10 +291,6 @@ import fries_img from '../assets/testImages/fries.webp'
 		border-radius: 25px;
 	}
 	.menu-section-container {
-		--wave-color: white;
-		--wave-height: 20px;
-		--wave-width: calc(var(--wave-height) * 8);
-
 		width: 100%;
 
 		background-color: var(--secondary-color-accent);
@@ -273,13 +298,18 @@ import fries_img from '../assets/testImages/fries.webp'
 		margin-block: var(--section-margin-medium);
 		padding-block: var(--section-padding-medium);
 
-		position: relative;
-
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-	.menu-section-container::before, .menu-section-container::after {
+	.waves {
+		--wave-color: white;
+		--wave-height: 20px;
+		--wave-width: calc(var(--wave-height) * 8);
+
+		position: relative;
+	}
+	.waves::before, .waves::after {
 		content: '';
 		position: absolute;
 		left: 0;
@@ -291,10 +321,11 @@ import fries_img from '../assets/testImages/fries.webp'
 
 		width: 100%;
 	}
-	.menu-section-container::before {
+
+	.waves::before {
 		top: 0;
 	}
-	.menu-section-container::after { 
+	.waves::after { 
 		bottom: 0;
 		transform: rotate(.5turn);
 	}
@@ -344,6 +375,34 @@ import fries_img from '../assets/testImages/fries.webp'
 		font-weight: var(--font-weight-medium);
 		font-size: var(--font-size-large);
 	}
+
+
+	.menu-section-sauces {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		background-color: var(--footer-background-color);
+		color: var(--text-contrast-color);
+		width: 100%;
+	}
+	.menu-section-sauces h3{
+		flex:1;
+		text-align: center;
+		padding-block: var(--section-padding-medium);
+		padding-inline: var(--section-padding-large)
+	}
+	.menu-section-sauces .bbq {
+		background-color: var(--bbq-color);
+	}
+	.menu-section-sauces .buffalo {
+		background-color: var(--buffalo-color);
+	}
+	.menu-section-sauces .mango-habanero {
+		background-color: var(--mango-habanero-color);
+	}
+
 	/*
 	.menu-container {
 		--wave-color: white;

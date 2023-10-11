@@ -213,11 +213,11 @@ const { title } = Astro.props;
 		--secondary-color: #AC202B;
 		--secondary-color-accent: #42050A;
 
-		--bbq-color: #42050A;
-		--chipotle-color: ;
-		--buffalo-color: ;
-		--mango-habanero-color: ;
-		--jalapeño-color: ;
+		--bbq-color: #210601;
+		--lemon-pepper-color: #F5C507;
+		--buffalo-color: #FF7105;
+		--mango-habanero-color: #FFB700;
+		--jalapeño-color: #556900;
 		
 		--accent-color: #42050a;
 
@@ -300,8 +300,6 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
-
-
 	header {
 		position: sticky;
 		top: 0;
@@ -309,8 +307,9 @@ const { title } = Astro.props;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: var(--secondary-color);
-		color: var(--text-color);
+		background-color: var(--background-color);
+		color: var(--secondary-color);
+		border-bottom: 1px solid var(--background-thin-color);
 	}
 
 	.hightlight {
@@ -327,7 +326,7 @@ const { title } = Astro.props;
 		font-size: var(--font-size-small);
 		margin-block: var(--spacing-200);
 		max-height: 50px;
-		color: var(--text-contrast-color)
+		color: var(--secondary-color)
 	}
 
 	.nav-call-to-action {
@@ -478,6 +477,28 @@ const { title } = Astro.props;
 			align-items: center;
 		}
 	}
+
+	.bbq-color {
+		background-color: transparent;
+		fill: var(--bbq-color);
+	}
+	.buffalo-color {
+		background-color: transparent;
+		fill: var(--buffalo-color);
+	}
+	.mango-habanero-color {
+		background-color: transparent;
+		fill: var(--mango-habanero-color);
+	}
+	.lemon-pepper-color {
+		background-color: transparent;
+		fill: var(--lemon-pepper-color);
+	}
+	.jalapeño-color {
+		background-color: transparent;
+		fill: var(--jalapeño-color);
+	}
+
 
 	a {
 		text-decoration: none;
