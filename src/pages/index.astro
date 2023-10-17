@@ -8,10 +8,12 @@ import ComboItem from '../components/combo-item.astro';
 
 
 import Location from '../assets/Location.png'
+import MapImg from '../assets/Screenshot de mapa.png'
 
-import hero_img from '../assets/testImages/qulity-boneless-red-sauce.jpg';
+import hero_img from '../assets/testImages/tasty-boneless-chicken-sauce.png';
 import boneless_img from '../assets/testImages/quality-boneless-ranch.jpg'
 import fries_img from '../assets/testImages/fries.webp'
+
 ---
 
 <Layout title="Boneless Crave">
@@ -28,113 +30,43 @@ import fries_img from '../assets/testImages/fries.webp'
 					</div>
 				</div>
 				<div class="hero-image-container-border">
-					<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hero-image-blob">
-						<path fill="#FDC90B" d="M42.8,-75.6C52.8,-68.5,56.2,-51.4,62.7,-37.2C69.1,-23,78.6,-11.5,82.9,2.5C87.2,16.4,86.2,32.8,77.8,43.7C69.4,54.5,53.5,59.9,39.3,60.9C25.1,62,12.6,58.7,-1.8,61.8C-16.1,64.9,-32.2,74.3,-43.9,71.8C-55.6,69.3,-62.8,54.9,-69.6,40.9C-76.5,26.9,-82.9,13.5,-84.6,-1C-86.2,-15.4,-83.1,-30.8,-73.4,-39.8C-63.7,-48.8,-47.5,-51.4,-34.1,-56.6C-20.8,-61.7,-10.4,-69.4,3,-74.7C16.4,-79.9,32.9,-82.7,42.8,-75.6Z" transform="translate(100 100)" />
-					</svg>
-					<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hero-image-blob">
-						<path fill="#AC202B" d="M28.2,-50.6C37.5,-43.5,46.6,-37.8,58.2,-29.6C69.9,-21.4,84.1,-10.7,84,0C84,10.7,69.7,21.3,61.4,35.3C53.1,49.4,50.9,66.8,41.7,75.4C32.4,83.9,16.2,83.4,2,80.1C-12.3,76.7,-24.6,70.3,-34.4,62.1C-44.1,53.9,-51.3,43.8,-61.4,33.2C-71.5,22.5,-84.4,11.3,-84.5,-0.1C-84.6,-11.4,-72,-22.8,-63.3,-35.9C-54.7,-49.1,-50.1,-63.9,-40.2,-70.7C-30.3,-77.5,-15.2,-76.2,-2.8,-71.2C9.5,-66.3,18.9,-57.7,28.2,-50.6Z" transform="translate(100 100)" />
-					</svg>
-
 					<div class="hero-image-container">
 						<Image src={hero_img} alt="Mejores boneless de chihuahua CUU" loading="lazy"></Image>
 					</div>
-				</div>
-				<div id="hero-scroll-down" class="hero-scroll-down-container">
-					<a class="hero-scroll-down" href="#hero-scroll-down">
-							Explorar menú
-					</a>
-				</div>
-				{/*<div class="gallery-container">
-					<div class="gallery-grid">
-						<a class="a-one"><GalleryImage image={bonelessImg} svgHeight='35px' svgWidth='35px'></GalleryImage></a>
-						<a class="a-two"><GalleryImage image={example_2} svgHeight='45px' svgWidth='45px'></GalleryImage></a>
-						<a class="a-three"><GalleryImage image={example_3} svgHeight='35px' svgWidth='35px'></GalleryImage></a>
-						<a class="a-four"><GalleryImage image={example_4} svgHeight='40px' svgWidth='40px'></GalleryImage></a>
-						<a class="a-five"><GalleryImage image={example_5} svgHeight='35px' svgWidth='35px'></GalleryImage></a>
-						<a class="a-six"><GalleryImage image={example_6} svgHeight='40px' svgWidth='40px'></GalleryImage></a>
-					</div>
-				</div>*/}	
+				</div>	
 			</section>
+			<a href="#menu" class="hero-menu-cta">Explorar Menú</a>
 		</div>
 		
-		{/*<div id="menu" class="menu-container">
-			<div class="menu-sections-container">
-				<h2 class="menu-title">Menú</h2> 
-				<section id="menu-boneless-section" class="menu-section">
-					<h3 class="menu-section-title">Boneless</h3>
-					<p class="menu-section-description">!Disfruta de nuestros Boneless!</p>
-
-
-					<div class="menu-items-container">	
-						<div class="main-menu-item">
-							<div class="main-menu-item-img">
-								<Image src={boneless_img} alt="Deliciosos Boneless con salsa ranch"></Image>
-							</div>
-							<div class="main-menu-item-info">
-								<h4>Boneless</h4>
-								<p class="main-menu-item-description">Boneless bañados en nuestras deliciosas salsas</p>
-								<p>250gr - <span class="menu-price-symbol">$</span>120</p>
-								<p>350gr - <span class="menu-price-symbol">$</span>160</p>
-							</div>	
-						</div>
-					</div>
-
-
-
-					<div class="menu-items-container">
-						<SauceItem name="BBQ" isHot={false} color="#601c14"></SauceItem>
-						<SauceItem name="Lemon-Pepper" isHot={false} color="#a2c11c"></SauceItem>
-						<SauceItem name="Chipotle" isHot={true} color="#a55233"></SauceItem>
-						<SauceItem name="Mango Habanero" isHot={true} color="#fac441"></SauceItem>
-						<SauceItem name="Buffalo" isHot={true} color="#ff5722"></SauceItem>
-					</div>
-				</section>
-				<section class="menu-section">
-					<h3 class="menu-section-title">Complementos</h3>
-					<p class="menu-section-description">!Disfruta de nuestra deliciosa selección de complementos!</p>
-					<div class="menu-items-container">
-						<ComplementItem 
-							itemTitle='Papas Fritas'
-							itemDescription='Papas a la francesa'
-							itemQtyPrice={ [{itemQuantity:'250gr',itemPrice: '100'}, {itemQuantity:'350gr',itemPrice: '150'}] }
-							itemImage={fries_img}
-							itemImageAlt="Menjores papas a la francesa en Chihuahua">
-						</ComplementItem>
+		<div id="aboutUs" class="aboutUs-container">
+			<section class="aboutUs-section">
+				<div class="aboutUs">
+					<h2><strong class="hightlight">Boneless</strong> Crave</h2>
+					<p>
+						Creamos sabores auténticos acompañados de complementos excepcionales que hacen la diferencia.
+					</p>
 					
+				</div>
+				<div class="gallery-container">
+					<div class="gallery-track">
+						<Image id="img-test" src={fries_img} alt="test"></Image>
+						<Image src={fries_img} alt="test"></Image>
+						<Image src={fries_img} alt="test"></Image>
+						<Image src={fries_img} alt="test"></Image>
+						<Image src={fries_img} alt="test"></Image>
+						<Image src={fries_img} alt="test"></Image>
+						<Image src={fries_img} alt="test"></Image>
+						<Image src={fries_img} alt="test"></Image>
+						<Image src={fries_img} alt="test"></Image>
 
 					</div>
-				</section>
-				<section id="menu-combos-section" class="menu-section">
-					<h3 class="menu-section-title">Combos</h3>
-					<p class="menu-section-description">!Las combinaciones perfectas!</p>
-					<div class="menu-items-container">
-						<ComboItem 
-							comboName='Combo #1' 
-							comboItems='Boneless + Papas Fritas' 
-							comboPrice={200} 
-							comboDescription='250 gr de boneless más 150 gr de papas a la francesa' 
-							comboImg={boneless_img}>
-						</ComboItem>
-						<ComboItem 
-							comboName='Combo #2' 
-							comboItems='Boneless + Papas Fritas + Oreo Frito' 
-							comboPrice={250} 
-							comboDescription='250 gr de boneless más 150 gr de papas a la francesa y 1 oreo frito' 
-							comboImg={boneless_img}>
-						</ComboItem>
-						<ComboItem comboName='Combo #3' 
-							comboItems='Boneless + Aros de Cebolla + Oreo Frito' 
-							comboPrice={200} 
-							comboDescription='250 gr de boneless más 150 gr de Aros de Cebolla' 
-							comboImg={boneless_img}>
-						</ComboItem>
-					</div>
-				</section>
-			</div>
-		</div>*/}
-		<div id="menu" class="menu-container">
-			<h2 class="section-title">Menú</h2>
-			<div class="menu-section-container waves">
+				</div>	
+			</section>
+			
+		</div>
+		<div id="menu" class="menu-container waves">
+			<h2 class="menu-title">Menú</h2>
+			<div class="menu-section-container">
 				<section class="menu-section">
 					<h2>Especialidades</h2>
 					<div class="item">
@@ -157,90 +89,91 @@ import fries_img from '../assets/testImages/fries.webp'
 					</div>
 				</section>
 			</div>
-
-			<div class="menu-section-sauces waves">
-
-				<h3 class="bbq">BBQ</h3>
-				<h3 class="buffalo">Buffalo</h3>
-				<h3 class="mango-habanero">Mango Habanero</h3>
-
-			</div>
-			
 		</div>
-		<div id="aboutUs" class="aboutUs-container">
-			<section class="aboutUs-section">
-				<div class="aboutUs">
-					<h2><span class="hightlight">Boneless</span> Crave</h2>
-					<p>
-						¡Bienvenido a Boneless Crave, el destino perfecto para los amantes de los boneless! Nuestro compromiso va más allá de los boneless, 
-						extendiéndose a nuestros acompañamientos y complementos, ya que son generosos, sabrosos y elaborados con el mismo detalle que a nuestros boneless. 
-					</p>
-				</div>		
-			</section>
-			
-		</div>
-		<div id="location" class="location-container">
-			<section class="location-section">
-				<h1>Ubicación</h1>
-				<div class="img-map-container">
-					<Image
-					src={Location}
-					width="250"
-					height="250"
-					decoding="async"
-					loading="lazy"
-					alt="Boneless Crave Location front view.">
-					</Image>
-
-				{/*
-				1.-Google docs example for api call for embed maps, the page generates the html code itself, https://developers.google.com/maps/documentation/embed/get-started
-				2.-I have to create new project on the google cloud console, will wait until the boneless location is set up in google maps to continue as they ask for location
-				of business, don't want to use the punto verde cafe location, want to have a different page for the boneless business
-				
-				<iframe
-					width="600"
-					height="250"
-					style="border:0"
-					loading="lazy"
-					allowfullscreen
-					referrerpolicy="no-referrer-when-downgrade"
-					src="https://www.google.com/maps/embed/v1/place?key=API_KEY
-						&q=Space+Needle,Seattle+WA">
-				</iframe>*/}
-				</div>
-
-				
-				
-			</section>
+		<div id="social-proof" class="social-proof-container">
+			<seciton class="social-proof-section">
+				<h2>Lo que los clientes dicen de nosotros</h2>
+			</seciton>
 		</div>
 		<div id="call-to-action" class="call-to-action-container">
 			<section class="call-to-action-section">
-				
-				<div class="call-to-action-header">
-					<h1>Realiza tu pedido para llevar !</h1>
+				<h2>Ordena a <strong>Domicilio</strong> ó <strong>Para llevar!</strong></h2>
+				<div class="anchors-container">
+					<a href="#" class="delivery"><span>Uber</span> Eats</a>
+					<a href="#" class="toGo">WhatsApp</a>
 				</div>
-				<ul>
-					<li>
-						<a class="call-to-action-anchor" href="#">WhatsApp</a> 
-						614-444-5566
-					</li>
-					<li>
-						<a class="call-to-action-anchor" href="#">UberEats</a> 
-						BonelessCrave
-					</li>
-					<li>
-						<a class="call-to-action-anchor" href="#">DidiFood</a> 
-						BonelessCrave
-					</li>
-				</ul>
+				<footer>
+					<p>Los precios en uber eats aumentan de precio.</p>
+				</footer>
 			</section>
 		</div>
+		<div id="location" class="location-container">
+			<section class="location-section">
+				<section class="location">
+					<h2>Ubicación</h2>
+					<div>
+						<Image
+						src={Location}
+						decoding="async"
+						loading="lazy"
+						alt="Foto de la vista por enfrente del negocio Boneless Crave.">
+						</Image>
+						<div class="location-description">
+							<section>
+								<h3>Dirección</h3>
+								<address>Boneless Crave, Calle Ignacio Allende, Zona Centro, Chihuahua <br>
+										614-555-6677
+								</address>
+							</section>
+							<section>
+								<h3>Horario</h3>
+								<p class="days">Martes a Sabado</p>
+								<p>12:30pm a 20:00pm</p>
+								<p class="days">Domingo</p>
+								<p>13:00pm a 19:00pm</p>
+							</section>
+						</div>
+					</div>
+				</section>
+				<section class="map">
+					<h2>Mapa</h2>
+					<Image src={MapImg} alt="Screenshot del mapa proporcionado por google maps del negocio boneless crave"></Image>
+						{/* aspect ratio = 177/116
+					1.-Google docs example for api call for embed maps, the page generates the html code itself, https://developers.google.com/maps/documentation/embed/get-started
+					2.-I have to create new project on the google cloud console, will wait until the boneless location is set up in google maps to continue as they ask for location
+					of business, don't want to use the punto verde cafe location, want to have a different page for the boneless business
+					
+					<iframe
+						width="100%"
+						aspect-ratio="x/y"
+						style="border:0"
+						loading="lazy"
+						allowfullscreen
+						referrerpolicy="no-referrer-when-downgrade"
+						src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+							&q=Space+Needle,Seattle+WA">
+					</iframe>*/}
+				</section>
+			</section>
+				
+				
+			
+
+				
+				
+
+				
+				
+			</section>
+		</div>
+		
 	</main>
 </Layout>
 
 <script>
 
-	/*---Hero img load-------Move to file later--------*/
+	/*---Hero img load-------Move to file later--------
+	1- the loaded class adds opasity 1, it initially is set to 0
 	const LOADED_CLASS = "loaded"
 
 	const imgContainer = document.querySelector('.hero-image-container')
@@ -255,55 +188,337 @@ import fries_img from '../assets/testImages/fries.webp'
 	}
 	else {
 		img?.addEventListener('load', loaded)
+	}*/
+
+	/* About us gallery */
+	const galleryTrack = document.querySelector('.gallery-track');
+	
+	const numberOfImages = galleryTrack?.children.length;
+	let translatePercentage = 0;
+	if (numberOfImages !== null && numberOfImages !== undefined) {
+		translatePercentage = (50 / numberOfImages) * 3
 	}
+	if (galleryTrack instanceof HTMLDivElement) {
+		
+		galleryTrack.style.translate = `-${translatePercentage}%`;
+	}
+
+
+	const galleryContainer = document.querySelector('.gallery-container')
+	let initialCoordX = 0
+	let sliderPercentage = 0
+	let previousSliderPercentage = 0
+	let currentSliderPercentage = 0
+	galleryContainer?.addEventListener('mousedown', (e) => {
+		const mouseDownEvent = e as MouseEvent
+		if (mouseDownEvent.target === galleryContainer) {
+			initialCoordX = mouseDownEvent.clientX
+		}
+	})
+	galleryContainer?.addEventListener('mouseup', (e) => {
+		const mouseDownEvent = e as MouseEvent
+		if (mouseDownEvent.target === galleryContainer) {
+			initialCoordX = 0
+			previousSliderPercentage = currentSliderPercentage
+		}
+	})
+	galleryContainer?.addEventListener('mousemove', (e) => {
+		const mouseMoveEvent = e as MouseEvent
+		if (mouseMoveEvent.target === galleryContainer) {
+			if (initialCoordX === 0) return;
+			const screenWidthPercentage: number = .65
+			const sliderWidth = window.innerWidth * screenWidthPercentage
+
+			const screenTraveled = initialCoordX - mouseMoveEvent.clientX
+			sliderPercentage = -(screenTraveled / sliderWidth) * 100
+			
+			currentSliderPercentage = previousSliderPercentage + sliderPercentage
+			console.log(currentSliderPercentage)
+			if (currentSliderPercentage > 0 ) currentSliderPercentage = 0;
+			if (currentSliderPercentage < (-100 + translatePercentage * 2)) currentSliderPercentage = (-100 + translatePercentage * 2)
+			if (galleryTrack instanceof HTMLDivElement) {
+				galleryTrack.animate({transform: `translate(${currentSliderPercentage}%, 0%)`}, {duration: 1200, fill: 'forwards', easing: 'ease-in-out'}) 
+			}
+		}
+	})
+	
+
+	
+
+
+
+	
 </script>
 <style >
-	.sauces-container {
+	/* Social proof  */
+	.social-proof-container {
+		padding-block: var(--section-padding-large);
+		width: 100%;
+	}
+	.social-proof-section h2{
+		text-align: center;
+
+		font-size: var(--font-size-x-large);
+		font-weight: var(--font-weight-large);
+	}
+
+
+	/* About us and Hours */
+	.aboutUs-container {
+		padding-block: var(--section-padding-large);
+	
+		width: 100%;
+
+		display: flex;
+		justify-content: center;
+
+	}
+	.aboutUs-section {
+
+		width: 100%;
+
+		border-top: 2px solid var(--priamry-color-500);
+
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	.aboutUs {
+		text-align: center;
+	}
+	.aboutUs h2 {
+		font-family: 'Laila';
+		font-size: var(--font-size-headline);
+		font-weight: var(--font-weight-medium);
+		line-height: calc(1.2 * var(--font-size-headline));
+		letter-spacing: calc(-.01 * var(--font-size-headline));
+
+	}
+	.aboutUs .hightlight {
+		color: var(--primary-color-500)
+	}
+	.aboutUs p {
+		text-wrap: balance;
+		line-height: calc(1.7 * var(--font-size-small));
+		font-size: var(--font-size-medium);
+		font-weight: var(--font-weight-small);
+	}
+	.gallery-container{
+		--height: 45vmin;
+		position: relative;
+
+		width: 100%;
+		padding-bottom: 58vmin;
+
+	}
+	.gallery-track {
+		position: absolute;
+		left: 50%;
+		top: 0%;
+
+		display: flex;
+		gap: 4vmin;
+	
+		padding-block : var(--section-padding-small);
+
+		pointer-events: none;
+	}
+	.gallery-container img {
+		width: 55vmin;
+		height: auto;
+		border-radius: 5vmin;
+
+		object-fit: cover;
+		object-position: center center;
+		/*width: auto;
+		height: var(--height);	*/
+	}
+	@media (max-width: 992px) {
+		.gallery-track {
+			flex-direction: column;
+		}
+	}
+	
+  
+
+
+
+	main {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 16px;
+		flex-direction: column;
+		padding: 0;
+		color: var(--text-color);
+		font-size: 20px;
+		line-height: 1.6;
+		width: 100%;
 	}
 
 
 
+	/* Hero */
+	.hero-container {
+		width: min(1300px, (100% - 1rem));
+		height: max((100vh - var(--nav-height) - var(--section-padding-large)), 530px);
+	
+		position: relative;
+
+		padding-top: var(--section-padding-large);
+	}
+	.hero-menu-cta {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		transform: translate(-50%, -50%);		
+
+		border: 2px solid var(--primary-color-500);
+		border-radius: 6px;
+
+		padding-inline: var(--spacing-300);
+		padding-block: var(--spacing-200);
+
+	}
+	.hero-section {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		gap: 3rem;	
+	}
+	
+	@media (max-width: 992px) {
+		.hero-container {
+			height: auto;
+			margin-top: var(--section-margin-medium);
+			padding-bottom: var(--section-padding-large);
+		}
+		.hero-section {
+			gap: 5rem;
+		}
+	}
+	
+	
+	.headline-container {
+		flex: 1;
+		text-wrap: balance;
+	}
+	.headline {
+		font-family: 'Laila';
+		font-weight: 600;
+		font-size: var(--font-size-headline);
+		margin-top: 0px;
+		margin-bottom: 1rem;
+		line-height: 70px;
+		color: var(--text-color);
+	}
+	.headline-highlight {
+		font-family: 'Laila';
+		font-weight: var(--font-weight-large);
+		color: var(--primary-color-500);
+	}
+	.sub-headline {
+		font-size: 2rem;
+		font-weight: 600;
+		margin: 0px;
+		color: var(--text-color);
+	}
+
+	.hero-call-to-action {
+		margin-top: var(--spacing-500);
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 1rem;
+	}
+	@media (max-width: 992px) {
+		.hero-call-to-action {
+		justify-content: center;
+		}
+	}
+	.hero-call-to-action > a {
+		width: fit-content;
+	}
+	.hero-order-call-to-action {
+		padding-block: var(--spacing-300);
+		padding-inline: var(--spacing-700);
+		background-color: var(--primary-color-500);
+		border-radius: 999px;
+		border: 3px solid var(--primary-color-500);
+		color: var(--text-contrast-color);
+		font-weight: var(--font-weight-large);
+		font-size: var(--font-size-large);
+	}
+	.hero-image-container-border {
+		width: 90%;
+		max-width: 500px;
+		aspect-ratio: 1 / 1;
+		position: relative;
+	}
+
+	
+	.hero-image-container {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+		max-width: 450px;
+		aspect-ratio: 1 / 1;
+		border-radius: 9999px;
+		overflow: hidden;
+		background-size: cover;
+		background-position: center;
+	}
+	.hero-image-container img {
+		display: block;
+		width: 100%;
+		height: -webkit-fill-available;
+		aspect-ratio: 1 / 1.5;
+		object-fit: cover;
+		object-position: center;
+		transition: opacity 250ms ease-in-out;
+	}
+
+
+
+
+
+	/* Menú */
 	.menu-container {
 		padding-block: var(--section-padding-large);
 		width: 100%;
+
+		background-color: var(--background-color-600);
 
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-	.menu-container .section-title {
+	.menu-container .menu-title {
 		font-size: var(--font-size-headline);
 		font-weight: var(--font-weight-large);
 
-		background-color: var(--secondary-color);
+		background-color: var(--primary-color-500);
 		color: var(--text-contrast-color);
-		box-shadow: 2px 2px 2px black;
 
 		padding-inline: var(--spacing-700);
 		padding-block: var(--spacing-300);
+
+		margin-bottom: var(--section-margin-small);
 		display: inline;
 
 		border-radius: 25px;
+
 	}
 	.menu-section-container {
 		width: 100%;
-
-		background-color: var(--secondary-color-accent);
-
-		margin-block: var(--section-margin-medium);
-		padding-block: var(--section-padding-medium);
-
+		
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	.waves {
-		--wave-color: white;
+		--wave-color: var(--background-color-500);
 		--wave-height: 20px;
 		--wave-width: calc(var(--wave-height) * 8);
 
@@ -331,12 +546,15 @@ import fries_img from '../assets/testImages/fries.webp'
 	}
 	.menu-section {
 		width: min(1300px,(100% - 1rem));
-		margin-bottom: var(--section-margin-small);
+		padding-block: var(--section-padding-small);
+
+		border-top: 2px solid var(--background-color-400);
 	}
 	.menu-section h2 {
-		color: var(--text-contrast-color);
-		font-size: var(--font-size-x-large);
+		color: var(--text-color);
 
+		font-size: var(--font-size-x-large);
+		line-height: 1;
 		text-align: center;
 
 		margin-bottom: var(--section-margin-small);
@@ -348,7 +566,7 @@ import fries_img from '../assets/testImages/fries.webp'
 
 		padding-inline: var(--spacing-700);
 
-		color: var(--text-contrast-color);
+		color: var(--text-color);
 	}
 	.menu-section .item > * {
 		flex: 1;
@@ -367,7 +585,7 @@ import fries_img from '../assets/testImages/fries.webp'
 		text-align: end;
 	}
 	.menu-section .item .description h3{
-		border-bottom: 1px solid var(--primary-color);
+		border-bottom: 1px solid var(--primary-color-500);
 
 		font-size: var(--font-size-subheadline);
 	}
@@ -376,506 +594,174 @@ import fries_img from '../assets/testImages/fries.webp'
 		font-size: var(--font-size-large);
 	}
 
-
-	.menu-section-sauces {
+	.sauces-container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
-
-		background-color: var(--footer-background-color);
-		color: var(--text-contrast-color);
-		width: 100%;
-	}
-	.menu-section-sauces h3{
-		flex:1;
-		text-align: center;
-		padding-block: var(--section-padding-medium);
-		padding-inline: var(--section-padding-large)
-	}
-	.menu-section-sauces .bbq {
-		background-color: var(--bbq-color);
-	}
-	.menu-section-sauces .buffalo {
-		background-color: var(--buffalo-color);
-	}
-	.menu-section-sauces .mango-habanero {
-		background-color: var(--mango-habanero-color);
-	}
-
-	/*
-	.menu-container {
-		--wave-color: white;
-		--wave-height: 20px;
-		--wave-width: calc(var(--wave-height) * 8);
-		padding-block: var(--section-padding-large);
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		background-color: var(--secondary-color);
-		position: relative;
-	}
-	.menu-container::before, .menu-container::after {
-		content: '';
-		position: absolute;
-
-		height: var(--wave-height);
-		background: var(--wave-color);
-		-webkit-mask-image: url('../assets/Waves/waves.svg');
-		-webkit-mask-size: var(--wave-width) var(--wave-height);
-		mask-image: url('../assets/Waves/waves.svg');
-		width: 100%;
-	}
-	.menu-container::before {
-		top: 0;
-	}
-	.menu-container::after { 
-		bottom: 0;
-		transform: rotate(.5turn);
-	}
-	.menu-title {
-		background: var(--accent-color);
-		border-radius: 24px;
-		padding-block: var(--section-padding-small);
-		text-align: center;
-		font-size: 4rem;
-		font-weight: 700;
-		color: var(--secondary-color);
-	}
-	.menu-sections-container {
-		width:  min(1300px,(100% - 1rem));;
-	}
-	.menu-section {
-		display: flex;
-		flex-direction: column;
-		padding-inline: 16px;
-		padding-top: var(--section-padding-medium);
-	}
-	.menu-section-title {
-		font-size: 3rem;
-		font-weight: 600;
-		text-decoration-color: #f59e0b;
-		text-decoration-line: underline;
-		text-decoration-thickness: 3px;
-		text-underline-offset: 5px;
-	}
-	.main-menu-item {
-		--border-radius: 24px;
-
-		display: flex;
-		gap: 4px;
-
-		max-width: 550px;
-	}
-	.main-menu-item-img {
-		border: 2px solid var(--text-color);
-		border-top-left-radius: var(--border-radius);
-		border-bottom-left-radius: var(--border-radius);
-
-		overflow: hidden;
-		width: 45%;
-	}
-	.main-menu-item-img img {
-		width: 100%;
-		height: 100%;
-		aspect-ratio: 1/1;
-		object-fit: cover;
-		object-position: center;
-	}
-	.main-menu-item-info {
-		background-color: var(--primary-color);
-		color: var(--secondary-color);
-
-		border: 2px solid var(--text-color);
-		border-top-right-radius: var(--border-radius);
-		border-bottom-right-radius: var(--border-radius);
-		padding: 12px;
-
-		width: calc(55% - 4px);
-
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: start;
-		text-align: start;
-	}
-	.main-menu-item-info h4 {
-		font-size: var(--font-size-large);
-	}
-	.main-menu-item-description {
-		font-size: var(--font-size-medium);
-	}
-	.menu-price-symbol {
-		font-size: var(--font-size-large);
-	}
-	@media(max-width: 992px) {
-		.main-menu-item {
-			flex-direction: column;
-
-			max-height: 550px;
-		}
-		.main-menu-item-img {
-			border-top-right-radius: var(--border-radius);
-			border-bottom-left-radius: 0;
-
-			width: auto;
-		}
-		.main-menu-item-info {
-			border-bottom-left-radius: var(--border-radius);
-
-			border-top-right-radius: 0;
-
-			width: auto;
-		}
-	}
-	.menu-section-description {
-		
-	}
-	.menu-items-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 8px;
-		margin-block: 24px;
-	}*/
-
+		gap: 16px;
+	} 
 
 
 	
-	main {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		padding: 0;
-		color: var(--text-color);
-		font-size: 20px;
-		line-height: 1.6;
+
+	
+/* Location */
+.location-container {
 		width: 100%;
-	}
-	.location-container {
-		padding-block: var(--section-padding-large)
+		
+		padding-block: var(--section-padding-large);
+
+		display: flex;
+		justify-content: center;
 	}
 	.location-section {
+		width: min(1300px, 100% - 2rem);
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-	.location-section h1 {
+	.location-section h2 {
 		text-align: center;
-		font-size: 3rem;
-		border-bottom: 2px solid var(--primary-color);
-		margin-bottom: var(--section-margin-small);
-	}
-	.img-map-container {
-		display: flex;
-	}
 
-	.location-img-container {
-		border: 2px solid var(--secondary-color);
-		border-radius: 8px;
-		overflow: hidden;
+		font-size: var(--font-size-x-large);
+		font-weight: var(--font-weight-large);
+	}
+	.location-section .location {
+		width: 100%;
+	}
+	.location-section .location div{
+		display: flex;
+		justify-content: space-between;
+
+		margin-block: var(--section-margin-small);
+	}
+	.location-section .location img {
+		width: 45%;
+		height: auto;
+		aspect-ratio: 1/1;
+
+		border-top-left-radius: 30%;
+		border-top-right-radius: 16px;
+		border-bottom-right-radius: 30%;
+		border-bottom-left-radius: 16px;
+
+	
+	}
+	.location-section .location .location-description {
+		width: 45%;
 		display: flex;
 		flex-direction: column;
-		max-width: 250px;
-	}
-
-
-
-	
-
-	/* Hero */
-	.hero-container {
-		width: min(1300px, (100% - 1rem));
-		height: calc(90vh - 150px);
-		margin-top: var(--section-padding-large);
-		position: relative;
-	}
-	.hero-section {
-		display: grid;
-		align-items: center;
-		justify-items: center;
-		gap: 3rem;	
-	}
-	@media (max-width: 992px) {
-		.hero-container {
-			height: auto;
-			margin-top: var(--section-margin-medium);
-			padding-bottom: var(--section-padding-large);
-		}
-		.hero-section {
-			gap: 5rem;
-		}
-	}
-	
-	
-	.headline-container {
-		flex: 1;
-		text-wrap: balance;
-	}
-	.headline {
-		font-family: 'Laila';
-		font-weight: 600;
-		font-size: var(--font-size-headline);
-		margin-top: 0px;
-		margin-bottom: 1rem;
-		line-height: 70px;
-	}
-	.headline-highlight {
-		font-family: 'Laila';
-		font-weight: var(--font-weight-large);
-		color: var(--primary-color);
-	}
-	.sub-headline {
-		font-size: 2rem;
-		font-weight: 600;
-		margin: 0px;
-		color: var(--text-main-color);
-	}
-
-	.hero-call-to-action {
-		margin-top: var(--spacing-500);
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		gap: 1rem;
-	}
-	@media (max-width: 992px) {
-		.hero-call-to-action {
 		justify-content: center;
-		}
+		gap: var(--spacing-400);
 	}
-	.hero-call-to-action > a {
-		width: fit-content;
-	}
-	.hero-menu-call-to-action {
-		padding-block: 16px;
-		padding-inline: 20px;
-		background-color: var(--primary-color);
-		border-radius: 999px;
-		border: 3px solid var(--primary-color);
-		color: var(--text-contrast-color);
-		font-weight: 700;
-		font-size: var(--font-size-medium);
-	}
-	.hero-order-call-to-action {
-		padding-block: var(--spacing-300);
-		padding-inline: var(--spacing-700);
-		background-color: var(--primary-color);
-		border-radius: 999px;
-		border: 3px solid var(--primary-color);
-		color: var(--text-color);
-		font-weight: var(--font-weight-large);
+	.location-section .location .location-description h3 {
 		font-size: var(--font-size-large);
 	}
-	.hero-image-container-border {
-		width: 90%;
-		max-width: 500px;
-		aspect-ratio: 1 / 1;
-		position: relative;
+	.location-section .location .location-description address {
+		text-wrap: balance;
 	}
-	.hero-image-blob {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: 130%;
-		aspect-ratio: 1 / 1;
+	.location-section .location .location-description .days {
+		font-size: var(--font-size-medium);
+		font-weight: var(--font-weight-medium);
 	}
-	.hero-image-container {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: 90%;
-		max-width: 450px;
-		aspect-ratio: 1 / 1;
-		border-radius: 9999px;
-		border: 3px solid var(--accent-color);
-		overflow: hidden;
-		background-size: cover;
-		background-position: center;
-	}
-	.hero-image-container img {
-		display: block;
+	.location-section .map {
 		width: 100%;
-		height: -webkit-fill-available;
-		aspect-ratio: 1 / 1.5;
-		object-fit: cover;
-		object-position: center;
-		opacity: 0;
-		transition: opacity 250ms ease-in-out;
-	}
-	.hero-image-container.loaded img {
-		opacity: 1;
-	}
-	.hero-scroll-down-container {
-		position: absolute;
-		bottom: 50px;
-		/* padding for <a href="" scroll purposes to appear above the hero scroll down svg */
-		padding-top: 70px;
-	}
-	.hero-scroll-down-container a {
-		border: 2px solid var(--primary-color);
-		border-radius: 6px;
-
-		padding-inline: var(--spacing-300);
-		padding-block: var(--spacing-200);
-
-
-	}
-
-
-	/*.gallery-container {
-		margin: 0;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding-top: 77%;
-		background-image: url('../assets/GalleryBlob.svg');
-		/* BLOB IS 384.91WIDTH AND 332.41 HEIGHT OR 1.15 RELATION
-	}
-	.gallery-container a{
-		border-radius: 10px;
-	}
-	@media (max-width: 992px) {
-		.gallery-container {
-			width: 90%;
-			padding-top: 69%;
-		}
-	}
-	.gallery-grid {
-		position: absolute;
-		display: grid;
-		width: 100%;
-		grid-template-columns: repeat(13, 1fr);
-		grid-template-rows: repeat(10, 1fr);
-		gap: .5em .5em;
-		left: 0;
-		top: 0;
-		height: 100%;
-	}*/
-
-
-	/* About us and Hours */
-	.aboutUs-container {
-		padding-bottom: var(--section-padding-large);
-		width: 100%;
-		display: flex;
-		justify-content: center;
-	}
-	.aboutUs-section {
-		padding-top: var(--section-padding-large);
-		width: var(--min-content-width);
-		border-top: 2px solid var(--secondary-color);
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-	}
-	.aboutUs {
-		max-width: min(600px, 60%);
-		flex: 1;
-		text-align: start;
 		display: flex;
 		flex-direction: column;
-		align-items: start;
-		justify-content: start;
 	}
-	.aboutUs h2 {
-		font-family: 'Laila';
-		text-align: start;
-		line-height: calc(1.2 * var(--font-size-headline));
-		width: fit-content;
-		font-size: var(--font-size-headline);
-		font-weight: var(--font-weight-medium);
-		position: relative;
-		letter-spacing: calc(-.01 * var(--font-size-headline));
-	}
-	.aboutUs p {
-		text-wrap: balance;
-		line-height: calc(1.7 * var(--font-size-small));
-		font-size: var(--font-size-medium);
-		font-weight: var(--font-weight-small);
+	.location-section .map img {
+		width: 70%;
+		height: auto;
+		aspect-ratio: auto 708 / 464;
+
+		margin-block: var(--section-margin-small);
+		align-self: center;
 	}
 
+	@media (max-width: 992px) {
+		.location-section .location div{
+			flex-direction: column;
+			align-items: center;
+		}
+		.location-section .location div > *{
+			width: 100%;
+		}
+
+		.location-section .map img {
+			width: 90%;
+		}
+	}
+
+
 	
-
-
-
-	
-	
-
 	/* Call to action */
 	.call-to-action-container {
 		width: 100%;
-		padding-block: var(--section-padding-large);
-		background-color: var(--secondary-color);
+
 		display: flex;
 		justify-content: center;
-		align-items: center;
+
+		padding-block: var(--section-padding-large);
+		background-color: var(--background-color-600);
+
+		color: var(--text-color);
 	}
 	.call-to-action-section {
-		width: var(--min-content-width);
-		border: 2px solid var(--text-color);
-		border-radius: 12px;
-		padding-inline: 12px;
-		padding-block: 24px;
+		width: min(1300px, 100% - 2rem);
+
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 	}
-	.call-to-action-header {
-		flex:1;
-		padding: 12px;
-		display: flex;
-		justify-content: center;
-	}
-	.call-to-action-section h1 {
+	.call-to-action-section h2 {
+		font-size: var(--font-size-x-large);
+		font-weight: var(--font-weight-large);
+		line-height: 1;
+
 		text-wrap: balance;
-		border-bottom: 2px solid var(--primary-color);
-		width: fit-content;
 	}
-	.call-to-action-section ul {
-		flex: 1;
-		border-left: 2px solid var(--primary-color);
-		padding: 12px;
-		text-align: center;
+	.call-to-action-section h2 strong{
+		color: var(--primary-color-500);
 	}
-	.call-to-action-section li {
-		padding-block: 12px;
+	.call-to-action-section .anchors-container {
+		margin-block: var(--spacing-700);
 	}
-	.call-to-action-anchor {
-		cursor: pointer;
-		background-color: var(--background-color);
-		padding: 6px;
-		border-radius: 4px;
+	.call-to-action-section a {
+		padding-inline: var(--spacing-600) ;
+		padding-block: var(--spacing-300);
+
+		background-color: var(--primary-color-500);
+		color: var(--text-contrast-color);
+
+		font-weight: var(--font-weight-large);
+	
 	}
-	.call-to-action-anchor:hover {
-		color: var(--primary-color);
+	.call-to-action-section .delivery {
+		border-top-left-radius: 24px;
+	}
+	.call-to-action-section .delivery:hover {
+		background-color: var(--uberEats-background-color);
+		color: var(--uberEats-color);
+	}
+	.call-to-action-section .delivery:hover span{
+		color: white;
+	}
+	.call-to-action-section .toGo {
+		border-bottom-right-radius: 24px;
+		border-left: 1px solid black;
+	}
+	.call-to-action-section .toGo:hover {
+		background-color: var(--whatsApp-background-color);
+		color: var(--whatsApp-color);
+	}
+	.call-to-action-section footer {
+		text-wrap: balance;
 	}
 
 
-	.a-one {
-		grid-area: 4 / 1 / 7 / 4;
-	}
-	.a-two {
-		grid-area: 1 / 4 / 7 / 10; 
-	}
-	.a-three {
-		grid-area: 2 / 10 / 5 / 13;
-	}
-	.a-four {
-		grid-area: 7 / 3 / 11 / 7;
-	}
-	.a-five {
-		grid-area: 7 / 7 / 10 / 10;
-	}
-	.a-six {
-		grid-area: 5 / 10 / 9 / 14;
-	}
-	a {
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-	}
+
 	
 	
 </style>
