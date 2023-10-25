@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import GalleryImage from '../components/gallery-image.astro';
+import GalleryRow from '../components/gallery-row.astro';
 import ComplementItem from '../components/complement-item.astro';
 import SauceItem from '../components/sauce-item.astro'; 
 import ComboItem from '../components/combo-item.astro';
@@ -45,21 +45,23 @@ import fries_img from '../assets/testImages/fries.webp'
 					<p>
 						Creamos sabores auténticos acompañados de complementos excepcionales que hacen la diferencia.
 					</p>
-					
 				</div>
 				<div class="gallery-container">
-					<div class="gallery-track">
-						<Image id="img-test" src={fries_img} alt="test"></Image>
-						<Image src={fries_img} alt="test"></Image>
-						<Image src={fries_img} alt="test"></Image>
-						<Image src={fries_img} alt="test"></Image>
-						<Image src={fries_img} alt="test"></Image>
-						<Image src={fries_img} alt="test"></Image>
-						<Image src={fries_img} alt="test"></Image>
-						<Image src={fries_img} alt="test"></Image>
-						<Image src={fries_img} alt="test"></Image>
-
-					</div>
+					<GalleryRow 
+						processStepOneImg={fries_img} processStepOneAlt='Pending'
+						processStepTwoImg={fries_img} processStepTwoAlt='Pending'
+						finalProductImg={fries_img} finalProductAlt='Pending'>
+					</GalleryRow>
+					<GalleryRow 
+						processStepOneImg={fries_img} processStepOneAlt='Pending'
+						processStepTwoImg={fries_img} processStepTwoAlt='Pending'
+						finalProductImg={fries_img} finalProductAlt='Pending'>
+					</GalleryRow>
+					<GalleryRow 
+						processStepOneImg={fries_img} processStepOneAlt='Pending'
+						processStepTwoImg={fries_img} processStepTwoAlt='Pending'
+						finalProductImg={fries_img} finalProductAlt='Pending'>
+					</GalleryRow>
 				</div>	
 			</section>
 			
@@ -190,63 +192,6 @@ import fries_img from '../assets/testImages/fries.webp'
 		img?.addEventListener('load', loaded)
 	}*/
 
-	/* About us gallery */
-	const galleryTrack = document.querySelector('.gallery-track');
-	
-	const numberOfImages = galleryTrack?.children.length;
-	let translatePercentage = 0;
-	if (numberOfImages !== null && numberOfImages !== undefined) {
-		translatePercentage = (50 / numberOfImages) * 3
-	}
-	if (galleryTrack instanceof HTMLDivElement) {
-		
-		galleryTrack.style.translate = `-${translatePercentage}%`;
-	}
-
-
-	const galleryContainer = document.querySelector('.gallery-container')
-	let initialCoordX = 0
-	let sliderPercentage = 0
-	let previousSliderPercentage = 0
-	let currentSliderPercentage = 0
-	galleryContainer?.addEventListener('mousedown', (e) => {
-		const mouseDownEvent = e as MouseEvent
-		if (mouseDownEvent.target === galleryContainer) {
-			initialCoordX = mouseDownEvent.clientX
-		}
-	})
-	galleryContainer?.addEventListener('mouseup', (e) => {
-		const mouseDownEvent = e as MouseEvent
-		if (mouseDownEvent.target === galleryContainer) {
-			initialCoordX = 0
-			previousSliderPercentage = currentSliderPercentage
-		}
-	})
-	galleryContainer?.addEventListener('mousemove', (e) => {
-		const mouseMoveEvent = e as MouseEvent
-		if (mouseMoveEvent.target === galleryContainer) {
-			if (initialCoordX === 0) return;
-			const screenWidthPercentage: number = .65
-			const sliderWidth = window.innerWidth * screenWidthPercentage
-
-			const screenTraveled = initialCoordX - mouseMoveEvent.clientX
-			sliderPercentage = -(screenTraveled / sliderWidth) * 100
-			
-			currentSliderPercentage = previousSliderPercentage + sliderPercentage
-			console.log(currentSliderPercentage)
-			if (currentSliderPercentage > 0 ) currentSliderPercentage = 0;
-			if (currentSliderPercentage < (-100 + translatePercentage * 2)) currentSliderPercentage = (-100 + translatePercentage * 2)
-			if (galleryTrack instanceof HTMLDivElement) {
-				galleryTrack.animate({transform: `translate(${currentSliderPercentage}%, 0%)`}, {duration: 1200, fill: 'forwards', easing: 'ease-in-out'}) 
-			}
-		}
-	})
-	
-
-	
-
-
-
 	
 </script>
 <style >
@@ -263,7 +208,7 @@ import fries_img from '../assets/testImages/fries.webp'
 	}
 
 
-	/* About us and Hours */
+	/* About us */
 	.aboutUs-container {
 		padding-block: var(--section-padding-large);
 	
@@ -275,7 +220,7 @@ import fries_img from '../assets/testImages/fries.webp'
 	}
 	.aboutUs-section {
 
-		width: 100%;
+		width: min(1300px, 100% - 1rem);
 
 		border-top: 2px solid var(--priamry-color-500);
 
@@ -283,6 +228,7 @@ import fries_img from '../assets/testImages/fries.webp'
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
+		gap: var(--spacing-500);
 	}
 	.aboutUs {
 		text-align: center;
@@ -291,9 +237,8 @@ import fries_img from '../assets/testImages/fries.webp'
 		font-family: 'Laila';
 		font-size: var(--font-size-headline);
 		font-weight: var(--font-weight-medium);
-		line-height: calc(1.2 * var(--font-size-headline));
+		line-height: 1;
 		letter-spacing: calc(-.01 * var(--font-size-headline));
-
 	}
 	.aboutUs .hightlight {
 		color: var(--primary-color-500)
@@ -304,41 +249,19 @@ import fries_img from '../assets/testImages/fries.webp'
 		font-size: var(--font-size-medium);
 		font-weight: var(--font-weight-small);
 	}
-	.gallery-container{
-		--height: 45vmin;
-		position: relative;
-
-		width: 100%;
-		padding-bottom: 58vmin;
-
-	}
-	.gallery-track {
-		position: absolute;
-		left: 50%;
-		top: 0%;
-
+	.gallery-container {
 		display: flex;
-		gap: 4vmin;
-	
-		padding-block : var(--section-padding-small);
+		flex-direction: column;
+		gap: var(--spacing-500);
 
-		pointer-events: none;
-	}
-	.gallery-container img {
-		width: 55vmin;
-		height: auto;
-		border-radius: 5vmin;
-
-		object-fit: cover;
-		object-position: center center;
-		/*width: auto;
-		height: var(--height);	*/
+		width: calc(100% - 1rem);
 	}
 	@media (max-width: 992px) {
-		.gallery-track {
-			flex-direction: column;
+		.gallery-container {
+			gap: var(--spacing-700);
 		}
 	}
+	
 	
   
 
