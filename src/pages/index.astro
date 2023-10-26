@@ -2,9 +2,8 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import GalleryRow from '../components/gallery-row.astro';
-import ComplementItem from '../components/complement-item.astro';
+import MenuItem from '../components/menu-item.astro';
 import SauceItem from '../components/sauce-item.astro'; 
-import ComboItem from '../components/combo-item.astro';
 
 
 import Location from '../assets/Location.png'
@@ -12,8 +11,10 @@ import MapImg from '../assets/Screenshot de mapa.png'
 
 import hero_img from '../assets/testImages/tasty-boneless-chicken-sauce.png';
 import boneless_img from '../assets/testImages/quality-boneless-ranch.jpg'
-import fries_img from '../assets/testImages/fries.webp'
 
+import fries_img from '../assets/AboutUs/fries.webp'
+import oreos_img from '../assets/AboutUs/fried-oreos.png'
+import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 ---
 
 <Layout title="Boneless Crave">
@@ -36,8 +37,7 @@ import fries_img from '../assets/testImages/fries.webp'
 				</div>	
 			</section>
 			<a href="#menu" class="hero-menu-cta">Explorar Menú</a>
-		</div>
-		
+		</div>	
 		<div id="aboutUs" class="aboutUs-container">
 			<section class="aboutUs-section">
 				<div class="aboutUs">
@@ -49,19 +49,10 @@ import fries_img from '../assets/testImages/fries.webp'
 				<div class="gallery-container">
 					<GalleryRow 
 						processStepOneImg={fries_img} processStepOneAlt='Pending'
-						processStepTwoImg={fries_img} processStepTwoAlt='Pending'
-						finalProductImg={fries_img} finalProductAlt='Pending'>
+						processStepTwoImg={oreos_img} processStepTwoAlt='Pending'
+						finalProductImg={bbq_boneless_img} finalProductAlt='Pending'>
 					</GalleryRow>
-					<GalleryRow 
-						processStepOneImg={fries_img} processStepOneAlt='Pending'
-						processStepTwoImg={fries_img} processStepTwoAlt='Pending'
-						finalProductImg={fries_img} finalProductAlt='Pending'>
-					</GalleryRow>
-					<GalleryRow 
-						processStepOneImg={fries_img} processStepOneAlt='Pending'
-						processStepTwoImg={fries_img} processStepTwoAlt='Pending'
-						finalProductImg={fries_img} finalProductAlt='Pending'>
-					</GalleryRow>
+
 				</div>	
 			</section>
 			
@@ -71,14 +62,14 @@ import fries_img from '../assets/testImages/fries.webp'
 			<div class="menu-section-container">
 				<section class="menu-section">
 					<h2>Especialidades</h2>
-					<div class="item">
-						<Image src={boneless_img} alt="Mejores boneless de chihuahua con aderezo ranch"></Image>
-						<div class="description">
-							<h3>Boneless</h3>
-							<p>Boneless bañados en una de nuestras deliciosas salsas</p>
-							<p class="price">250gr - $140</p>
-						</div>
-					</div>
+					<MenuItem 
+						itemTitle="Boneless"
+						itemDescription='Boneless bañados en una de nuestras salsas'
+						itemImage={boneless_img}
+						itemImageAlt='Mejores boneless de chihuahua con aderezo ranch'
+						itemQtyPrice={[{itemPrice: "$140", itemQuantity: '300gr'}, {itemPrice: "$180", itemQuantity: '450gr'}]}
+						isImageLeft='true'>
+					</MenuItem>
 				</section>
 				<section class="menu-section">
 					<h2>Salsas</h2>
@@ -89,6 +80,25 @@ import fries_img from '../assets/testImages/fries.webp'
 						<SauceItem class="buffalo-color" name="Buffalo" isHot={true}></SauceItem>
 						<SauceItem class="mango-habanero-color" name="Mango Habanero" isHot={true}></SauceItem>
 					</div>
+				</section>
+				<section class="menu-section">
+					<h2>Complementos</h2>
+					<MenuItem 
+						itemTitle="Papas a la francesa"
+						itemDescription='Papas a la francesa sazonadas'
+						itemImage={fries_img}
+						itemImageAlt='Mejores papas a la francesa de chihuahua, sazonadas con paprika, sal, pimienta'
+						itemQtyPrice={[{itemPrice: "$80", itemQuantity: '200gr'}, {itemPrice: "$110", itemQuantity: '350gr'}]}
+						isImageLeft='true'>
+					</MenuItem>
+					<MenuItem 
+						itemTitle="Oreos fritos"
+						itemDescription='Deliciosos Oreos fritos espolvoreados'
+						itemImage={oreos_img}
+						itemImageAlt='Oreos fritos'
+						itemQtyPrice={[{itemPrice: "$10", itemQuantity: '1 pz'}, {itemPrice: "$15", itemQuantity: '2 pz'}]}
+						isImageLeft='false'>
+					</MenuItem>
 				</section>
 			</div>
 		</div>
@@ -208,6 +218,143 @@ import fries_img from '../assets/testImages/fries.webp'
 	}
 
 
+	
+	
+	
+  
+
+
+
+	main {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 0;
+		color: var(--text-color);
+		font-size: 20px;
+		line-height: 1.6;
+		width: 100%;
+	}
+
+
+
+	/* Hero */
+	.hero-container {
+		width: min(1300px, (100% - 1rem));
+		height: max((100vh - var(--nav-height) - var(--section-padding-large)), 530px);
+	
+		position: relative;
+
+		padding-top: var(--section-padding-large);
+	}
+	.hero-menu-cta {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		transform: translate(-50%, -50%);		
+
+		border: 2px solid var(--primary-color-500);
+		border-radius: 999px;
+
+		padding-inline: var(--spacing-300);
+		padding-block: var(--spacing-200);
+
+	}
+	.hero-section {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		gap: 3rem;	
+	}
+	@media (max-width: 992px) {
+		.hero-container {
+			height: auto;
+			margin-top: var(--section-margin-medium);
+			padding-bottom: var(--section-padding-large);
+		}
+		.hero-section {
+			gap: 5rem;
+		}
+	}	
+	.headline-container {
+		flex: 1;
+		text-wrap: balance;
+	}
+	.headline {
+		font-family: 'Laila';
+		font-weight: 600;
+		font-size: var(--font-size-headline);
+		margin-top: 0px;
+		margin-bottom: 1rem;
+		line-height: 70px;
+		color: var(--text-color);
+	}
+	.headline-highlight {
+		font-family: 'Laila';
+		font-weight: var(--font-weight-large);
+		color: var(--primary-color-500);
+	}
+	.sub-headline {
+		font-size: 2rem;
+		font-weight: 600;
+		margin: 0px;
+		color: var(--text-color);
+	}
+	.hero-call-to-action {
+		margin-top: var(--spacing-500);
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 1rem;
+	}
+	@media (max-width: 992px) {
+		.hero-call-to-action {
+		justify-content: center;
+		}
+	}
+	.hero-call-to-action > a {
+		width: fit-content;
+	}
+	.hero-order-call-to-action {
+		padding-block: var(--spacing-300);
+		padding-inline: var(--spacing-700);
+		background-color: var(--primary-color-500);
+		border-radius: 999px;
+		border: 3px solid var(--primary-color-500);
+		color: var(--text-contrast-color);
+		font-weight: var(--font-weight-large);
+		font-size: var(--font-size-large);
+	}
+	.hero-image-container-border {
+		width: 90%;
+		max-width: 500px;
+		aspect-ratio: 1 / 1;
+		position: relative;
+	}
+	.hero-image-container {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+		max-width: 450px;
+		aspect-ratio: 1 / 1;
+		border-radius: 9999px;
+		overflow: hidden;
+		background-size: cover;
+		background-position: center;
+	}
+	.hero-image-container img {
+		display: block;
+		width: 100%;
+		height: -webkit-fill-available;
+		aspect-ratio: 1 / 1.5;
+		object-fit: cover;
+		object-position: center;
+		transition: opacity 250ms ease-in-out;
+	}
+
+
 	/* About us */
 	.aboutUs-container {
 		padding-block: var(--section-padding-large);
@@ -261,149 +408,6 @@ import fries_img from '../assets/testImages/fries.webp'
 			gap: var(--spacing-700);
 		}
 	}
-	
-	
-  
-
-
-
-	main {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		padding: 0;
-		color: var(--text-color);
-		font-size: 20px;
-		line-height: 1.6;
-		width: 100%;
-	}
-
-
-
-	/* Hero */
-	.hero-container {
-		width: min(1300px, (100% - 1rem));
-		height: max((100vh - var(--nav-height) - var(--section-padding-large)), 530px);
-	
-		position: relative;
-
-		padding-top: var(--section-padding-large);
-	}
-	.hero-menu-cta {
-		position: absolute;
-		bottom: 30px;
-		left: 50%;
-		transform: translate(-50%, -50%);		
-
-		border: 2px solid var(--primary-color-500);
-		border-radius: 6px;
-
-		padding-inline: var(--spacing-300);
-		padding-block: var(--spacing-200);
-
-	}
-	.hero-section {
-		display: grid;
-		align-items: center;
-		justify-items: center;
-		gap: 3rem;	
-	}
-	
-	@media (max-width: 992px) {
-		.hero-container {
-			height: auto;
-			margin-top: var(--section-margin-medium);
-			padding-bottom: var(--section-padding-large);
-		}
-		.hero-section {
-			gap: 5rem;
-		}
-	}
-	
-	
-	.headline-container {
-		flex: 1;
-		text-wrap: balance;
-	}
-	.headline {
-		font-family: 'Laila';
-		font-weight: 600;
-		font-size: var(--font-size-headline);
-		margin-top: 0px;
-		margin-bottom: 1rem;
-		line-height: 70px;
-		color: var(--text-color);
-	}
-	.headline-highlight {
-		font-family: 'Laila';
-		font-weight: var(--font-weight-large);
-		color: var(--primary-color-500);
-	}
-	.sub-headline {
-		font-size: 2rem;
-		font-weight: 600;
-		margin: 0px;
-		color: var(--text-color);
-	}
-
-	.hero-call-to-action {
-		margin-top: var(--spacing-500);
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		gap: 1rem;
-	}
-	@media (max-width: 992px) {
-		.hero-call-to-action {
-		justify-content: center;
-		}
-	}
-	.hero-call-to-action > a {
-		width: fit-content;
-	}
-	.hero-order-call-to-action {
-		padding-block: var(--spacing-300);
-		padding-inline: var(--spacing-700);
-		background-color: var(--primary-color-500);
-		border-radius: 999px;
-		border: 3px solid var(--primary-color-500);
-		color: var(--text-contrast-color);
-		font-weight: var(--font-weight-large);
-		font-size: var(--font-size-large);
-	}
-	.hero-image-container-border {
-		width: 90%;
-		max-width: 500px;
-		aspect-ratio: 1 / 1;
-		position: relative;
-	}
-
-	
-	.hero-image-container {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: 90%;
-		max-width: 450px;
-		aspect-ratio: 1 / 1;
-		border-radius: 9999px;
-		overflow: hidden;
-		background-size: cover;
-		background-position: center;
-	}
-	.hero-image-container img {
-		display: block;
-		width: 100%;
-		height: -webkit-fill-available;
-		aspect-ratio: 1 / 1.5;
-		object-fit: cover;
-		object-position: center;
-		transition: opacity 250ms ease-in-out;
-	}
-
-
-
 
 
 	/* Menú */
@@ -494,29 +498,6 @@ import fries_img from '../assets/testImages/fries.webp'
 	.menu-section .item > * {
 		flex: 1;
 	}
-	.menu-section .item img{
-		width: 30%;
-		height: auto;
-		aspect-ratio: 1/1;
-		object-fit: cover;
-		object-position: center;
-
-		border-radius: 36px;
-		box-shadow: 2px 2px 3px black;
-	}
-	.menu-section .item .description {
-		text-align: end;
-	}
-	.menu-section .item .description h3{
-		border-bottom: 1px solid var(--primary-color-500);
-
-		font-size: var(--font-size-subheadline);
-	}
-	.menu-section .item .description .price{
-		font-weight: var(--font-weight-medium);
-		font-size: var(--font-size-large);
-	}
-
 	.sauces-container {
 		display: flex;
 		align-items: center;

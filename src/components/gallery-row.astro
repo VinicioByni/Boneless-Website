@@ -16,12 +16,15 @@ const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAl
 
 
 <div class="gallery">
-    <div class="process-row">
+    <div class="image-container">
         <Image class="process-img" src={processStepOneImg} alt={processStepOneAlt}></Image>
-        <Image class="process-img"src={processStepTwoImg} alt={processStepTwoAlt}></Image>
     </div>
-    
-    <Image class="final-product-img" src={finalProductImg} alt={finalProductAlt}></Image>
+    <div class="image-container">
+        <Image class="process-img second-level"src={processStepTwoImg} alt={processStepTwoAlt}></Image>
+    </div>
+    <div class="image-container">
+        <Image class="final-product-img third-level" src={finalProductImg} alt={finalProductAlt}></Image>
+    </div> 
 </div>
 
 
@@ -33,10 +36,32 @@ const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAl
         --border-width: 3px;
 
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        gap: var(--spacing-300);
+        gap: var(--spacing-500);
+    }
+    .gallery .image-container {
+        width: calc(33% - (var(--spacing-500))/2);
+        aspect-ratio: 3/2;
+        height: auto;
+    }
+    .gallery .image-container img {
+        width: 100%;
+        aspect-ratio: 3/2;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+    .process-img {
+        border: var(--border-width) solid white;
+    }
+    .final-product-img {
+        border: var(--border-width) solid var(--primary-color-500);
+    }
+    .second-level {
+        margin-top: calc(33% * (2/3));
+    }
+    .third-level {
+        margin-top: calc(33% * (4/3));
     }
 
     @media(max-width: 992px) {
@@ -44,33 +69,12 @@ const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAl
             flex-direction: column;
             align-items: center;
         }
-    }
-    .process-row {
-        display: flex;
-        justify-content: center;
-        gap: var(--spacing-300);
-    }
-    .process-img {
-        border: var(--border-width) solid white;
-
-        width: calc(45% - (var(--spacing-300))/2);
-        height: auto;
-    }
-    .final-product-img {
-        border: var(--border-width) solid var(--primary-color-500);
-
-        width: calc(90% + (var(--border-width)*2));
-        height: auto;
-    }
-    @media(max-width: 992px) {
-        .process-row {
-            flex-direction: column;
-            align-items: center;
-        }
-        .process-img, .final-product-img {
+        .gallery .image-container {
             width: 95%;
         }
-
+        .second-level, .third-level {
+            margin-top: 0;
+        }
     }
 
 </style>
