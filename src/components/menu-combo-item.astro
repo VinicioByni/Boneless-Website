@@ -1,33 +1,35 @@
 ---
 import { Image } from 'astro:assets';
 
-export type ItemQtyPrices= {
-    itemPrice: number
+export type ItemQtyName= {
+    itemName: string
     itemQuantity: string
 }
 
 interface Props {
-    itemTitle: string
-    itemDescription: string
-    itemQtyPrice: ItemQtyPrices[]
-    itemImage: ImageMetadata
-    itemImageAlt: string
+    comboItemTitle: string
+    comboItemDescription: string
+    itemQtyName: ItemQtyName[]
+    comboItemPrice: number
+    comboItemImage: ImageMetadata
+    comboItemImageAlt: string
     isImageLeft: string
 }
 
-const { itemTitle, itemDescription, itemQtyPrice, itemImage, itemImageAlt, isImageLeft } = Astro.props;
+const { comboItemTitle, comboItemDescription, itemQtyName, comboItemPrice, comboItemImage, comboItemImageAlt, isImageLeft } = Astro.props;
 ---
 
 <div class="item" data-imageLeft={isImageLeft}>
-    <Image src={itemImage} alt={itemImageAlt}></Image>
+    <Image src={comboItemImage} alt={comboItemImageAlt}></Image>
     <section class="item-info">
-        <h3>{itemTitle}</h3>
-        <p>{itemDescription}</p>
+        <h3>{comboItemTitle}</h3>
+        <p>{comboItemDescription}</p>
         {
-            itemQtyPrice.map((item) => 
-                <p class="quantity-price">{item.itemQuantity} - <span class="price">${item.itemPrice}</span></p>
+            itemQtyName.map((item) => 
+                <p class="quantity-name">{item.itemName} - {item.itemQuantity}</p>
             )
         }
+        <p class="price">${comboItemPrice}</p>
     </section>
 </div>
 
@@ -71,18 +73,23 @@ const { itemTitle, itemDescription, itemQtyPrice, itemImage, itemImageAlt, isIma
 
 		font-size: var(--font-size-subheadline);
 	}
-	.item .item-info .quantity-price{
+	.item .item-info .quantity-name{
 		font-weight: var(--font-weight-medium);
 		font-size: var(--font-size-large);
 	}
-    .item .item-info .quantity-price .price {
+    .item .item-info .price {
         padding-inline: 12px;
 
         border-radius: 999px;
         outline: 2px solid var(--text-color);
-
+        
         background-color: var(--background-color-900);
+
+        font-weight: var(--font-weight-medium);
+		font-size: var(--font-size-large);
         color: var(--primary-color-500);
+
+        display: inline;
     }
     @media (max-width: 992px) {
         .item {

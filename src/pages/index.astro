@@ -2,19 +2,22 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import GalleryRow from '../components/gallery-row.astro';
-import MenuItem from '../components/menu-item.astro';
-import SauceItem from '../components/sauce-item.astro'; 
 
+import MenuComboItem from '../components/menu-combo-item.astro';
+import MenuItem from '../components/menu-item.astro';
+import MenuSauceItem from '../components/menu-sauce-item.astro'; 
 
 import Location from '../assets/Location.png'
 import MapImg from '../assets/Screenshot de mapa.png'
 
 import hero_img from '../assets/testImages/tasty-boneless-chicken-sauce.png';
 import boneless_img from '../assets/testImages/quality-boneless-ranch.jpg'
+import combo_1_img from '../assets/testImages/combo-1.png'
 
 import fries_img from '../assets/AboutUs/fries.webp'
 import oreos_img from '../assets/AboutUs/fried-oreos.png'
 import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
+
 ---
 
 <Layout title="Boneless Crave">
@@ -60,25 +63,46 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 			<h2 class="menu-title">Menú</h2>
 			<div class="menu-section-container">
 				<section class="menu-section">
+					<h2>Combos</h2>
+					<MenuComboItem 
+						comboItemTitle="Combo #1"
+						comboItemDescription='Boneless, papas fritas y oreos fritos (Estimado: 1 persona)'
+						comboItemImage={combo_1_img}
+						comboItemImageAlt='Combo de boneless, papas fritas y oreos fritas'
+						itemQtyName={[{itemName: "Boneless", itemQuantity: '300gr'}, {itemName: "Papas fritas", itemQuantity: '350gr'}, {itemName: "Oreos fritas", itemQuantity: '2 pz'}]}
+						comboItemPrice= {140}
+						isImageLeft='true'>
+					</MenuComboItem>
+					<MenuComboItem 
+						comboItemTitle="Combo #2"
+						comboItemDescription='Boneless, papas fritas y oreos fritos (Estimado: 2 personas)'
+						comboItemImage={combo_1_img}
+						comboItemImageAlt='Combo de boneless, papas fritas y oreos fritas'
+						itemQtyName={[{itemName: "Boneless (2 salsas)", itemQuantity: '500gr'}, {itemName: "Papas fritas", itemQuantity: '500gr'}, {itemName: "Oreos fritas", itemQuantity: '4 pz'}]}
+						comboItemPrice= {140}
+						isImageLeft='false'>
+					</MenuComboItem>
+				</section>
+				<section class="menu-section">
+					<h2>Salsas</h2>
+					<div class="sauces-container">
+						<MenuSauceItem class="bbq-color" name="BBQ" isHot={false}></MenuSauceItem>
+						<MenuSauceItem class="lemon-pepper-color" name="Lemon Pepper" isHot={false}></MenuSauceItem>
+						<MenuSauceItem class="jalapeño-color" name="Jalapeño" isHot={true}></MenuSauceItem>
+						<MenuSauceItem class="buffalo-color" name="Buffalo" isHot={true}></MenuSauceItem>
+						<MenuSauceItem class="mango-habanero-color" name="Mango Habanero" isHot={true}></MenuSauceItem>
+					</div>
+				</section>
+				<section class="menu-section">
 					<h2>Especialidades</h2>
 					<MenuItem 
 						itemTitle="Boneless"
 						itemDescription='Boneless bañados en una de nuestras salsas'
 						itemImage={boneless_img}
 						itemImageAlt='Mejores boneless de chihuahua con aderezo ranch'
-						itemQtyPrice={[{itemPrice: "$140", itemQuantity: '300gr'}, {itemPrice: "$180", itemQuantity: '450gr'}]}
+						itemQtyPrice={[{itemPrice: 140, itemQuantity: '300gr'}, {itemPrice: 180, itemQuantity: '450gr'}]}
 						isImageLeft='true'>
 					</MenuItem>
-				</section>
-				<section class="menu-section">
-					<h2>Salsas</h2>
-					<div class="sauces-container">
-						<SauceItem class="bbq-color" name="BBQ" isHot={false}></SauceItem>
-						<SauceItem class="lemon-pepper-color" name="Lemon Pepper" isHot={false}></SauceItem>
-						<SauceItem class="jalapeño-color" name="Jalapeño" isHot={true}></SauceItem>
-						<SauceItem class="buffalo-color" name="Buffalo" isHot={true}></SauceItem>
-						<SauceItem class="mango-habanero-color" name="Mango Habanero" isHot={true}></SauceItem>
-					</div>
 				</section>
 				<section class="menu-section">
 					<h2>Complementos</h2>
@@ -87,7 +111,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 						itemDescription='Papas a la francesa sazonadas'
 						itemImage={fries_img}
 						itemImageAlt='Mejores papas a la francesa de chihuahua, sazonadas con paprika, sal, pimienta'
-						itemQtyPrice={[{itemPrice: "$80", itemQuantity: '200gr'}, {itemPrice: "$110", itemQuantity: '350gr'}]}
+						itemQtyPrice={[{itemPrice: 80, itemQuantity: '200gr'}, {itemPrice: 110, itemQuantity: '350gr'}]}
 						isImageLeft='true'>
 					</MenuItem>
 					<MenuItem 
@@ -95,7 +119,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 						itemDescription='Deliciosos Oreos fritos espolvoreados'
 						itemImage={oreos_img}
 						itemImageAlt='Oreos fritos'
-						itemQtyPrice={[{itemPrice: "$10", itemQuantity: '1 pz'}, {itemPrice: "$15", itemQuantity: '2 pz'}]}
+						itemQtyPrice={[{itemPrice: 10, itemQuantity: '1 pz'}, {itemPrice: 15, itemQuantity: '2 pz'}]}
 						isImageLeft='false'>
 					</MenuItem>
 				</section>
