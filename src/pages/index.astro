@@ -52,7 +52,6 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 						processStepTwoImg={oreos_img} processStepTwoAlt='Pending'
 						finalProductImg={bbq_boneless_img} finalProductAlt='Pending'>
 					</GalleryRow>
-
 				</div>
 			</section>
 			
@@ -182,29 +181,10 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 	</main>
 </Layout>
 
+<script src="../lib/aboutUs-animation.ts"></script>
 <script>
 
-	const imgContainers= document.querySelectorAll('.gallery .image-container');
-
-	const handleIntersection = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
 	
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				const imgContainer = entry.target
-				const img = imgContainer.querySelector('img');
-				img?.setAttribute('data-visible', 'true')
-			}
-		});
-		
-		
-		
-	}
-
-	const aboutUsObserver = new IntersectionObserver(handleIntersection, {rootMargin: '0px', threshold: .2});
-	
-	imgContainers.forEach(container => {
-		aboutUsObserver.observe(container);
-	})
 	
 			
 	
