@@ -17,13 +17,13 @@ const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAl
 
 <div class="gallery">
     <div class="image-container">
-        <Image class="process-img" src={processStepOneImg} alt={processStepOneAlt}></Image>
+        <Image data-visible="false" class="process-img" src={processStepOneImg} alt={processStepOneAlt}></Image>
     </div>
-    <div class="image-container">
-        <Image class="process-img second-level"src={processStepTwoImg} alt={processStepTwoAlt}></Image>
+    <div class="image-container second-level">
+        <Image data-visible="false" class="process-img"src={processStepTwoImg} alt={processStepTwoAlt}></Image>
     </div>
-    <div class="image-container">
-        <Image class="final-product-img third-level" src={finalProductImg} alt={finalProductAlt}></Image>
+    <div class="image-container third-level">
+        <Image data-visible="false" class="final-product-img" src={finalProductImg} alt={finalProductAlt}></Image>
     </div> 
 </div>
 
@@ -41,8 +41,12 @@ const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAl
     }
     .gallery .image-container {
         width: calc(33% - (var(--spacing-500))/2);
-        aspect-ratio: 3/2;
-        height: auto;
+    }
+    .second-level {
+        margin-top: 100px;
+    }
+    .third-level {
+        margin-top: 200px;
     }
     .gallery .image-container img {
         width: 100%;
@@ -50,6 +54,16 @@ const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAl
         height: auto;
         object-fit: cover;
         object-position: center;
+
+        transition: transform 800ms, opacity 800ms;
+    }
+    .gallery .image-container img[data-visible='false'] {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    .gallery .image-container img[data-visible='true'] {
+        transform: translateY(0px);
+        opacity: 1;
     }
     .process-img {
         border: var(--border-width) solid white;
@@ -57,12 +71,7 @@ const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAl
     .final-product-img {
         border: var(--border-width) solid var(--primary-color-500);
     }
-    .second-level {
-        margin-top: calc(33% * (2/3));
-    }
-    .third-level {
-        margin-top: calc(33% * (4/3));
-    }
+    
 
     @media(max-width: 992px) {
         .gallery {
