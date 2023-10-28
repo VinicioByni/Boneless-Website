@@ -18,13 +18,13 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<header>
+		<header class="main-header">
 			<div class="primary-nav-container">
 				<a class="nav-logo" href="#"></a>
 				<nav>
 					<ul data-visible="false" class="primary-nav">
 						<li>
-							<a class="nav-custom-a" href="#aboutUs-hours">Horario</a>
+							<a class="nav-custom-a" href="#aboutUs">Sobre nosotros</a>
 						</li>
 						<li>
 							<a class="nav-custom-a" href="#menu">Menú</a>
@@ -226,7 +226,7 @@ const { title } = Astro.props;
 		--text-color: #fcf4e2;
 		--text-contrast-color: black;
 
-		
+		--background-color-100: #AA7878;
 		--background-color-400: rgba(78, 9, 16, 0.847);
 		--background-color-500: #42050A;
 		--background-color-600: #140103;
@@ -325,7 +325,7 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
-	header {
+	.main-header {
 		position: sticky;
 		top: 0;
 		z-index: 4;

@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    userImg: ImageMetadata
+    userName: string
+    userReviewRating: number
+    userReviewOpinion: string
+    reviewSiteLink: string
+    reviewSiteName: string
+}
+
+const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, reviewSiteName} = Astro.props
+---
+
+<article class="review-container">
+    <div>
+        <header class="review-header">
+            <Image src={userImg} alt="Foto de perfil de reseñador"></Image>
+            <div>
+                <h3>{userName}</h3>
+                <p>{userReviewRating}.0</p>
+            </div>
+        </header>
+        <p class="review-opinion">"{userReviewOpinion}"</p> 
+    </div>
+    <footer>
+        <a href={reviewSiteLink}>Mira nuestras reseñas</a>
+        <cite> de {reviewSiteName}</cite>
+    </footer>
+</article>
+
+<style>
+    .review-container {
+        background-color: var(--background-color-600);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 12px;
+
+        max-width: 350px;
+
+
+        border-radius: 15px;
+
+        text-align: start;
+    }
+    .review-header {
+        display: flex;
+
+        margin-bottom: var(--spacing-100);
+    }
+    .review-header img {
+        width: 50px;
+        height: 50px;
+
+        object-fit: cover;
+        object-position: center;
+
+        border-radius: 999px;
+
+        margin-right: 12px;
+    }
+    .review-header h3 {
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-large);
+    }
+    .review-header p {
+        font-size: var(--font-size-small);
+
+        color: var(--primary-color-500);
+    }
+    .review-opinion {
+        font-size: var(--font-size-small);
+        font-weight: var(--font-weight-medium);
+    }
+    .review-container footer {
+        font-size: var(--font-size-small);
+    }
+    .review-container footer a {
+        color: var(--background-color-100);
+
+        text-decoration: underline;
+    }
+</style>

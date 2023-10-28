@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
+
 import Layout from '../layouts/Layout.astro';
 import GalleryRow from '../components/gallery-row.astro';
-
 import MenuComboItem from '../components/menu-combo-item.astro';
 import MenuItem from '../components/menu-item.astro';
 import MenuSauceItem from '../components/menu-sauce-item.astro'; 
+import Review from '../components/review.astro';
 
 import Location from '../assets/Location.png'
 import MapImg from '../assets/Screenshot de mapa.png'
@@ -126,9 +127,35 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 			</div>
 		</div>
 		<div id="social-proof" class="social-proof-container">
-			<seciton class="social-proof-section">
+			<section class="social-proof-section">
 				<h2>Lo que los clientes dicen de nosotros</h2>
-			</seciton>
+				<div class="review-container">
+					<Review 
+						userName='David Juarez' 
+						userImg={boneless_img}
+						userReviewOpinion='Los mejores boneless de chihuahua sin duda'
+						userReviewRating={5}
+						reviewSiteLink='https://www.google.ca/maps/place/Punto+Verde+Caf%C3%A9/@28.6352891,-106.0766849,17z/data=!4m8!3m7!1s0x86ea438e8949809b:0x1f110e25be0dfe89!8m2!3d28.6352891!4d-106.07411!9m1!1b1!16s%2Fg%2F11sqkhmpg1?entry=ttu'
+						reviewSiteName='Google Maps'>
+					</Review>
+					<Review 
+						userName='David Juarez' 
+						userImg={boneless_img}
+						userReviewOpinion='Los mejores boneless de chihuahua sin duda'
+						userReviewRating={5}
+						reviewSiteLink='https://www.google.ca/maps/place/Punto+Verde+Caf%C3%A9/@28.6352891,-106.0766849,17z/data=!4m8!3m7!1s0x86ea438e8949809b:0x1f110e25be0dfe89!8m2!3d28.6352891!4d-106.07411!9m1!1b1!16s%2Fg%2F11sqkhmpg1?entry=ttu'
+						reviewSiteName='Google Maps'>
+					</Review>
+					<Review 
+						userName='David Juarez' 
+						userImg={boneless_img}
+						userReviewOpinion='Los mejores boneless de chihuahua sin duda'
+						userReviewRating={5}
+						reviewSiteLink='https://www.google.ca/maps/place/Punto+Verde+Caf%C3%A9/@28.6352891,-106.0766849,17z/data=!4m8!3m7!1s0x86ea438e8949809b:0x1f110e25be0dfe89!8m2!3d28.6352891!4d-106.07411!9m1!1b1!16s%2Fg%2F11sqkhmpg1?entry=ttu'
+						reviewSiteName='Google Maps'>
+					</Review>
+				</div>
+			</section>
 		</div>
 		<div id="call-to-action" class="call-to-action-container">
 			<section class="call-to-action-section">
@@ -237,14 +264,31 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 	.social-proof-container {
 		padding-block: var(--section-padding-large);
 		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	.social-proof-section h2{
 		text-align: center;
 
+		width: min(1300px, 100% - 1rem);
+
 		font-size: var(--font-size-x-large);
 		font-weight: var(--font-weight-large);
-	}
 
+		margin-bottom: var(--spacing-500);
+	}
+	.review-container {
+		display: flex;
+		gap: var(--spacing-400);
+	}
+	@media(max-width: 992px) {
+		.review-container {
+			flex-direction: column;
+			margin-inline: var(--spacing-200);
+		}
+	}
 
 	
 	
@@ -298,6 +342,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		.hero-container {
 			height: auto;
 			margin-top: var(--section-margin-medium);
+			padding-top: 0;
 			padding-bottom: var(--section-padding-large);
 		}
 		.hero-section {
@@ -505,7 +550,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		width: min(1300px,(100% - 1rem));
 		padding-block: var(--section-padding-small);
 
-		border-top: 2px solid var(--background-color-400);
+		border-top: 2px solid var(--text-color);
 	}
 	.menu-section h2 {
 		color: var(--text-color);
