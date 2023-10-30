@@ -31,13 +31,12 @@ import CallToAction from '../components/call-to-action.astro';
 					<h1 class="headline">Tu <span class="headline-highlight">antojo</span>, <br>nuestra <span class="headline-highlight">pasión</span></h1>
 					<p class="sub-headline">Saboréa las Combinaciones Perfectas</p>
 					
-						<CTA></CTA>
+					<CTA></CTA>
 					
 				</div>
-				<div class="hero-image-container-border">
-					<div class="hero-image-container">
+				<div class="hero-image-container">
 						<Image src={hero_img} alt="Mejores boneless de chihuahua CUU" loading="lazy"></Image>
-					</div>
+
 				</div>	
 			</section>
 			<a href="#menu" class="hero-menu-cta">Explorar Menú</a>
@@ -314,9 +313,54 @@ import CallToAction from '../components/call-to-action.astro';
 	
 		position: relative;
 
-		padding-top: var(--section-padding-large);
+		padding-top: var(--section-full-spacing);
+	}
+	.hero-section {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		gap: 3rem;	
+	}
+	.headline-container {
+		display: flex;
+		flex-direction: column;
+		gap: var(--section-grid-spacing);
+
+		text-wrap: balance;
+	}
+	.headline {
+		font-family: 'Laila';
+		font-weight: 600;
+		font-size: var(--font-size-headline);
+		line-height: 70px;
+		color: var(--text-color);
+	}
+	.headline-highlight {
+		font-family: 'Laila';
+		font-weight: var(--font-weight-large);
+		color: var(--primary-color-500);
+	}
+	.sub-headline {
+		font-size: var(--font-size-large);
+		font-weight: 600;
+		color: var(--text-color);
+	}
+	.hero-image-container {
+		width: 90%;
+		max-width: 600px;
+
+		position: relative;
+	}
+	.hero-image-container img {
+		display: block;
+		width: 100%;
+		height: -webkit-fill-available;
+		object-fit: contain;
+		object-position: center;
 	}
 	.hero-menu-cta {
+		display: inline;
+
 		position: absolute;
 		bottom: 30px;
 		left: 50%;
@@ -327,79 +371,24 @@ import CallToAction from '../components/call-to-action.astro';
 
 		padding-inline: var(--spacing-300);
 		padding-block: var(--spacing-200);
-
-	}
-	.hero-section {
-		display: grid;
-		align-items: center;
-		justify-items: center;
-		gap: 3rem;	
 	}
 	@media (max-width: 992px) {
 		.hero-container {
 			height: auto;
-			margin-top: var(--section-margin-medium);
-			padding-top: 0;
+			padding-top: var(--section-half-spacing);
 			padding-bottom: var(--section-padding-large);
 		}
 		.hero-section {
 			gap: 5rem;
 		}
-	}	
-	.headline-container {
-		flex: 1;
-		text-wrap: balance;
+		.headline-container {
+			align-items: center;
+		}
+		.hero-menu-cta {
+			width: calc(100% - 1rem);
+			bottom: 0px;
+		}
 	}
-	.headline {
-		font-family: 'Laila';
-		font-weight: 600;
-		font-size: var(--font-size-headline);
-		margin-top: 0px;
-		margin-bottom: 1rem;
-		line-height: 70px;
-		color: var(--text-color);
-	}
-	.headline-highlight {
-		font-family: 'Laila';
-		font-weight: var(--font-weight-large);
-		color: var(--primary-color-500);
-	}
-	.sub-headline {
-		font-size: 2rem;
-		font-weight: 600;
-		margin: 0px;
-		color: var(--text-color);
-	}
-
-	.hero-image-container-border {
-		width: 90%;
-		max-width: 500px;
-		aspect-ratio: 1 / 1;
-		position: relative;
-	}
-	.hero-image-container {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: 90%;
-		max-width: 450px;
-		aspect-ratio: 1 / 1;
-		border-radius: 9999px;
-		overflow: hidden;
-		background-size: cover;
-		background-position: center;
-	}
-	.hero-image-container img {
-		display: block;
-		width: 100%;
-		height: -webkit-fill-available;
-		aspect-ratio: 1 / 1.5;
-		object-fit: cover;
-		object-position: center;
-		transition: opacity 250ms ease-in-out;
-	}
-
 
 	/* About us */
 	.aboutUs-container {
