@@ -11,6 +11,7 @@ interface Props {
 }
 
 const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, reviewSiteName} = Astro.props
+
 ---
 
 <article class="review-container">
@@ -19,7 +20,30 @@ const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, r
             <Image src={userImg} alt="Foto de perfil de reseñador"></Image>
             <div>
                 <h3>{userName}</h3>
-                <p>{userReviewRating}.0</p>
+                <div class="rating">
+                    <p>{userReviewRating}.0</p>
+                    <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path class="filled-star" d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" stroke-width="0"/>
+                    </svg>
+                    <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path class="filled-star" d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" stroke-width="0"/>
+                    </svg>
+                    <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path class="filled-star" d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" stroke-width="0"/>
+                    </svg>
+                    <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path class="filled-star" d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" stroke-width="0"/>
+                    </svg>
+                    <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path class="empty-star" d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" stroke-width="0"/>
+                    </svg>
+                </div>
+                
             </div>
         </header>
         <p class="review-opinion">"{userReviewOpinion}"</p> 
@@ -49,7 +73,7 @@ const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, r
     }
     .review-header {
         display: flex;
-
+        align-items: center;
         margin-bottom: var(--spacing-100);
     }
     .review-header img {
@@ -71,6 +95,25 @@ const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, r
         font-size: var(--font-size-small);
 
         color: var(--primary-color-500);
+    }
+    .rating {
+        display: flex;
+        align-items: center;
+    }
+    .rating p {
+        margin-right: var(--spacing-200);
+        
+        line-height: 1;
+    }
+    .rating .star {
+        width: 18px;
+        height: 18px;
+    }
+    .rating .filled-star{
+        fill: var(--primary-color-500);
+    }
+    .rating .empty-star {
+        fill: white;
     }
     .review-opinion {
         font-size: var(--font-size-small);

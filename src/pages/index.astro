@@ -7,6 +7,7 @@ import MenuComboItem from '../components/menu-combo-item.astro';
 import MenuItem from '../components/menu-item.astro';
 import MenuSauceItem from '../components/menu-sauce-item.astro'; 
 import Review from '../components/review.astro';
+import CTA from '../components/call-to-action.astro'
 
 import Location from '../assets/Location.png'
 import MapImg from '../assets/Screenshot de mapa.png'
@@ -18,6 +19,7 @@ import combo_1_img from '../assets/testImages/combo-1.png'
 import fries_img from '../assets/AboutUs/fries.webp'
 import oreos_img from '../assets/AboutUs/fried-oreos.png'
 import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
+import CallToAction from '../components/call-to-action.astro';
 
 ---
 
@@ -28,11 +30,9 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 				<div class="headline-container">
 					<h1 class="headline">Tu <span class="headline-highlight">antojo</span>, <br>nuestra <span class="headline-highlight">pasión</span></h1>
 					<p class="sub-headline">Saboréa las Combinaciones Perfectas</p>
-					<div class="hero-call-to-action">
-						<a class="hero-order-call-to-action" href="#call-to-action">
-							Ordenar
-						</a>
-					</div>
+					
+						<CTA></CTA>
+					
 				</div>
 				<div class="hero-image-container-border">
 					<div class="hero-image-container">
@@ -160,10 +160,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		<div id="call-to-action" class="call-to-action-container">
 			<section class="call-to-action-section">
 				<h2>Ordena a <strong>Domicilio</strong> ó <strong>Para llevar!</strong></h2>
-				<div class="anchors-container">
-					<a href="#" class="delivery"><span>Uber</span> Eats</a>
-					<a href="#" class="toGo">WhatsApp</a>
-				</div>
+				<CTA></CTA>
 				<footer>
 					<p>Los precios en uber eats aumentan de precio.</p>
 				</footer>
@@ -373,31 +370,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		margin: 0px;
 		color: var(--text-color);
 	}
-	.hero-call-to-action {
-		margin-top: var(--spacing-500);
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		gap: 1rem;
-	}
-	@media (max-width: 992px) {
-		.hero-call-to-action {
-		justify-content: center;
-		}
-	}
-	.hero-call-to-action > a {
-		width: fit-content;
-	}
-	.hero-order-call-to-action {
-		padding-block: var(--spacing-300);
-		padding-inline: var(--spacing-700);
-		background-color: var(--primary-color-500);
-		border-radius: 999px;
-		border: 3px solid var(--primary-color-500);
-		color: var(--text-contrast-color);
-		font-weight: var(--font-weight-large);
-		font-size: var(--font-size-large);
-	}
+
 	.hero-image-container-border {
 		width: 90%;
 		max-width: 500px;

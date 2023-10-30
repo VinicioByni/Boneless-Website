@@ -1,0 +1,66 @@
+---
+interface Props{
+
+}
+const {} = Astro.props
+---
+
+<div class="call-to-action">
+    <a href="#" class="delivery"><span>Uber</span> Eats</a>
+    <a href="#" class="toGo">WhatsApp</a>
+</div>
+
+<style>
+     .call-to-action {
+		margin-block: var(--spacing-700);
+	}
+    
+	a {
+		padding-inline: var(--spacing-600) ;
+		padding-block: var(--spacing-300);
+
+		background-color: var(--primary-color-500);
+		color: var(--text-contrast-color);
+
+		font-weight: var(--font-weight-large);
+
+        position: relative;
+	}
+    a:first-child {
+        border-top-left-radius: 24px;
+    }
+    a:first-child:hover {
+        background-color: var(--uberEats-background-color);
+        color: var(--uberEats-color);
+    }
+    a:first-child:hover span{
+		color: white;
+	}
+    a:first-child::before {
+        content: '';
+        width: 1px;
+        height: 100%;        
+        background-color: var(--primary-color-900);
+        
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+    a:last-child {
+        border-bottom-right-radius: 24px;
+    }
+    a:last-child:hover {
+        background-color: var(--whatsApp-background-color);
+        color: var(--whatsApp-color);
+    }
+    a:last-child::before {
+        content: '';
+        width: 1px;
+        height: 100%;        
+        background-color: var(--primary-color-900);
+        
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+</style>
