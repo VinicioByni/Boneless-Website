@@ -42,12 +42,12 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		</div>	
 		<div id="aboutUs" class="aboutUs-container">
 			<section class="aboutUs-section">
-				<div class="aboutUs">
+				<header class="aboutUs-header">
 					<h2><strong class="hightlight">Boneless</strong> Crave</h2>
 					<p>
 						Creamos sabores auténticos acompañados de complementos excepcionales que hacen la diferencia.
 					</p>
-				</div>
+				</header>
 				<div class="gallery-container">
 					<GalleryRow 
 						processStepOneImg={fries_img} processStepOneAlt='Pending'
@@ -229,44 +229,8 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 
 <script src="../lib/aboutUs-animation.ts"></script>
 <script src="../lib/hero-img.ts"></script>
+
 <style >
-	/* Social proof  */
-	.social-proof-container {
-		padding-block: var(--section-padding-large);
-		width: 100%;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.social-proof-section h2{
-		text-align: center;
-
-		width: min(1300px, 100% - 1rem);
-
-		font-size: var(--font-size-x-large);
-		font-weight: var(--font-weight-large);
-
-		margin-bottom: var(--spacing-500);
-	}
-	.review-container {
-		display: flex;
-		gap: var(--spacing-400);
-	}
-	@media(max-width: 992px) {
-		.review-container {
-			flex-direction: column;
-			margin-inline: var(--spacing-200);
-		}
-	}
-
-	
-	
-	
-  
-
-
-
 	main {
 		display: flex;
 		align-items: center;
@@ -277,7 +241,6 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		line-height: 1.6;
 		width: 100%;
 	}
-
 
 
 	/* Hero */
@@ -373,16 +336,14 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 
 	/* About us */
 	.aboutUs-container {
-		padding-block: var(--section-padding-large);
+		padding-block: var(--section-full-spacing);
 	
 		width: 100%;
 
 		display: flex;
 		justify-content: center;
-
 	}
 	.aboutUs-section {
-
 		width: min(1300px, 100% - 1rem);
 
 		border-top: 2px solid var(--priamry-color-500);
@@ -391,22 +352,24 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
-		gap: var(--spacing-500);
+		gap: var(--section-elements-spacing);
 	}
-	.aboutUs {
+	.aboutUs-header {
 		text-align: center;
 	}
-	.aboutUs h2 {
+	.aboutUs-header h2 {
 		font-family: 'Laila';
 		font-size: var(--font-size-headline);
 		font-weight: var(--font-weight-medium);
 		line-height: 1;
 		letter-spacing: calc(-.01 * var(--font-size-headline));
+	
+		margin-bottom: var(--section-grid-spacing);
 	}
-	.aboutUs .hightlight {
+	.aboutUs-header .hightlight {
 		color: var(--primary-color-500)
 	}
-	.aboutUs p {
+	.aboutUs-header p {
 		text-wrap: balance;
 		line-height: calc(1.7 * var(--font-size-small));
 		font-size: var(--font-size-medium);
@@ -415,17 +378,11 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 	.gallery-container {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-500);
+		gap: var(--section-grid-spacing);
 
 		width: calc(100% - 1rem);
+	}
 
-		margin-top: var(--section-margin-medium);
-	}
-	@media (max-width: 992px) {
-		.gallery-container {
-			gap: var(--spacing-700);
-		}
-	}
 
 
 	/* Menú */
@@ -524,9 +481,100 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		gap: 16px;
 	} 
 
+		/* Social proof  */
+		.social-proof-container {
+		padding-block: var(--section-padding-large);
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.social-proof-section h2{
+		text-align: center;
+
+		width: min(1300px, 100% - 1rem);
+
+		font-size: var(--font-size-x-large);
+		font-weight: var(--font-weight-large);
+
+		margin-bottom: var(--spacing-500);
+	}
+	.review-container {
+		display: flex;
+		gap: var(--spacing-400);
+	}
+	@media(max-width: 992px) {
+		.review-container {
+			flex-direction: column;
+			margin-inline: var(--spacing-200);
+		}
+	}
 
 	
+		/* Call to action */
+		.call-to-action-container {
+		width: 100%;
 
+		display: flex;
+		justify-content: center;
+
+		padding-block: var(--section-padding-large);
+		background-color: var(--background-color-600);
+
+		color: var(--text-color);
+	}
+	.call-to-action-section {
+		width: min(1300px, 100% - 2rem);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.call-to-action-section h2 {
+		font-size: var(--font-size-x-large);
+		font-weight: var(--font-weight-large);
+		line-height: 1;
+
+		text-wrap: balance;
+	}
+	.call-to-action-section h2 strong{
+		color: var(--primary-color-500);
+	}
+	.call-to-action-section .anchors-container {
+		margin-block: var(--spacing-700);
+	}
+	.call-to-action-section a {
+		padding-inline: var(--spacing-600) ;
+		padding-block: var(--spacing-300);
+
+		background-color: var(--primary-color-500);
+		color: var(--text-contrast-color);
+
+		font-weight: var(--font-weight-large);
+	
+	}
+	.call-to-action-section .delivery {
+		border-top-left-radius: 24px;
+	}
+	.call-to-action-section .delivery:hover {
+		background-color: var(--uberEats-background-color);
+		color: var(--uberEats-color);
+	}
+	.call-to-action-section .delivery:hover span{
+		color: white;
+	}
+	.call-to-action-section .toGo {
+		border-bottom-right-radius: 24px;
+		border-left: 1px solid black;
+	}
+	.call-to-action-section .toGo:hover {
+		background-color: var(--whatsApp-background-color);
+		color: var(--whatsApp-color);
+	}
+	.call-to-action-section footer {
+		text-wrap: balance;
+	}
 	
 /* Location */
 .location-container {
@@ -618,69 +666,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 
 
 	
-	/* Call to action */
-	.call-to-action-container {
-		width: 100%;
 
-		display: flex;
-		justify-content: center;
-
-		padding-block: var(--section-padding-large);
-		background-color: var(--background-color-600);
-
-		color: var(--text-color);
-	}
-	.call-to-action-section {
-		width: min(1300px, 100% - 2rem);
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.call-to-action-section h2 {
-		font-size: var(--font-size-x-large);
-		font-weight: var(--font-weight-large);
-		line-height: 1;
-
-		text-wrap: balance;
-	}
-	.call-to-action-section h2 strong{
-		color: var(--primary-color-500);
-	}
-	.call-to-action-section .anchors-container {
-		margin-block: var(--spacing-700);
-	}
-	.call-to-action-section a {
-		padding-inline: var(--spacing-600) ;
-		padding-block: var(--spacing-300);
-
-		background-color: var(--primary-color-500);
-		color: var(--text-contrast-color);
-
-		font-weight: var(--font-weight-large);
-	
-	}
-	.call-to-action-section .delivery {
-		border-top-left-radius: 24px;
-	}
-	.call-to-action-section .delivery:hover {
-		background-color: var(--uberEats-background-color);
-		color: var(--uberEats-color);
-	}
-	.call-to-action-section .delivery:hover span{
-		color: white;
-	}
-	.call-to-action-section .toGo {
-		border-bottom-right-radius: 24px;
-		border-left: 1px solid black;
-	}
-	.call-to-action-section .toGo:hover {
-		background-color: var(--whatsApp-background-color);
-		color: var(--whatsApp-color);
-	}
-	.call-to-action-section footer {
-		text-wrap: balance;
-	}
 
 
 
