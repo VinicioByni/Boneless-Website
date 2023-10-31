@@ -387,7 +387,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 
 	/* Menú */
 	.menu-container {
-		padding-block: var(--section-padding-large);
+		padding-block: var(--section-full-spacing);
 		width: 100%;
 
 		background-color: var(--background-color-600);
@@ -406,7 +406,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		padding-inline: var(--spacing-700);
 		padding-block: var(--spacing-300);
 
-		margin-bottom: var(--section-margin-small);
+		margin-bottom: var(--section-half-spacing);
 		display: inline;
 
 		border-radius: 25px;
@@ -419,47 +419,28 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		flex-direction: column;
 		align-items: center;
 	}
-	.waves {
-		--wave-color: var(--background-color-500);
-		--wave-height: 20px;
-		--wave-width: calc(var(--wave-height) * 8);
-
-		position: relative;
-	}
-	.waves::before, .waves::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		height: var(--wave-height);
-		background: var(--wave-color);
-		-webkit-mask-image: url('../assets/Waves/waves.svg');
-		-webkit-mask-size: var(--wave-width) var(--wave-height);
-		mask-image: url('../assets/Waves/waves.svg');
-
-		width: 100%;
-	}
-
-	.waves::before {
-		top: 0;
-	}
-	.waves::after { 
-		bottom: 0;
-		transform: rotate(.5turn);
-	}
 	.menu-section {
 		width: min(1300px,(100% - 1rem));
-		padding-block: var(--section-padding-small);
+		padding-block: var(--section-elements-spacing);
 
 		border-top: 2px solid var(--text-color);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--section-elements-spacing);
+
+	}
+	.menu-section:last-child {
+		padding-top: var(--section-elements-spacing);
+		padding-bottom: 0;
 	}
 	.menu-section h2 {
 		color: var(--text-color);
 
-		font-size: var(--font-size-x-large);
+		font-size: var(--font-size-x-x-large);
 		line-height: 1;
 		text-align: center;
-
-		margin-bottom: var(--section-margin-small);
 	}
 	.menu-section .item {
 		display: flex;
@@ -495,7 +476,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 
 		width: min(1300px, 100% - 1rem);
 
-		font-size: var(--font-size-x-large);
+		font-size: var(--font-size-x-x-large);
 		font-weight: var(--font-weight-large);
 
 		margin-bottom: var(--spacing-500);
@@ -510,7 +491,33 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 			margin-inline: var(--spacing-200);
 		}
 	}
+	.waves {
+		--wave-color: var(--background-color-500);
+		--wave-height: 20px;
+		--wave-width: calc(var(--wave-height) * 8);
 
+		position: relative;
+	}
+	.waves::before, .waves::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		height: var(--wave-height);
+		background: var(--wave-color);
+		-webkit-mask-image: url('../assets/Waves/waves.svg');
+		-webkit-mask-size: var(--wave-width) var(--wave-height);
+		mask-image: url('../assets/Waves/waves.svg');
+
+		width: 100%;
+	}
+
+	.waves::before {
+		top: 0;
+	}
+	.waves::after { 
+		bottom: 0;
+		transform: rotate(.5turn);
+	}
 	
 		/* Call to action */
 		.call-to-action-container {
@@ -532,7 +539,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		align-items: center;
 	}
 	.call-to-action-section h2 {
-		font-size: var(--font-size-x-large);
+		font-size: var(--font-size-x-x-large);
 		font-weight: var(--font-weight-large);
 		line-height: 1;
 
@@ -595,7 +602,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 	.location-section h2 {
 		text-align: center;
 
-		font-size: var(--font-size-x-large);
+		font-size: var(--font-size-x-x-large);
 		font-weight: var(--font-weight-large);
 	}
 	.location-section .location {
