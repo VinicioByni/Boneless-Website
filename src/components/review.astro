@@ -14,7 +14,7 @@ const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, r
 
 ---
 
-<article class="review-container">
+<article class="review">
     <div>
         <header class="review-header">
             <Image src={userImg} alt="Foto de perfil de reseñador"></Image>
@@ -43,11 +43,13 @@ const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, r
                     <path class="empty-star" d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" stroke-width="0"/>
                     </svg>
                 </div>
-                
             </div>
         </header>
         <p class="review-opinion">"{userReviewOpinion}"</p> 
     </div>
+    
+
+    
     <footer>
         <a href={reviewSiteLink}>Mira nuestras reseñas</a>
         <cite> de {reviewSiteName}</cite>
@@ -55,17 +57,17 @@ const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, r
 </article>
 
 <style>
-    .review-container {
+    .review {
         background-color: var(--background-color-600);
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
+        align-self: stretch;
         padding: 12px;
 
         max-width: 350px;
-
 
         border-radius: 15px;
 
@@ -74,7 +76,8 @@ const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, r
     .review-header {
         display: flex;
         align-items: center;
-        margin-bottom: var(--spacing-100);
+
+        margin-bottom: 12px;
     }
     .review-header img {
         width: 50px;
@@ -96,33 +99,35 @@ const {userImg, userName, userReviewRating, userReviewOpinion, reviewSiteLink, r
 
         color: var(--primary-color-500);
     }
-    .rating {
+    .review-header .rating {
         display: flex;
         align-items: center;
     }
-    .rating p {
+    .review-header .rating p {
         margin-right: var(--spacing-200);
         
         line-height: 1;
     }
-    .rating .star {
+    .review-header .rating .star {
         width: 18px;
         height: 18px;
     }
-    .rating .filled-star{
+    .review-header .rating .filled-star{
         fill: var(--primary-color-500);
     }
-    .rating .empty-star {
+    .review-header .rating .empty-star {
         fill: white;
     }
     .review-opinion {
         font-size: var(--font-size-small);
         font-weight: var(--font-weight-medium);
+
+        margin-bottom: 24px;
     }
-    .review-container footer {
+    .review footer {
         font-size: var(--font-size-small);
     }
-    .review-container footer a {
+    .review footer a {
         color: var(--background-color-100);
 
         text-decoration: underline;

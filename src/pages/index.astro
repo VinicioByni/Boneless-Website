@@ -30,9 +30,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 				<div class="headline-container">
 					<h1 class="headline">Tu <span class="headline-highlight">antojo</span>, <br>nuestra <span class="headline-highlight">pasión</span></h1>
 					<p class="sub-headline">Saboréa las Combinaciones Perfectas</p>
-					
 					<CTA></CTA>
-					
 				</div>
 				<div class="hero-image-container">
 					<Image class="image-transition" src={hero_img} alt="Mejores boneless de chihuahua CUU" decoding='auto' loading="eager"></Image>
@@ -131,7 +129,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 					<Review 
 						userName='David Juarez' 
 						userImg={boneless_img}
-						userReviewOpinion='Los mejores boneless de chihuahua sin duda'
+						userReviewOpinion='Los mejores boneless de chihuahua sin duda, volvere muy pronto de eso estoy seguro'
 						userReviewRating={5}
 						reviewSiteLink='https://www.google.ca/maps/place/Punto+Verde+Caf%C3%A9/@28.6352891,-106.0766849,17z/data=!4m8!3m7!1s0x86ea438e8949809b:0x1f110e25be0dfe89!8m2!3d28.6352891!4d-106.07411!9m1!1b1!16s%2Fg%2F11sqkhmpg1?entry=ttu'
 						reviewSiteName='Google Maps'>
@@ -312,8 +310,12 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		border: 2px solid var(--primary-color-500);
 		border-radius: 999px;
 
-		padding-inline: var(--spacing-300);
 		padding-block: var(--spacing-200);
+		
+		box-sizing: border-box;
+		min-width: 200px;
+
+		text-align: center;
 	}
 
 	@media (max-width: 992px) {
@@ -329,7 +331,6 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 			align-items: center;
 		}
 		.hero-menu-cta {
-			width: calc(100% - 1rem);
 			bottom: 0px;
 		}
 	}
@@ -429,7 +430,6 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		flex-direction: column;
 		align-items: center;
 		gap: var(--section-elements-spacing);
-
 	}
 	.menu-section:last-child {
 		padding-top: var(--section-elements-spacing);
@@ -462,9 +462,9 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		gap: 16px;
 	} 
 
-		/* Social proof  */
-		.social-proof-container {
-		padding-block: var(--section-padding-large);
+	/* Social proof  */
+	.social-proof-container {
+		padding-block: var(--section-full-spacing);
 		width: 100%;
 
 		display: flex;
@@ -479,11 +479,12 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		font-size: var(--font-size-x-x-large);
 		font-weight: var(--font-weight-large);
 
-		margin-bottom: var(--spacing-500);
+		margin-bottom: var(--section-elements-spacing);
 	}
 	.review-container {
 		display: flex;
-		gap: var(--spacing-400);
+		align-items: center;
+		gap: var(--section-grid-spacing);
 	}
 	@media(max-width: 992px) {
 		.review-container {
@@ -519,14 +520,15 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		transform: rotate(.5turn);
 	}
 	
-		/* Call to action */
-		.call-to-action-container {
+
+	/* Call to action */
+	.call-to-action-container {
 		width: 100%;
 
 		display: flex;
 		justify-content: center;
 
-		padding-block: var(--section-padding-large);
+		padding-block: var(--section-full-spacing);
 		background-color: var(--background-color-600);
 
 		color: var(--text-color);
@@ -537,6 +539,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: var(--section-elements-spacing);
 	}
 	.call-to-action-section h2 {
 		font-size: var(--font-size-x-x-large);
@@ -548,43 +551,13 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 	.call-to-action-section h2 strong{
 		color: var(--primary-color-500);
 	}
-	.call-to-action-section .anchors-container {
-		margin-block: var(--spacing-700);
-	}
-	.call-to-action-section a {
-		padding-inline: var(--spacing-600) ;
-		padding-block: var(--spacing-300);
-
-		background-color: var(--primary-color-500);
-		color: var(--text-contrast-color);
-
-		font-weight: var(--font-weight-large);
 	
-	}
-	.call-to-action-section .delivery {
-		border-top-left-radius: 24px;
-	}
-	.call-to-action-section .delivery:hover {
-		background-color: var(--uberEats-background-color);
-		color: var(--uberEats-color);
-	}
-	.call-to-action-section .delivery:hover span{
-		color: white;
-	}
-	.call-to-action-section .toGo {
-		border-bottom-right-radius: 24px;
-		border-left: 1px solid black;
-	}
-	.call-to-action-section .toGo:hover {
-		background-color: var(--whatsApp-background-color);
-		color: var(--whatsApp-color);
-	}
 	.call-to-action-section footer {
 		text-wrap: balance;
 	}
 	
-/* Location */
-.location-container {
+	/* Location */
+	.location-container {
 		width: 100%;
 		
 		padding-block: var(--section-padding-large);
