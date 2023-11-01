@@ -191,7 +191,6 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 					</div>
 				</section>
 				<section class="map">
-					<h2>Mapa</h2>
 					<Image src={MapImg} alt="Screenshot del mapa proporcionado por google maps del negocio boneless crave"></Image>
 						{/* aspect ratio = 177/116
 					1.-Google docs example for api call for embed maps, the page generates the html code itself, https://developers.google.com/maps/documentation/embed/get-started
@@ -511,7 +510,6 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 
 		width: 100%;
 	}
-
 	.waves::before {
 		top: 0;
 	}
@@ -520,6 +518,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		transform: rotate(.5turn);
 	}
 	
+
 
 	/* Call to action */
 	.call-to-action-container {
@@ -556,11 +555,13 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		text-wrap: balance;
 	}
 	
+
+
 	/* Location */
 	.location-container {
 		width: 100%;
 		
-		padding-block: var(--section-padding-large);
+		padding-block: var(--section-full-spacing);
 
 		display: flex;
 		justify-content: center;
@@ -585,7 +586,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		display: flex;
 		justify-content: space-between;
 
-		margin-block: var(--section-margin-small);
+		margin-block: var(--section-elements-spacing);
 	}
 	.location-section .location img {
 		width: 45%;
@@ -596,8 +597,6 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		border-top-right-radius: 16px;
 		border-bottom-right-radius: 30%;
 		border-bottom-left-radius: 16px;
-
-	
 	}
 	.location-section .location .location-description {
 		width: 45%;
@@ -626,10 +625,9 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		height: auto;
 		aspect-ratio: auto 708 / 464;
 
-		margin-block: var(--section-margin-small);
+		margin-block: var(--section-elements-spacing);
 		align-self: center;
 	}
-
 	@media (max-width: 992px) {
 		.location-section .location div{
 			flex-direction: column;

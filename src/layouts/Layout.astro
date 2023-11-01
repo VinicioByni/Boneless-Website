@@ -49,9 +49,10 @@ const { title } = Astro.props;
 		<div class="footer-content">
 			<a class="nav-logo" href="#"></a>
 			<div class="footer-nav">
+				<h2>Acerca de</h2>
 				<ul>
 					<li>
-						<a href="#aboutUs-hours">Sobre Nosotros</a>
+						<a href="#aboutUs-hours">Nosotros</a>
 					</li>
 					<li>
 						<a href="#menu">Menú</a>
@@ -62,14 +63,14 @@ const { title } = Astro.props;
 				</ul>
 			</div>
 			
-			<div class="footer-hours">
+			<div>
 				<h2>Horario</h2>
 				<h3>Lunes a Sabado</h3>
 				<p>13:00 pm - 21:00pm</p>
 				<h3>Domingo</h3>
 				<p>13:00pm - 20:00pm</p>
 			</div>
-			<div class="footer-location">
+			<div>
 				<h2>Ubicación</h2>
 				<p>Boneless Crave, Calle Ignacio Allende, Zona Centro, Chihuahua, Chih.</p>
 			</div>
@@ -433,18 +434,18 @@ const { title } = Astro.props;
 
 	/* Footer */
 	.footer-content {
-		padding: 16px;
+		padding-block: var(--section-half-spacing);
+
 		color: var(--text-color);
-		display: flex;
-		align-items: center;
 		background-color: var(--background-color-900);
-	}
-	.footer-content > * {
-		flex: 1;
+
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		
 	}
 	.footer-content h2{
-		font-size: 1.25rem;
-		font-weight: 500;
+		font-size: var(--font-size-medium);
+		font-weight: var(--font-weight-medium);
 		margin-bottom: .5rem;
 	}
 	.footer-content h3 {
@@ -454,42 +455,36 @@ const { title } = Astro.props;
 	.footer-content p {
 		margin-bottom: .5rem;
 	}
-	.footer-hours {
-		text-align: center;
-	}
-	.footer-nav {
-		display: flex;
-		justify-content: center;
-	}
-	.footer-nav ul{
-		width: fit-content;
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-	}
-	.footer-location {
-		text-align: center;
-		text-wrap: balance;
-	}
-	.footer-socials {
+	
+	.footer-content > * {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: start;
+
+		text-align: center;
+		text-wrap: balance
 	}
-	.footer-socials ul {
+	.footer-content .nav-logo {
+		justify-self: center;
+		align-self: center;
+	}
+	.footer-content .footer-nav {
+		text-align: start;
+	}
+	.footer-content .footer-socials ul {
 		display: flex;
-		align-items: center;
 	}
 	@media (max-width: 992px) {
 		.footer-content {
-			flex-direction: column;
-			gap: 1.5rem;
+			grid-template-columns: 1fr;
+			gap: var(--section-grid-spacing);
 		}
-		.footer-nav ul {
-			align-items: center;
-		}
+	
 	}
 
+
+	
 	.bbq-color {
 		background-color: transparent;
 		fill: var(--bbq-color);
