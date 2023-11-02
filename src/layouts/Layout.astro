@@ -276,6 +276,9 @@ const { title } = Astro.props;
 		background-size: 224px;
 		font-size: 16px;
 		scroll-behavior: smooth;
+
+		position: relative;
+		overflow-x: hidden;
 	}
 	@media (max-width: 992px) {
 		html {
@@ -313,7 +316,8 @@ const { title } = Astro.props;
 			monospace;
 	}
 	.main-header {
-		position: sticky;
+		position: fixed;
+		width: 100%;
 		top: 0;
 		z-index: 4;
 		display: flex;
@@ -323,7 +327,6 @@ const { title } = Astro.props;
 		color: var(--text-color);
 		border-bottom: 1px solid var(--background-color-400);
 	}
-
 	.hightlight {
 		color: var(--primary-color);
 	}
@@ -484,7 +487,7 @@ const { title } = Astro.props;
 	}
 
 
-	
+
 	.bbq-color {
 		background-color: transparent;
 		fill: var(--bbq-color);
@@ -515,6 +518,9 @@ const { title } = Astro.props;
 		opacity: 1;
 	}
 	
+
+	
+
 	/* Css reset */
 	a {
 		text-decoration: none;

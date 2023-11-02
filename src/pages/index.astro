@@ -56,7 +56,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 			</section>
 			
 		</div>
-		<div id="menu" class="menu-container waves">
+		<div id="menu" class="menu-container">
 			<h2 class="menu-title">Menú</h2>
 			<div class="menu-section-container">
 				<section class="menu-section">
@@ -120,6 +120,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 						isImageLeft='false'>
 					</MenuItem>
 				</section>
+				
 			</div>
 		</div>
 		<div id="social-proof" class="social-proof-container">
@@ -154,6 +155,9 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 			</section>
 		</div>
 		<div id="call-to-action" class="call-to-action-container">
+			<svg class="call-to-action-divider-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 1">
+				<path d="M 0 0 L 20 1 L 40 0"/>
+			</svg>
 			<section class="call-to-action-section">
 				<h2>Ordena a <strong>Domicilio</strong> ó <strong>Para llevar!</strong></h2>
 				<CTA></CTA>
@@ -161,6 +165,9 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 					<p>Los precios en uber eats aumentan de precio.</p>
 				</footer>
 			</section>
+			<svg class="call-to-action-divider-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="-40 -1 40 1">
+				<path d="M 0 0 L -20 -1 L -40 0"/>
+			</svg>
 		</div>
 		<div id="location" class="location-container">
 			<section class="location-section">
@@ -391,10 +398,16 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		width: 100%;
 
 		background-color: var(--background-color-600);
+		border-top-left-radius: 50% 2rem;
+		border-top-right-radius: 50% 2rem;
+		border-bottom-left-radius: 50% 2rem;
+		border-bottom-right-radius: 50% 2rem;
 
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
+		position: relative;
 	}
 	.menu-container .menu-title {
 		font-size: var(--font-size-headline);
@@ -461,6 +474,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		gap: 16px;
 	} 
 
+
 	/* Social proof  */
 	.social-proof-container {
 		padding-block: var(--section-full-spacing);
@@ -488,34 +502,11 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 	@media(max-width: 992px) {
 		.review-container {
 			flex-direction: column;
+			align-content: center;
+			flex-wrap: wrap;
+
 			margin-inline: var(--spacing-200);
 		}
-	}
-	.waves {
-		--wave-color: var(--background-color-500);
-		--wave-height: 20px;
-		--wave-width: calc(var(--wave-height) * 8);
-
-		position: relative;
-	}
-	.waves::before, .waves::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		height: var(--wave-height);
-		background: var(--wave-color);
-		-webkit-mask-image: url('../assets/Waves/waves.svg');
-		-webkit-mask-size: var(--wave-width) var(--wave-height);
-		mask-image: url('../assets/Waves/waves.svg');
-
-		width: 100%;
-	}
-	.waves::before {
-		top: 0;
-	}
-	.waves::after { 
-		bottom: 0;
-		transform: rotate(.5turn);
 	}
 	
 
@@ -527,10 +518,23 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 		display: flex;
 		justify-content: center;
 
+		position: relative;
+
 		padding-block: var(--section-full-spacing);
 		background-color: var(--background-color-600);
 
 		color: var(--text-color);
+	}
+	.call-to-action-divider-top path, .call-to-action-divider-bottom path{
+		fill: var(--background-color-500)
+	}
+	.call-to-action-divider-top {
+		position: absolute;
+		top: -1px;
+	}
+	.call-to-action-divider-bottom {
+		position: absolute;
+		bottom: -1px;
 	}
 	.call-to-action-section {
 		width: min(1300px, 100% - 2rem);
