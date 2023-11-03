@@ -45,7 +45,7 @@ const { title } = Astro.props;
 		
 		<slot />
 	</body>
-	<footer>
+	<footer class="main-footer">
 		<div class="footer-content">
 			<a class="nav-logo" href="#"></a>
 			<div class="footer-nav">
@@ -103,6 +103,9 @@ const { title } = Astro.props;
 <script>
 	const menuToggleBtn = document.querySelector('.primary-nav-container button');	
 	const navMenu = document.querySelector('.primary-nav');
+	const main = document.querySelector('main')
+	const footer = document.querySelector('.main-footer')
+	let visible = navMenu?.getAttribute('data-visible')
 	const navMenuOptions = navMenu?.querySelectorAll('a');
 	const mobileSize = '992px';
 
@@ -111,41 +114,70 @@ const { title } = Astro.props;
 		if (isMobile()) {
 			toggleMenu();
 		}
-		
 	})
 
 	navMenuOptions?.forEach(option => {
 		option.addEventListener('click', function() {
-			if (isMobile()) {
-			toggleMenu();
-			}
+			if (isMobile()) toggleMenu();
 		})
 	})
+
+	main?.addEventListener('click', () => {
+		if (isVisible()) toggleMenu()
+	})
+	footer?.addEventListener('click', () => {
+		if (isVisible()) toggleMenu()
+	})
+
+
+		
+	
 
 	function isMobile():boolean {
 		const mediaQuery = window.matchMedia('(max-width: ' + mobileSize + ')')
 		if (mediaQuery.matches) {
-			console.log('true')
 			return true
 		}
 		else {
-			console.log('false')
 			return false
 		}
 	}
+
 	function toggleMenu() {
-		const visible = navMenu?.getAttribute('data-visible')
-		
-		if(visible === 'false') {
+		if (!isMobile) return
+		if(!isVisible()) {
 			navMenu?.setAttribute('data-visible', 'true')
 			menuToggleBtn?.setAttribute('aria-expanded', 'true')
+
 		}
 		else {
 			navMenu?.setAttribute('data-visible', 'false')
 			menuToggleBtn?.setAttribute('aria-expanded', 'false')
 		}
 	}
+	 
+	function isVisible() {
+		visible = navMenu?.getAttribute('data-visible')
+		if (visible === 'true') return true
+		return false
+	}
+
+	let start = 0
+	let end = 0
+	window.addEventListener('touchstart', (event) => {
+		start = event.touches[0].clientX
+	})
+	window.addEventListener('touchmove', (event) => {
+		if (!isVisible()) return
+		end = event.touches[0].clientX
+
+		console.log(end-start)
+
+		if (end-start > 40) toggleMenu()
+	})
 	
+
+
 </script>
 <style is:global>
 
