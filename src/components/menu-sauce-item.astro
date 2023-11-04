@@ -8,7 +8,7 @@ interface Props{
 const { class: className, name, isHot} = Astro.props
 ---
 <div class:list={[className, "sauce-item"]}>
-    <h4>{name}</h4>
+    <h3>{name}</h3>
     {
         isHot ? (
         <svg class="feeling" width="40px" height="40px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet">
@@ -39,7 +39,7 @@ const { class: className, name, isHot} = Astro.props
         border-radius: 16px;
         position: relative;
     }
-    .sauce-item h4 {
+    .sauce-item h3 {
         z-index: 3;
         margin-right: 6px;
         padding-inline: 12px; 
