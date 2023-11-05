@@ -1,28 +1,36 @@
 ---
 import wave from '../assets/Waves/svg-path.svg'
 import CTA from '../components/call-to-action.astro';
+import logo from '../assets/testImages/TestLogo.svg'
 
 interface Props {
 	title: string;
+	themeColor: string
 }
 
-const { title } = Astro.props;
+const { title, themeColor } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Boneless Crave página oficial" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg" href={logo.src}/>
 		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content={themeColor}/>
+		<meta property="og:title" content="Boneless Crave Page"/>
+		<meta property="og:description" content="Boneless Crave official website"/>
+		<meta property="og:image" content={logo.src}/>
+		<meta property="og:image:alt" content="Official logo of Boneless Crave"/>
+		<link rel="canonical" href="https://boneless-crave.vercel.app"
 		<title>{title}</title>
 	</head>
 	<body>
 		<header class="main-header">
 			<div class="primary-nav-container">
-				<a class="nav-logo" href="#"></a>
+				<a class="nav-logo" href="#hero"></a>
 				<nav class="primary-nav">
 					<ul data-visible="false">
 						<li>
@@ -52,13 +60,13 @@ const { title } = Astro.props;
 				<h2>Acerca de</h2>
 				<ul>
 					<li>
-						<a href="#aboutUs-hours">Nosotros</a>
+						<a href="#aboutUs">Nosotros</a>
 					</li>
 					<li>
 						<a href="#menu">Menú</a>
 					</li>
 					<li>
-						<a href="#orders">Pedidos</a>
+						<a href="#call-to-action">Pedidos</a>
 					</li>
 				</ul>
 			</div>
@@ -78,7 +86,7 @@ const { title } = Astro.props;
 				<h2>¡Siguenos!</h2>
 				<ul>
 					<li>
-						<a href="#">
+						<a href="#hero">
 							<svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="#FDC90B" stroke-linecap="round" stroke-linejoin="round">
 								<path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
 								<path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
@@ -87,13 +95,16 @@ const { title } = Astro.props;
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="#hero">
 							<svg xmlns="http://www.w3.org/2000/svg"  width="36px" height="36px" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FDC90B" fill="none" stroke-linecap="round" stroke-linejoin="round">
 								<path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
 							</svg>
 						</a>
 					</li>
 				</ul>
+			</div>
+			<div class="attributions">
+				Image by <a href="https://www.freepik.com/free-photo/high-angle-tasty-boneless-chicken-parsley_35022712.htm#page=5&query=boneless%20wings%20fries&position=22&from_view=search&track=ais">Freepik</a>
 			</div>
 		</div>
 	</footer>
@@ -379,7 +390,7 @@ const { title } = Astro.props;
 		}
 	}
 	.nav-logo {
-		background-image: url('../assets/TestLogo.svg');
+		background-image: url('../assets/testImages/testLogo.svg');
 		background-repeat: no-repeat;
 		background-position: center;
 		/*  1.2 ratio*/
@@ -401,16 +412,17 @@ const { title } = Astro.props;
 		
 	}
 	.footer-content h2{
-		font-size: var(--font-size-medium);
+		font-size: var(--font-size-large);
 		font-weight: var(--font-weight-medium);
-		margin-bottom: .5rem;
+		margin-bottom: 8px;
 	}
 	.footer-content h3 {
-		font-size: 1rem;
-		font-weight: 400;
+		font-size: var(--font-size-medium);
+		font-weight: var(--font-weight-medium);
 	}
 	.footer-content p {
-		margin-bottom: .5rem;
+		font-size: var(--font-size-small);
+		margin-bottom: 8px;
 	}
 	
 	.footer-content > * {
@@ -423,11 +435,21 @@ const { title } = Astro.props;
 		text-wrap: balance
 	}
 	.footer-content .nav-logo {
+		background-image: url('../assets/testImages/testLogo.svg');
 		justify-self: center;
 		align-self: center;
 	}
 	.footer-content .footer-nav {
 		text-align: start;
+	}
+	.footer-content .footer-nav li {
+		padding-block: 4px;
+	}
+	.footer-content .footer-nav li:hover {
+		color: var(--primary-color-500);
+	}
+	.footer-content .footer-nav li a {
+		font-size: var(--font-size-small);
 	}
 	.footer-content .footer-socials ul {
 		display: flex;
@@ -435,7 +457,7 @@ const { title } = Astro.props;
 	@media (max-width: 992px) {
 		.footer-content {
 			grid-template-columns: 1fr;
-			gap: var(--section-grid-spacing);
+			gap: var(--section-elements-spacing);
 		}
 	
 	}
@@ -443,24 +465,24 @@ const { title } = Astro.props;
 
 
 	.bbq-color {
-		background-color: transparent;
-		fill: var(--bbq-color);
+		background-color: var(--bbq-color);
+		color: var(--text-color);
 	}
 	.buffalo-color {
-		background-color: transparent;
-		fill: var(--buffalo-color);
+		background-color: var(--buffalo-color);
+		color: var(--text-contrast-color);
 	}
 	.mango-habanero-color {
-		background-color: transparent;
-		fill: var(--mango-habanero-color);
+		background-color: var(--mango-habanero-color);
+		color: var(--text-contrast-color);
 	}
 	.lemon-pepper-color {
-		background-color: transparent;
-		fill: var(--lemon-pepper-color);
+		background-color: var(--lemon-pepper-color);
+		color: var(--text-contrast-color);
 	}
 	.jalapeño-color {
-		background-color: transparent;
-		fill: var(--jalapeño-color);
+		background-color: var(--jalapeño-color);
+		color: var(--text-color);
 	}
 
 	/* Image loading */

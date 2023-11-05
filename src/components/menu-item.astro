@@ -38,8 +38,6 @@ const { itemTitle, itemDescription, itemQtyPrice, itemImage, itemImageAlt, isIma
 		align-items: center;
 		gap: var(--spacing-600);
 
-		padding-inline: var(--spacing-700);
-
 		color: var(--text-color);
 	}
     .item[data-imageLeft = 'false'] {
@@ -99,6 +97,9 @@ const { itemTitle, itemDescription, itemQtyPrice, itemImage, itemImageAlt, isIma
         } 
         .item .item-info {
             width: 80%;
+        }
+        .item .item-info p {
+            margin-bottom: 8px;
         }
 
     }
