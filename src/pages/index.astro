@@ -9,18 +9,19 @@ import MenuSauceItem from '../components/menu-sauce-item.astro';
 import Review from '../components/review.astro';
 import CTA from '../components/call-to-action.astro'
 
-import Location from '../assets/Location.png'
-import MapImg from '../assets/Screenshot de mapa.png'
+import boneless_crave_location_img from '../assets/Location-images/boneless-crave-location.webp'
 
 import hero_img from '../assets/testImages/tasty-boneless-chicken-sauce.png';
 import boneless_img from '../assets/testImages/quality-boneless-ranch.jpg'
 import combo_1_img from '../assets/testImages/combo-1.png'
 
-import fries_img from '../assets/AboutUs/fries.webp'
-import oreos_img from '../assets/AboutUs/fried-oreos.png'
-import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
+import fries_img from '../assets/AboutUs-images/fries.webp'
+import oreos_img from '../assets/AboutUs-images/fried-oreos.png'
+import bbq_boneless_img from '../assets/AboutUs-images/bbq-boneless.png'
 
-
+import male_reviewer_1_img from '../assets/Review-images/young-review-man-1.webp'
+import male_reviewer_2_img from '../assets/Review-images/young-review-man-2.webp'
+import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.webp'
 ---
 
 <Layout title="Boneless Crave" themeColor="#ffb703">
@@ -128,25 +129,25 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 				<h2>Lo que los clientes dicen de nosotros</h2>
 				<div class="review-container">
 					<Review 
-						userName='David Juarez' 
-						userImg={boneless_img}
-						userReviewOpinion='Los mejores boneless de chihuahua sin duda, volvere muy pronto de eso estoy seguro'
+						userName='Alejandro Rodriguez' 
+						userImg={male_reviewer_1_img}
+						userReviewOpinion='Los boneless estuvieron deliciosos y el servicio rápido. ¡Muy recomendable para llevar!'
 						userReviewRating={5}
 						reviewSiteLink='https://www.google.ca/maps/place/Punto+Verde+Caf%C3%A9/@28.6352891,-106.0766849,17z/data=!4m8!3m7!1s0x86ea438e8949809b:0x1f110e25be0dfe89!8m2!3d28.6352891!4d-106.07411!9m1!1b1!16s%2Fg%2F11sqkhmpg1?entry=ttu'
 						reviewSiteName='Google Maps'>
 					</Review>
 					<Review 
-						userName='David Juarez' 
-						userImg={boneless_img}
-						userReviewOpinion='Los mejores boneless de chihuahua sin duda'
+						userName='Carlos Martinez' 
+						userImg={male_reviewer_2_img}
+						userReviewOpinion='Excelente comida para llevar, los complementos estan muy bien surtidos'
 						userReviewRating={5}
 						reviewSiteLink='https://www.google.ca/maps/place/Punto+Verde+Caf%C3%A9/@28.6352891,-106.0766849,17z/data=!4m8!3m7!1s0x86ea438e8949809b:0x1f110e25be0dfe89!8m2!3d28.6352891!4d-106.07411!9m1!1b1!16s%2Fg%2F11sqkhmpg1?entry=ttu'
 						reviewSiteName='Google Maps'>
 					</Review>
 					<Review 
-						userName='David Juarez' 
-						userImg={boneless_img}
-						userReviewOpinion='Los mejores boneless de chihuahua sin duda'
+						userName='Sofia Ramirez' 
+						userImg={female_reviewer_1_img}
+						userReviewOpinion='Comida deliciosa y servicio rápido, ¡un lugar que debes probar!'
 						userReviewRating={5}
 						reviewSiteLink='https://www.google.ca/maps/place/Punto+Verde+Caf%C3%A9/@28.6352891,-106.0766849,17z/data=!4m8!3m7!1s0x86ea438e8949809b:0x1f110e25be0dfe89!8m2!3d28.6352891!4d-106.07411!9m1!1b1!16s%2Fg%2F11sqkhmpg1?entry=ttu'
 						reviewSiteName='Google Maps'>
@@ -175,7 +176,7 @@ import bbq_boneless_img from '../assets/AboutUs/bbq-boneless.png'
 					<h2>Ubicación</h2>
 					<div>
 						<Image
-						src={Location}
+						src={boneless_crave_location_img}
 						decoding="async"
 						loading="lazy"
 						alt="Foto de la vista por enfrente del negocio Boneless Crave.">
