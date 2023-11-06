@@ -2,28 +2,29 @@
 import { Image } from 'astro:assets';
 
 interface Props {
-    processStepOneImg: ImageMetadata
-    processStepOneAlt: string
-    processStepTwoImg: ImageMetadata
-    processStepTwoAlt: string
-    finalProductImg: ImageMetadata
-    finalProductAlt: string
+    imgOne: ImageMetadata
+    imgTwo: ImageMetadata
+    imgThree: ImageMetadata
+    imgOneAlt: string
+    imgTwoAlt: string
+    imgThreeAlt: string
+
 
 }  
 
-const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAlt, finalProductImg, finalProductAlt } = Astro.props
+const { imgOne, imgTwo, imgThree, imgOneAlt, imgTwoAlt, imgThreeAlt } = Astro.props
 ---
 
 
 <div class="gallery">
     <div class="image-container">
-        <Image data-visible="false" class="process-img" src={processStepOneImg} alt={processStepOneAlt}></Image>
+        <Image data-visible="false" src={imgOne} alt={imgOneAlt}></Image>
     </div>
     <div class="image-container second-level">
-        <Image data-visible="false" class="process-img"src={processStepTwoImg} alt={processStepTwoAlt}></Image>
+        <Image data-visible="false" src={imgTwo} alt={imgTwoAlt}></Image>
     </div>
     <div class="image-container third-level">
-        <Image data-visible="false" class="final-product-img" src={finalProductImg} alt={finalProductAlt}></Image>
+        <Image data-visible="false" src={imgThree} alt={imgThreeAlt}></Image>
     </div> 
 </div>
 
@@ -58,20 +59,11 @@ const { processStepOneImg, processStepOneAlt, processStepTwoImg,processStepTwoAl
         transition: transform 800ms, opacity 800ms;
     }
     .gallery .image-container img[data-visible='false'] {
-        transform: translateY(200px);
         opacity: 0;
     }
     .gallery .image-container img[data-visible='true'] {
-        transform: translateY(0px);
         opacity: 1;
     }
-    .process-img {
-        border: var(--border-width) solid white;
-    }
-    .final-product-img {
-        border: var(--border-width) solid var(--primary-color-500);
-    }
-    
 
     @media(max-width: 992px) {
         .gallery {

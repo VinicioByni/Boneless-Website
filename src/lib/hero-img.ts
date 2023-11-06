@@ -1,4 +1,4 @@
-const LOADED_CLASS = "loaded-img"
+	const LOADED_CLASS = "loaded-img"
 
 	const imgContainer = document.querySelector('.hero-image-container')
 	const isDiv = imgContainer instanceof HTMLDivElement
