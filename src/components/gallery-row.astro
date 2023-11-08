@@ -17,14 +17,14 @@ const { imgOne, imgTwo, imgThree, imgOneAlt, imgTwoAlt, imgThreeAlt } = Astro.pr
 
 
 <div class="gallery">
-    <div class="image-container">
-        <Image data-visible="false" src={imgOne} alt={imgOneAlt}></Image>
+    <div class="image-container first-level">
+        <Image data-visible="false" src={imgOne} alt={imgOneAlt} loading="eager" decoding='auto'></Image>
     </div>
     <div class="image-container second-level">
-        <Image data-visible="false" src={imgTwo} alt={imgTwoAlt}></Image>
+        <Image data-visible="false" src={imgTwo} alt={imgTwoAlt} loading="eager" decoding='auto'></Image>
     </div>
     <div class="image-container third-level">
-        <Image data-visible="false" src={imgThree} alt={imgThreeAlt}></Image>
+        <Image data-visible="false" src={imgThree} alt={imgThreeAlt} loading="eager" decoding='auto'></Image>
     </div> 
 </div>
 
@@ -55,14 +55,16 @@ const { imgOne, imgTwo, imgThree, imgOneAlt, imgTwoAlt, imgThreeAlt } = Astro.pr
         height: auto;
         object-fit: cover;
         object-position: center;
-
-        transition: transform 800ms, opacity 800ms;
+        
+        transition: opacity 800ms ease-in, transform 400ms ease;
     }
     .gallery .image-container img[data-visible='false'] {
         opacity: 0;
+        transform: translateY(35px);
     }
     .gallery .image-container img[data-visible='true'] {
         opacity: 1;
+        transform: translateY(0);
     }
 
     @media(max-width: 992px) {

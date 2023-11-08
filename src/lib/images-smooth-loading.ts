@@ -19,10 +19,6 @@
 		}
 	}
 
-	
-	
-
-
 	function loaded(img: HTMLImageElement) {
 		img.classList.add(LOADED_CLASS)
 	}
