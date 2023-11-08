@@ -1,13 +1,9 @@
-	const LOADED_CLASS = "loaded-img"
 
-	const imgContainer = document.querySelector('.hero-image-container')
-	const isDiv = imgContainer instanceof HTMLDivElement
 
-	if (isDiv && imgContainer != null) {
-		const img = imgContainer.querySelector('img')
-		const isImage = img instanceof HTMLImageElement
-
-		if (isImage && img != null) {
+	const imgs = document.querySelectorAll('.img-transition')
+	console.log(imgs)
+	imgs.forEach(img => {
+		if (img instanceof HTMLImageElement && img != null) {
 			if (img.complete) {
 				loaded(img)
 			}
@@ -17,8 +13,8 @@
 				})
 			}
 		}
-	}
+	})
 
 	function loaded(img: HTMLImageElement) {
-		img.classList.add(LOADED_CLASS)
+		img.setAttribute('data-visible', 'true')
 	}

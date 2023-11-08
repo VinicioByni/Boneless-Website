@@ -1,6 +1,5 @@
 
 const handleIntersection = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             const imgContainer = entry.target

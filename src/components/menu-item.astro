@@ -19,7 +19,7 @@ const { itemTitle, itemDescription, itemQtyPrice, itemImage, itemImageAlt, isIma
 ---
 
 <div class="item" data-imageLeft={isImageLeft}>
-    <Image src={itemImage} alt={itemImageAlt}></Image>
+    <Image src={itemImage} class="img-transition" data-visible="false" alt={itemImageAlt}></Image>
     <section class="item-info">
         <h3>{itemTitle}</h3>
         <p>{itemDescription}</p>

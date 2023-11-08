@@ -20,7 +20,7 @@ const { comboItemTitle, comboItemDescription, itemQtyName, comboItemPrice, combo
 ---
 
 <div class="item" data-imageLeft={isImageLeft}>
-    <Image src={comboItemImage} alt={comboItemImageAlt}></Image>
+    <Image class="img-transition" data-visible="false" src={comboItemImage} alt={comboItemImageAlt}></Image>
     <section class="item-info">
         <h3>{comboItemTitle}</h3>
         <p>{comboItemDescription}</p>
