@@ -9,6 +9,13 @@ import MenuSauceItem from '../components/menu-sauce-item.astro';
 import Review from '../components/review.astro';
 import CTA from '../components/call-to-action.astro'
 
+import hero_boneless_hq_img from '../assets/Hero-images/boneless-buffalo-sauce-1000-1446-hq.webp'
+import hero_boneless_lq_img from '../assets/Hero-images/boneless-buffalo-sauce-1000-1446-lq.webp'
+import hero_oreos_hq_img from '../assets/Hero-images/oreos-fried-glass-1000-1446-hq.webp'
+import hero_oreos_lq_img from '../assets/Hero-images/oreos-fried-glass-1000-1446-lq.webp'
+import hero_fries_hq_img from '../assets/Hero-images/fries-paprika-1500-2169-hq.webp'
+import hero_fries_lq_img from '../assets/Hero-images/boneless-buffalo-sauce-1000-1446-lq.webp'
+
 import boneless_crave_location_img from '../assets/Location-images/boneless-crave-location.webp'
 
 import hero_img from '../assets/Food-images/boneless-fork.png'
@@ -29,14 +36,16 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 <Layout title="Boneless Crave" themeColor="#ffb703">
 	<main>
 		<div id="hero" class="hero-container">
-			<section class="hero-section">
+			<section class="hero-section section-inline-margin">
 				<div class="headline-container">
 					<h1 class="headline"><span class="headline-highlight">Crujientes</span> y <span class="headline-highlight">Deliciosos</span></h1>
 					<p class="sub-headline">Los mejores combos de boneless para llevar</p>
 					<CTA></CTA>
 				</div>
-				<div class="hero-image-container">
-					<Image class="img-transition" data-visible="false" src={hero_img} alt="Imagen de un delicioso boneless con aderezo ranch, sostenido en un tenedor" decoding='auto' loading="eager"></Image>
+				<div class="hero-gallery-container">
+					<Image src={hero_fries_hq_img} alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></Image>
+					<Image src={hero_oreos_hq_img} alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></Image>
+					<Image src={hero_boneless_hq_img} alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></Image>
 				</div>	
 			</section>
 			<a href="#menu" class="hero-menu-cta">Explorar Menú</a>
@@ -127,7 +136,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 			</div>
 		</div>
 		<div id="social-proof" class="social-proof-container">
-			<section class="social-proof-section">
+			<section class="social-proof-section section-inline-margin">
 				<h2>Lo que los clientes dicen de nosotros</h2>
 				<div class="review-container">
 					<Review 
@@ -223,19 +232,11 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					</div>
 				</section>
 				<section class="map">
-					<iframe title="Boneless Crave business google maps location" style="border:0" loading="lazy" allowfullscreen 
-					src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJm4BJiY5D6oYRif4NviUOER8&key=AIzaSyD_Cw-KXwReKV5j8VG1HIRKSZGsqklBLlA"></iframe>
+					<iframe class="google-maps-iframe" title="Boneless Crave business google maps location" style="border:0" loading="lazy" allowfullscreen 
+					src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Punto%20Verde,%20Calle%20Ignacio%20Allende,%20Zona%20Centro,%20Chihuahua+(Ubicacion%20de%20Boneless%20Crave)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+					</iframe>
 				</section>
 			</section>
-				
-				
-			
-
-				
-				
-
-				
-				
 			</section>
 		</div>
 		
@@ -280,7 +281,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	.headline-container {
 		display: flex;
 		flex-direction: column;
-
+		font-size: 16px;
 		text-wrap: balance;
 	}
 	.headline {
@@ -304,20 +305,58 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 		margin-bottom: 32px;
 	}
-	.hero-image-container {
-		width: 90%;
-
+	.hero-gallery-container {
+		--border-roundness: 30px;
+		--border-offset: 50px;
+		width: 100%;
+		aspect-ratio: 4/3;
 		position: relative;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;	
 	}
-	.hero-image-container img {
+	.hero-gallery-container::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		inset: 0 0 0 0;
+		transform: translate(calc(var(--border-offset) / 2), calc(var(--border-offset) / 2 * -1));
+
+		border-top: 2px solid var(--primary-color-500);
+		border-right: 2px solid var(--primary-color-500);
+		border-top-right-radius: 40px;
+	}	
+	.hero-gallery-container::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		inset: 0 0 0 0;
+		transform: translate(calc(var(--border-offset) / 2 * -1), calc(var(--border-offset) / 2 ));
+
+		border-left: 2px solid var(--primary-color-500);
+		border-bottom: 2px solid var(--primary-color-500);
+		border-bottom-left-radius: 40px;
+	}	
+	.hero-gallery-container img {
 		display: block;
 		width: 100%;
-		max-height: 600px;
-		height: -webkit-fill-available;
+		height: 100%;
 
-		object-fit: contain;
+		object-fit: cover;
 		object-position: center;
 	}
+	.hero-gallery-container img:first-child {
+		border-top-left-radius: var(--border-roundness);
+		border-bottom-left-radius: var(--border-roundness);
+	}
+	.hero-gallery-container img:last-child {
+		border-top-right-radius: var(--border-roundness);
+		border-bottom-right-radius: var(--border-roundness);
+	}
+
 	.hero-menu-cta {
 		display: inline;
 
@@ -340,14 +379,20 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	@media (max-width: 992px) {
 		.hero-container {
 			height: auto;
-			padding-top: calc(var(--nav-height) + var(--section-half-spacing));
+			padding-top: var(--nav-height);
 			padding-bottom: var(--section-full-spacing);
+			
 		}
 		.hero-section {
 			gap: 5rem;
 		}
 		.headline-container {
 			align-items: center;
+			font-size: 12px;
+		}
+		.hero-gallery-container {
+			width: 90%;
+			--border-offset: 30px;
 		}
 		.hero-menu-cta {
 			bottom: 0px;
@@ -598,12 +643,14 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	}
 	.location-section .location {
 		width: 100%;
+		margin-bottom: var(--)
 	}
 	.location-section .location div{
 		display: flex;
 		justify-content: space-between;
 
-		margin-block: var(--section-elements-spacing);
+		margin-top: var(--section-elements-spacing);
+		margin-bottom: 56px;
 	}
 	.location-section .location img {
 		width: 45%;
@@ -656,10 +703,11 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		margin-block: var(--section-elements-spacing);
 		align-self: center;
 	}
-	.location-section .map iframe {
-		width: 70%;
+	.location-section .map .google-maps-iframe {
+		width: 100%;
 		height: auto;
-		aspect-ratio: auto 4/3;
+		aspect-ratio: 2/1;
+
 
 		align-self: center;
 	}
@@ -672,8 +720,8 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 			width: 100%;
 		}
 
-		.location-section .map iframe{
-			width: 90%;
+		.location-section .map .google-maps-iframe{
+			aspect-ratio: 1/1;
 		}
 		.location-section .location .location-description section header {
 			justify-content: center;
