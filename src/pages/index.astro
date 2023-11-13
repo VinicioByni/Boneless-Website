@@ -51,7 +51,6 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					<Image src={hero_boneless_hq_img} alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></Image>
 				</div>	
 			</section>
-			<a href="#menu" class="hero-menu-cta">Explorar Menú</a>
 		</div>	
 		<div id="aboutUs" class="aboutUs-container">
 			<section class="aboutUs-section">
@@ -264,12 +263,14 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 	/* Hero */
 	.hero-container {
+		--min-padding-top: 20px;
+
 		width: min(1300px, (100% - 1rem));
-		min-height: calc(100vh - var(--nav-height));
+		min-height: calc(100vh - var(--nav-height) - var(--min-padding-top));
 	
 		position: relative;
-	
-		padding-bottom: var(--section-full-spacing);
+
+		padding-top: calc(var(--nav-height) + var(--min-padding-top));
 		
 		display: flex;
 		justify-content: center;
@@ -363,32 +364,10 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		border-bottom-right-radius: var(--border-roundness);
 	}
 
-	.hero-menu-cta {
-		display: inline;
-
-		position: absolute;
-		bottom: var(--section-full-spacing);
-		left: 50%;
-		transform: translate(-50%, -50%);		
-
-		border: 2px solid var(--primary-color-500);
-		border-radius: 999px;
-
-		padding-block: var(--spacing-200);
-		
-		box-sizing: border-box;
-		min-width: 200px;
-
-		text-align: center;
-	}
-
 	@media (max-width: 992px) {
 		.hero-container {
 			height: auto;
-			padding-top: calc(var(--nav-height) + 32px);
 			padding-bottom: var(--section-full-spacing);
-			align-items: start;
-			
 		}
 		.hero-section {
 			gap: 5rem;
@@ -402,7 +381,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 			--border-offset: 30px;
 		}
 		.hero-menu-cta {
-			bottom: 0px;
+			display: none;
 		}
 	}
 
