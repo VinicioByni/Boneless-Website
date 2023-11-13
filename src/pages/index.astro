@@ -38,7 +38,10 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		<div id="hero" class="hero-container">
 			<section class="hero-section section-inline-margin">
 				<div class="headline-container">
-					<h1 class="headline"><span class="headline-highlight">Crujientes</span> y <span class="headline-highlight">Deliciosos</span></h1>
+					<header>
+						<h1 class="headline"><span class="headline-highlight">Crujientes</span> <br>y<br> <span class="headline-highlight">Deliciosos</span></h1>
+					</header>
+					
 					<p class="sub-headline">Los mejores combos de boneless para llevar</p>
 					<div class="hero-cta">
 						<CTA></CTA>
@@ -249,6 +252,8 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 <script src="../lib/images-smooth-loading.ts"></script>
 
 <style >
+
+
 	main {
 		display: flex;
 		align-items: center;
@@ -288,19 +293,25 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		font-size: 16px;
 		text-wrap: balance;
 	}
+	.headline-container header {
+		display: inline;
+		text-align: center;
+		width: fit-content;
+	}
 	.headline {
 		font-family: 'Laila';
 		font-weight: 600;
 		font-size: var(--font-size-headline);
-		line-height: 1.2;
+		line-height: 1.1;
 		color: var(--text-color);
-
-		margin-bottom: var(--section-grid-spacing);
 	}
 	.headline-highlight {
 		font-family: 'Laila';
 		font-weight: var(--font-weight-large);
 		color: var(--primary-color-500);
+	}
+	.headline-highlight:last-child {
+		line-height: 1.7;
 	}
 	.sub-headline {
 		font-size: var(--font-size-large);
