@@ -235,7 +235,7 @@ const { title, themeColor } = Astro.props;
 		--spacing-600: 24px;
 		--spacing-700: 32px;
 		/* Font size */
-		--font-size-headline: 4.5em;
+		--font-size-headline: 4.5rem;
 
 		--font-size-small: 1.125rem;
 		--font-size-medium: 1.25rem;
@@ -270,6 +270,11 @@ const { title, themeColor } = Astro.props;
 			align-items: center;
 		}
 		
+	}
+	@media (max-width: 576px) {
+		html {
+			font-size: 12px;
+		}
 	}
 	@media (min-width: 992px) {
 		.hero-section {
@@ -324,9 +329,10 @@ const { title, themeColor } = Astro.props;
 		justify-content: space-between;
 		max-width: var(--min-content-width); 
 		font-size: var(--font-size-small);
-		margin-block: var(--spacing-200);
-		max-height: var(--nav-height);
-		color: var(--text-color)
+		padding-block: 8px;
+		height: var(--nav-height);
+		color: var(--text-color);
+		box-sizing:border-box
 	}
 
 	.nav-call-to-action {
@@ -541,6 +547,16 @@ const { title, themeColor } = Astro.props;
 
 	.section-inline-margin {
 		margin-inline: 64px;
+	}
+	@media(max-width: 768px) {
+		.section-inline-margin {
+			margin-inline: 32px;
+		}
+	}
+	@media(max-width: 576px) {
+		.section-inline-margin {
+			margin-inline: 16px;
+		}
 	}
 
 	/* Css reset */
