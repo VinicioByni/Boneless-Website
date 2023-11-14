@@ -1,7 +1,6 @@
 
 
 	const imgs = document.querySelectorAll('.img-transition')
-	console.log(imgs)
 	imgs.forEach(img => {
 		if (img instanceof HTMLImageElement && img != null) {
 			if (img.complete) {

@@ -48,11 +48,15 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 				</div>
 				<div class="hero-gallery-container">
 
-					<img src={hero_fries_hq_img.src} class="hero-img-background hero-fries-lq-img" alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></img>
-					<img src={hero_oreos_hq_img.src} class="hero-img-background hero-oreos-lq-img" alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></img>
-					<img src={hero_boneless_hq_img.src} class="hero-img-background hero-boneless-lq-img" alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></img>
-
-					
+					<picture class="hero-img-background hero-fries-lq-img">
+						<img src={hero_fries_hq_img.src} class="img-transition" data-visible="false" alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></img>
+					</picture>
+					<picture class="hero-img-background hero-oreos-lq-img ">
+						<img src={hero_oreos_hq_img.src} class="img-transition" data-visible="false" alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></img>
+					</picture>
+					<picture class="hero-img-background hero-boneless-lq-img">
+						<img src={hero_boneless_hq_img.src} class=" img-transition" data-visible="false" alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></img>
+					</picture>
 				</div>	
 			</section>
 		</div>	
@@ -377,11 +381,14 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		object-fit: cover;
 		object-position: center;
 	}
-	.hero-gallery-container img:first-child {
+	.hero-gallery-container picture {
+		overflow: hidden;
+	}
+	.hero-gallery-container picture:first-child {
 		border-top-left-radius: var(--border-roundness);
 		border-bottom-left-radius: var(--border-roundness);
 	}
-	.hero-gallery-container img:last-child {
+	.hero-gallery-container picture:last-child {
 		border-top-right-radius: var(--border-roundness);
 		border-bottom-right-radius: var(--border-roundness);
 	}
