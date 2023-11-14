@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 
 import Layout from '../layouts/Layout.astro';
+import HeroImage from '../components/hero-image.astro'
 import GalleryRow from '../components/gallery-row.astro';
 import MenuComboItem from '../components/menu-combo-item.astro';
 import MenuItem from '../components/menu-item.astro';
@@ -10,11 +11,8 @@ import Review from '../components/review.astro';
 import CTA from '../components/call-to-action.astro'
 
 import hero_boneless_hq_img from '../assets/Hero-images/boneless-buffalo-sauce-1000-1446-hq.webp'
-import hero_boneless_lq_img from '../assets/Hero-images/boneless-buffalo-sauce-1000-1446-lq.webp'
 import hero_oreos_hq_img from '../assets/Hero-images/oreos-fried-glass-1000-1446-hq.webp'
-import hero_oreos_lq_img from '../assets/Hero-images/oreos-fried-glass-1000-1446-lq.webp'
 import hero_fries_hq_img from '../assets/Hero-images/fries-paprika-1500-2169-hq.webp'
-import hero_fries_lq_img from '../assets/Hero-images/boneless-buffalo-sauce-1000-1446-lq.webp'
 
 import boneless_crave_location_img from '../assets/Location-images/boneless-crave-location.webp'
 
@@ -49,22 +47,22 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					
 				</div>
 				<div class="hero-gallery-container">
-					<Image src={hero_fries_hq_img} alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></Image>
-					<Image src={hero_oreos_hq_img} alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></Image>
-					<Image src={hero_boneless_hq_img} alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></Image>
+
+					<img src={hero_fries_hq_img.src} class="hero-img-background hero-fries-lq-img" alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></img>
+					<img src={hero_oreos_hq_img.src} class="hero-img-background hero-oreos-lq-img" alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></img>
+					<img src={hero_boneless_hq_img.src} class="hero-img-background hero-boneless-lq-img" alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></img>
+
+					
 				</div>	
 			</section>
 		</div>	
 		<div id="aboutUs" class="aboutUs-container">
 			<section class="aboutUs-section">
-				
 				<h2><strong class="hightlight">Boneless</strong> Crave</h2>
 				<p>
 					Creamos sabores auténticos acompañados de complementos excepcionales que hacen la diferencia.
 				</p>
-				
 			</section>
-			
 		</div>
 		<div id="menu" class="menu-container">
 			<h2 class="menu-title">Menú</h2>
@@ -244,7 +242,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 <script src="../lib/aboutUs-animation.ts"></script>
 <script src="../lib/images-smooth-loading.ts"></script>
 
-<style >
+<style>
 
 
 	main {
@@ -327,6 +325,20 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		grid-template-columns: repeat(3, 1fr);
 		gap: 8px;	
 	}
+	.hero-gallery-container .hero-img-background {
+		background-position: center;
+		background-size: cover;
+	}
+	.hero-gallery-container .hero-fries-lq-img {
+		background-image: url('../assets/Hero-images/fries-paprika-100-145-lq.webp');
+	}
+	.hero-gallery-container .hero-oreos-lq-img {
+		background-image: url('../assets/Hero-images/oreos-fried-glass-100-145-lq.webp');
+	}
+	.hero-gallery-container .hero-boneless-lq-img {
+		background-image: url('../assets/Hero-images/boneless-buffalo-100-145-lq.webp');
+	}
+
 	.hero-gallery-container::before {
 		content: '';
 		position: absolute;
@@ -350,7 +362,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		border-left: 3px solid var(--primary-color-500);
 		border-bottom: 3px solid var(--primary-color-500);
 		border-bottom-left-radius: 40px;
-	}	
+	}
 	.hero-gallery-container img {
 		display: block;
 		width: 100%;

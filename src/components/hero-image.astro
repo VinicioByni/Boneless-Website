@@ -1,0 +1,18 @@
+---
+
+interface Props {
+    src: ImageMetadata
+    lqsrc: ImageMetadata
+    alt: string
+}
+
+const {src, lqsrc, alt} = Astro.props
+---
+
+<img src={src.src} alt={alt} />
+
+<style define:vars={{ lqsrc }}>
+    img {
+        background-image: var(--lqsrc)
+    }
+</style>
