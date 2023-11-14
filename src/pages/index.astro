@@ -44,18 +44,16 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					<div class="hero-cta">
 						<CTA></CTA>
 					</div>
-					
 				</div>
 				<div class="hero-gallery-container">
-
 					<picture class="hero-img-background hero-fries-lq-img">
-						<img src={hero_fries_hq_img.src} class="img-transition" data-visible="false" alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></img>
+						<img src={hero_fries_hq_img.src} class="img-transition" data-visible="false" data-animation-right="false" alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></img>
 					</picture>
 					<picture class="hero-img-background hero-oreos-lq-img ">
-						<img src={hero_oreos_hq_img.src} class="img-transition" data-visible="false" alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></img>
+						<img src={hero_oreos_hq_img.src} class="img-transition" data-visible="false" data-animation-right="false" alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></img>
 					</picture>
 					<picture class="hero-img-background hero-boneless-lq-img">
-						<img src={hero_boneless_hq_img.src} class=" img-transition" data-visible="false" alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></img>
+						<img src={hero_boneless_hq_img.src} class=" img-transition" data-visible="false" data-animation-right="false" alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></img>
 					</picture>
 				</div>	
 			</section>
@@ -245,6 +243,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 <script src="../lib/aboutUs-animation.ts"></script>
 <script src="../lib/images-smooth-loading.ts"></script>
+<script src="../lib/hero-images-animation.ts"></script>
 
 <style>
 
@@ -335,20 +334,6 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 		margin-inline: calc(var(--border-offset)/2);
 	}
-	.hero-gallery-container .hero-img-background {
-		background-position: center;
-		background-size: cover;
-	}
-	.hero-gallery-container .hero-fries-lq-img {
-		background-image: url('../assets/Hero-images/fries-paprika-100-145-lq.webp');
-	}
-	.hero-gallery-container .hero-oreos-lq-img {
-		background-image: url('../assets/Hero-images/oreos-fried-glass-100-145-lq.webp');
-	}
-	.hero-gallery-container .hero-boneless-lq-img {
-		background-image: url('../assets/Hero-images/boneless-buffalo-100-145-lq.webp');
-	}
-
 	.hero-gallery-container::before {
 		content: '';
 		position: absolute;
@@ -373,16 +358,12 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		border-bottom: 3px solid var(--primary-color-500);
 		border-bottom-left-radius: 40px;
 	}
-	.hero-gallery-container img {
-		display: block;
-		width: 100%;
-		height: 100%;
-
-		object-fit: cover;
-		object-position: center;
-	}
 	.hero-gallery-container picture {
 		overflow: hidden;
+	}
+	.hero-gallery-container .hero-img-background {
+		background-position: 0%;
+		background-size: cover;
 	}
 	.hero-gallery-container picture:first-child {
 		border-top-left-radius: var(--border-roundness);
@@ -392,6 +373,29 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		border-top-right-radius: var(--border-roundness);
 		border-bottom-right-radius: var(--border-roundness);
 	}
+	.hero-gallery-container .hero-fries-lq-img {
+		background-image: url('../assets/Hero-images/fries-paprika-100-145-lq.webp');
+	}
+	.hero-gallery-container .hero-oreos-lq-img {
+		background-image: url('../assets/Hero-images/oreos-fried-glass-100-145-lq.webp');
+	}
+	.hero-gallery-container .hero-boneless-lq-img {
+		background-image: url('../assets/Hero-images/boneless-buffalo-100-145-lq.webp');
+	}
+	.hero-gallery-container img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.hero-gallery-container img[data-animation-right = 'false'] {
+		object-position: 0%;
+	}
+	.hero-gallery-container img[data-animation-right = 'true'] {
+		object-position: 100%;
+	}
+
+	
 
 	@media (max-width: 992px) {
 		.hero-container {
@@ -415,7 +419,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 	/* About us */
 	.aboutUs-container {
-		padding-block: var(--section-full-spacing);
+		padding-bottom: var(--section-full-spacing);
 	
 		width: 100%;
 

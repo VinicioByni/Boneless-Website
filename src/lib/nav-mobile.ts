@@ -58,7 +58,6 @@ function toggleMenu() {
     if(!isVisible()) {
         navMenu.setAttribute('data-visible', 'true')
         menuToggleBtn.setAttribute('aria-expanded', 'true')
-
     }
     else {
         navMenu.setAttribute('data-visible', 'false')
@@ -68,18 +67,14 @@ function toggleMenu() {
     
 function isVisible() {
     if (navMenu == null) return false
-
     const visible = navMenu.getAttribute('data-visible')
-
     if (visible === 'true') return true
-
     return false
 }
 
 function isMobile() {
     const mobileSize = '992px'
     const mediaQuery = window.matchMedia('(max-width: ' + mobileSize + ')')
-    
     if (mediaQuery.matches) return true
     return false
     
