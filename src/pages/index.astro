@@ -34,7 +34,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 <Layout title="Boneless Crave" themeColor="#ffb703">
 	<main>
 		<div id="hero" class="hero-container">
-			<section class="hero-section section-inline-margin">
+			<section class="hero-section min-content-width">
 				<div class="headline-container">
 					<header>
 						<h1 class="headline"><span class="headline-highlight">Crujientes</span> <br>y<br> <span class="headline-highlight">Deliciosos</span></h1>
@@ -57,7 +57,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 			</section>
 		</div>	
 		<div id="aboutUs" class="aboutUs-container">
-			<section class="aboutUs-section">
+			<section class="aboutUs-section min-content-width">
 				<h2><strong class="hightlight">Boneless</strong> Crave</h2>
 				<p>
 					Creamos sabores auténticos acompañados de complementos excepcionales que hacen la diferencia.
@@ -66,7 +66,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		</div>
 		<div id="menu" class="menu-container">
 			<h2 class="menu-title">Menú</h2>
-			<div class="menu-section-container">
+			<div class="menu-section-container min-content-width">
 				<section class="menu-section">
 					<h2>Combos</h2>
 					<MenuComboItem 
@@ -132,7 +132,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 			</div>
 		</div>
 		<div id="social-proof" class="social-proof-container">
-			<section class="social-proof-section section-inline-margin">
+			<section class="social-proof-section min-content-width">
 				<h2>Lo que los clientes dicen de nosotros</h2>
 				<div class="review-container">
 					<Review 
@@ -166,7 +166,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 			<svg class="call-to-action-divider-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 1">
 				<path d="M 0 0 L 20 1 L 40 0"/>
 			</svg>
-			<section class="call-to-action-section">
+			<section class="call-to-action-section min-content-width">
 				<h2>Ordena a <strong>Domicilio</strong> ó <strong>Para llevar!</strong></h2>
 				<CTA></CTA>
 				<footer>
@@ -178,7 +178,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 			</svg>
 		</div>
 		<div id="location" class="location-container">
-			<section class="location-section">
+			<section class="location-section min-content-width">
 				<section class="location">
 					<h2>Ubicación</h2>
 					<div>
@@ -261,7 +261,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	.hero-container {
 		--min-padding-top: 20px;
 
-		width: min(1300px, (100% - 1rem));
+		width: 100%;
 		min-height: calc(100vh - var(--nav-height) - var(--min-padding-top));
 	
 		position: relative;
@@ -273,9 +273,11 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		align-items: center;
 	}
 	.hero-section {
+		width: var(--min-content-width);
+
 		display: grid;
 		align-items: center;
-		justify-items: center;
+		justify-items:center;
 		gap: 3rem;	
 	}
 	.headline-container {
@@ -283,6 +285,8 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		flex-direction: column;
 		font-size: 16px;
 		text-wrap: balance;
+
+		width: 100%;
 	}
 	.headline-container header {
 		display: inline;
@@ -323,7 +327,9 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 8px;	
+		gap: 8px;
+
+		margin-inline: calc(var(--border-offset)/2);
 	}
 	.hero-gallery-container .hero-img-background {
 		background-position: center;
@@ -410,12 +416,8 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		justify-content: center;
 	}
 	.aboutUs-section {
-		width: min(1300px, 100% - 1rem);
-
 		border-top: 2px solid var(--priamry-color-500);
 		text-align: center;
-
-
 	}
 	.aboutUs-section h2 {
 		font-family: 'Laila';
@@ -473,14 +475,11 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 	}
 	.menu-section-container {
-		width: 100%;
-		
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	.menu-section {
-		width: min(1300px,(100% - 1rem));
 		padding-block: var(--section-elements-spacing);
 
 		border-top: 2px solid var(--text-color);
@@ -534,14 +533,12 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	.social-proof-section h2{
 		text-align: center;
 
-		width: min(1300px, 100% - 1rem);
-
 		font-size: var(--font-size-x-x-large);
 		font-weight: var(--font-weight-large);
 
 		margin-bottom: var(--section-elements-spacing);
 	}
-	.review-container {
+	.social-proof-section .review-container {
 		display: flex;
 		align-items: center;
 		gap: var(--section-grid-spacing);
@@ -584,8 +581,6 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		bottom: -1px;
 	}
 	.call-to-action-section {
-		width: min(1300px, 100% - 2rem);
-
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -618,8 +613,6 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		justify-content: center;
 	}
 	.location-section {
-		width: min(1300px, 100% - 2rem);
-
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -716,13 +709,4 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 			justify-content: center;
 		}
 	}
-
-
-	
-
-
-
-
-	
-	
 </style>

@@ -215,7 +215,6 @@ const { title, themeColor } = Astro.props;
 		--section-elements-spacing: 40px;
 		--section-grid-spacing: 24px;
 
-
 		--section-padding-large: 120px;
 		--section-padding-medium: 80px;
 		--section-padding-small: 40px;
@@ -225,7 +224,7 @@ const { title, themeColor } = Astro.props;
 		--section-margin-small: 40px;
 
 		--nav-height: 65px;
-		--min-content-width: min(1300px, (100% - 2rem));
+		--min-content-width: min(1300px, (100% - 4rem));
 
 		--spacing-100: 4px;
 		--spacing-200: 8px;
@@ -249,6 +248,16 @@ const { title, themeColor } = Astro.props;
 		--font-weight-medium: 600;
 		--font-weight-large: 700;
 		
+	}
+	@media(max-width:768px) {
+		:root {
+			--min-content-width: min(1300px, (100% - 2rem))
+		}
+	}
+	@media(max-width:576px) {
+		:root {
+			--min-content-width: min(1300px, (100% - 1rem))
+		}
 	}
 	html {
 		font-family: 'Quicksand', system-ui, sans-serif;
@@ -545,20 +554,10 @@ const { title, themeColor } = Astro.props;
 		opacity: 1;
 	}
 	
+	.min-content-width {
+		width: var(--min-content-width);
+	}
 
-	.section-inline-margin {
-		margin-inline: 64px;
-	}
-	@media(max-width: 768px) {
-		.section-inline-margin {
-			margin-inline: 32px;
-		}
-	}
-	@media(max-width: 576px) {
-		.section-inline-margin {
-			margin-inline: 16px;
-		}
-	}
 
 	/* Css reset */
 	a {
