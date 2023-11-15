@@ -36,10 +36,10 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		<div id="hero" class="hero-container">
 			<section class="hero-section min-content-width">
 				<div class="headline-container">
+
 					<header>
-						<h1 class="headline"><span class="headline-highlight">Crujientes</span> <br>y<br> <span class="headline-highlight">Deliciosos</span></h1>
+						<h1 class="headline"><strong class="headline-highlight">Boneless</strong> Crave</h1>
 					</header>
-					
 					<p class="sub-headline">Los mejores combos de boneless para llevar</p>
 					<div class="hero-cta">
 						<CTA></CTA>
@@ -58,14 +58,6 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 				</div>	
 			</section>
 		</div>	
-		<div id="aboutUs" class="aboutUs-container">
-			<section class="aboutUs-section min-content-width">
-				<h2><strong class="hightlight">Boneless</strong> Crave</h2>
-				<p>
-					Creamos sabores auténticos acompañados de complementos excepcionales que hacen la diferencia.
-				</p>
-			</section>
-		</div>
 		<div id="menu" class="menu-container">
 			<h2 class="menu-title">Menú</h2>
 			<div class="menu-section-container min-content-width">
@@ -249,13 +241,14 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 
 	main {
+		--general-line-height: 1.6;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		padding: 0;
 		color: var(--text-color);
 		font-size: 20px;
-		line-height: 1.6;
+		line-height: var(--general-line-height);
 		width: 100%;
 	}
 
@@ -276,54 +269,49 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		align-items: center;
 	}
 	.hero-section {
+		--border-offset: 25px;
+		--elements-spacing: 2rem;
 		width: var(--min-content-width);
 
 		display: grid;
 		align-items: center;
 		justify-items:center;
-		gap: 3rem;	
+		gap: calc(var(--elements-spacing)*2 + var(--border-offset));
 	}
 	.headline-container {
 		display: flex;
 		flex-direction: column;
 		font-size: 16px;
 		text-wrap: balance;
-
-		width: 100%;
-	}
-	.headline-container header {
-		display: inline;
-		text-align: center;
-		width: fit-content;
 	}
 	.headline {
+		--line-height: 1.1;
 		font-family: 'Laila';
 		font-weight: 600;
 		font-size: var(--font-size-headline);
-		line-height: 1.1;
+		line-height: var(--line-height);
 		color: var(--text-color);
+
+		margin-bottom: calc(var(--font-size-headline) - (var(--line-height) * var(--font-size-headline)));
 	}
 	.headline-highlight {
 		font-family: 'Laila';
 		font-weight: var(--font-weight-large);
 		color: var(--primary-color-500);
 	}
-	.headline-highlight:last-child {
-		line-height: 1.7;
-	}
 	.sub-headline {
 		font-size: var(--font-size-large);
 		font-weight: var(--font-weight-small);
 		color: var(--text-color);
 
-		margin-bottom: 32px;
+		margin-top: calc(var(--elements-spacing) + (var(--font-size-large) - (var(--general-line-height) * var(--font-size-large))));
+		margin-bottom: var(--elements-spacing);
 	}
 	.hero-cta {
 		font-size: var(--font-size-medium);
 	}
 	.hero-gallery-container {
 		--border-roundness: 30px;
-		--border-offset: 50px;
 		width: 100%;
 		aspect-ratio: 4/3;
 		position: relative;
@@ -332,7 +320,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		grid-template-columns: repeat(3, 1fr);
 		gap: 8px;
 
-		margin-inline: calc(var(--border-offset)/2);
+		margin-inline: calc(var(--border-offset));
 	}
 	.hero-gallery-container::before {
 		content: '';
@@ -340,7 +328,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		width: 100%;
 		height: 100%;
 		inset: 0 0 0 0;
-		transform: translate(calc(var(--border-offset) / 2), calc(var(--border-offset) / 2 * -1));
+		transform: translate(calc(var(--border-offset)), calc(var(--border-offset) * -1));
 
 		border-top: 3px solid var(--primary-color-500);
 		border-right: 3px solid var(--primary-color-500);
@@ -352,7 +340,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		width: 100%;
 		height: 100%;
 		inset: 0 0 0 0;
-		transform: translate(calc(var(--border-offset) / 2 * -1), calc(var(--border-offset) / 2 ));
+		transform: translate(calc(var(--border-offset) * -1), calc(var(--border-offset)));
 
 		border-left: 3px solid var(--primary-color-500);
 		border-bottom: 3px solid var(--primary-color-500);
@@ -394,61 +382,25 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	.hero-gallery-container img[data-animation-right = 'true'] {
 		object-position: 100%;
 	}
-
-	
-
 	@media (max-width: 992px) {
 		.hero-container {
 			height: auto;
 		}
 		.hero-section {
-			gap: 5rem;
+			--border-offset: 15px;
+			
 		}
 		.headline-container {
 			align-items: center;
 			font-size: 12px;
 		}
 		.hero-gallery-container {
-			width: 90%;
-			--border-offset: 30px;
+			width: 90%;	
 		}
 		.hero-menu-cta {
 			display: none;
 		}
 	}
-
-	/* About us */
-	.aboutUs-container {
-		padding-bottom: var(--section-full-spacing);
-	
-		width: 100%;
-
-		display: flex;
-		justify-content: center;
-	}
-	.aboutUs-section {
-		border-top: 2px solid var(--priamry-color-500);
-		text-align: center;
-	}
-	.aboutUs-section h2 {
-		font-family: 'Laila';
-		font-size: var(--font-size-headline);
-		font-weight: var(--font-weight-medium);
-		line-height: 1;
-		letter-spacing: calc(-.01 * var(--font-size-headline));
-	
-		margin-bottom: var(--section-grid-spacing);
-	}
-	.aboutUs-section .hightlight {
-		color: var(--primary-color-500)
-	}
-	.aboutUs-section p {
-		text-wrap: balance;
-		line-height: calc(1.7 * var(--font-size-small));
-		font-size: var(--font-size-medium);
-		font-weight: var(--font-weight-small);
-	}
-
 
 
 
@@ -551,6 +503,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	}
 	.social-proof-section .review-container {
 		display: flex;
+		justify-content: center;
 		align-items: center;
 		gap: var(--section-grid-spacing);
 	}
