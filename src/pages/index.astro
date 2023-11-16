@@ -2,8 +2,6 @@
 import { Image } from 'astro:assets';
 
 import Layout from '../layouts/Layout.astro';
-import HeroImage from '../components/hero-image.astro'
-import GalleryRow from '../components/gallery-row.astro';
 import MenuComboItem from '../components/menu-combo-item.astro';
 import MenuItem from '../components/menu-item.astro';
 import MenuSauceItem from '../components/menu-sauce-item.astro'; 
@@ -18,16 +16,6 @@ import transparent_bg from '../assets/Hero-images/transparent-bg.webp'
 
 import boneless_crave_location_img from '../assets/Location-images/boneless-crave-location.webp'
 
-import hero_img from '../assets/Food-images/boneless-fork.png'
-
-import boneless_img from '../assets/Food-images/boneless-hero-section.webp'
-import french_fries_seasoned_img from '../assets/Food-images/french-fries-seasoned.webp'
-
-import combo_1_img from '../assets/Food-images/boneless-fries.webp'
-
-import fries_img from '../assets/AboutUs-images/fries.webp'
-import oreos_img from '../assets/Food-images/deep-fried-oreos.webp'
-
 import male_reviewer_1_img from '../assets/Review-images/young-review-man-1.webp'
 import male_reviewer_2_img from '../assets/Review-images/young-review-man-2.webp'
 import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.webp'
@@ -38,7 +26,6 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		<div id="hero" class="hero-container">
 			<section class="hero-section min-content-width">
 				<div class="headline-container">
-
 					<header>
 						<h1 class="headline"><strong class="headline-highlight">Boneless</strong> Crave</h1>
 					</header>
@@ -404,7 +391,6 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	}
 	.hero-gallery-container .img-hq {
 		overflow: hidden;
-		transition: background-position 3500ms cubic-bezier(0.29, 0.01, 0.44, 0.99),opacity 300ms;
 		background-position: 0%;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -413,8 +399,6 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		opacity: 0;
 
 	}
-
-
 	@media (max-width: 992px) {
 		.hero-container {
 			height: auto;
