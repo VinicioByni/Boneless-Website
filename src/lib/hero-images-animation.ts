@@ -4,8 +4,8 @@
 
 
 const heroImgsContainer = document.querySelector('.hero-gallery-container')
-const transitionDuration = 1500
-const delay = 1500
+const transitionDuration = 1800
+const delay = 1000
 
 
 if (heroImgsContainer != null) {
@@ -43,10 +43,10 @@ if (heroImgsContainer != null) {
 }
 
 function heroImgAnimationStart(img: HTMLImageElement) {
-    img.setAttribute('data-animation-right', 'true')
+    img.setAttribute('data-animate-right', 'true')
     setTimeout(() => heroImgAnimationReturn(img), transitionDuration + delay)
 }
 
 function heroImgAnimationReturn(img: HTMLImageElement) {
-    img.setAttribute('data-animation-right', 'false')
+    img.setAttribute('data-animate-right', 'false')
 }

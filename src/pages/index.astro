@@ -13,6 +13,7 @@ import CTA from '../components/call-to-action.astro'
 import hero_boneless_hq_img from '../assets/Hero-images/boneless-buffalo-sauce-1000-1446-hq.webp'
 import hero_oreos_hq_img from '../assets/Hero-images/oreos-fried-glass-1000-1446-hq.webp'
 import hero_fries_hq_img from '../assets/Hero-images/fries-paprika-1500-2169-hq.webp'
+import boneless_fries_combo_hq_img from '../assets/Food-images/boneless-fries-combo-1000-hq.webp' 
 
 import boneless_crave_location_img from '../assets/Location-images/boneless-crave-location.webp'
 
@@ -66,7 +67,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					<MenuComboItem 
 						comboItemTitle="Combo #1"
 						comboItemDescription='Boneless, papas fritas y oreos fritos (Estimado: 1 persona)'
-						comboItemImage={combo_1_img}
+						comboItemImage={boneless_fries_combo_hq_img}
 						comboItemImageAlt='Combo de boneless, papas fritas y oreos fritas'
 						itemQtyName={[{itemName: "Boneless", itemQuantity: '300gr'}, {itemName: "Papas fritas", itemQuantity: '350gr'}, {itemName: "Oreos fritas", itemQuantity: '2 pz'}]}
 						comboItemPrice= {140}
@@ -75,10 +76,10 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					<MenuComboItem 
 						comboItemTitle="Combo #2"
 						comboItemDescription='Boneless, papas fritas y oreos fritos (Estimado: 2 personas)'
-						comboItemImage={combo_1_img}
+						comboItemImage={boneless_fries_combo_hq_img}
 						comboItemImageAlt='Combo de boneless, papas fritas y oreos fritas'
 						itemQtyName={[{itemName: "Boneless (2 salsas)", itemQuantity: '500gr'}, {itemName: "Papas fritas", itemQuantity: '500gr'}, {itemName: "Oreos fritas", itemQuantity: '4 pz'}]}
-						comboItemPrice= {140}
+						comboItemPrice= {180}
 						isImageLeft='false'>
 					</MenuComboItem>
 				</section>
@@ -97,7 +98,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					<MenuItem 
 						itemTitle="Boneless"
 						itemDescription='Boneless bañados en una de nuestras salsas'
-						itemImage={boneless_img}
+						itemImage={hero_boneless_hq_img}
 						itemImageAlt='Mejores boneless de chihuahua con aderezo ranch'
 						itemQtyPrice={[{itemPrice: 140, itemQuantity: '300gr'}, {itemPrice: 180, itemQuantity: '450gr'}]}
 						isImageLeft='true'>
@@ -108,7 +109,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					<MenuItem 
 						itemTitle="Papas a la francesa"
 						itemDescription='Papas a la francesa sazonadas'
-						itemImage={fries_img}
+						itemImage={hero_fries_hq_img}
 						itemImageAlt='Mejores papas a la francesa de chihuahua, sazonadas con paprika, sal, pimienta'
 						itemQtyPrice={[{itemPrice: 80, itemQuantity: '200gr'}, {itemPrice: 110, itemQuantity: '350gr'}]}
 						isImageLeft='true'>
@@ -116,7 +117,7 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					<MenuItem 
 						itemTitle="Oreos fritos"
 						itemDescription='Deliciosos Oreos fritos espolvoreados'
-						itemImage={oreos_img}
+						itemImage={hero_oreos_hq_img}
 						itemImageAlt='Oreos fritos'
 						itemQtyPrice={[{itemPrice: 10, itemQuantity: '1 pz'}, {itemPrice: 15, itemQuantity: '2 pz'}]}
 						isImageLeft='false'>
@@ -375,13 +376,15 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-	.hero-gallery-container img[data-animation-right = 'false'] {
 		object-position: 0%;
 	}
-	.hero-gallery-container img[data-animation-right = 'true'] {
+	.hero-gallery-container img[data-animate-right = 'true'] {
 		object-position: 100%;
 	}
+	.hero-gallery-container img[data-animate-right = 'false'] {
+		object-position: 0%;
+	}
+
 	@media (max-width: 992px) {
 		.hero-container {
 			height: auto;
