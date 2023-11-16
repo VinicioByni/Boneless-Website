@@ -47,14 +47,17 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 					</div>
 				</div>
 				<div class="hero-gallery-container">
-					<picture class="hero-img-background hero-fries-lq-img">
-						<img src={hero_fries_hq_img.src} class="img-transition" data-visible="false" data-animation-right="false" alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></img>
+					<picture class="hero-img-background hero-fries-img" data-hq ="false" data-animate="false">
+						<div class="img-hq"></div>
+						<img src={hero_fries_hq_img.src} class="img-load-check" alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></img>
 					</picture>
-					<picture class="hero-img-background hero-oreos-lq-img ">
-						<img src={hero_oreos_hq_img.src} class="img-transition" data-visible="false" data-animation-right="false" alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></img>
+					<picture class="hero-img-background hero-oreos-img" data-hq="false" data-animate="false">
+						<div class="img-hq"></div>
+						<img src={hero_oreos_hq_img.src} class="img-load-check" alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></img>
 					</picture>
-					<picture class="hero-img-background hero-boneless-lq-img">
-						<img src={hero_boneless_hq_img.src} class=" img-transition" data-visible="false" data-animation-right="false" alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></img>
+					<picture class="hero-img-background hero-boneless-img" data-hq="false" data-animate="false">
+						<div class="img-hq"></div>
+						<img src={hero_boneless_hq_img.src} class="img-load-check" alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></img>
 					</picture>
 				</div>	
 			</section>
@@ -347,10 +350,9 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		border-bottom: 3px solid var(--primary-color-500);
 		border-bottom-left-radius: 40px;
 	}
-	.hero-gallery-container picture {
-		overflow: hidden;
-	}
 	.hero-gallery-container .hero-img-background {
+		overflow: hidden;
+		transition: background-position 3500ms cubic-bezier(0.29, 0.01, 0.44, 0.99);
 		background-position: 0%;
 		background-size: cover;
 	}
@@ -358,32 +360,59 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 		border-top-left-radius: var(--border-roundness);
 		border-bottom-left-radius: var(--border-roundness);
 	}
+	.hero-gallery-container .test:hover {
+		background-position: 100%;
+	}
 	.hero-gallery-container picture:last-child {
 		border-top-right-radius: var(--border-roundness);
 		border-bottom-right-radius: var(--border-roundness);
 	}
-	.hero-gallery-container .hero-fries-lq-img {
+	.hero-gallery-container .hero-fries-img {
 		background-image: url('../assets/Hero-images/fries-paprika-100-145-lq.webp');
 	}
-	.hero-gallery-container .hero-oreos-lq-img {
+	.hero-gallery-container .hero-oreos-img {
 		background-image: url('../assets/Hero-images/oreos-fried-glass-100-145-lq.webp');
 	}
-	.hero-gallery-container .hero-boneless-lq-img {
+	.hero-gallery-container .hero-boneless-img {
 		background-image: url('../assets/Hero-images/boneless-buffalo-100-145-lq.webp');
 	}
-	.hero-gallery-container img {
-		display: block;
+	.hero-gallery-container .hero-fries-img[data-hq="true"] .img-hq{
+		opacity: 1;
+		background-image: url('../assets/Hero-images/fries-paprika-1500-2169-hq.webp');
+	}
+	.hero-gallery-container .hero-oreos-img[data-hq="true"] .img-hq{
+		opacity: 1;
+		background-image: url('../assets/Hero-images/oreos-fried-glass-1000-1446-hq.webp');
+	}
+	.hero-gallery-container .hero-boneless-img[data-hq="true"] .img-hq{
+		opacity: 1;
+		background-image: url('../assets/Hero-images/boneless-buffalo-sauce-1000-1446-hq.webp');
+	}
+
+	.hero-gallery-container .hero-fries-img[data-animate="true"] .img-hq{
+		background-position: 100%;
+	}
+	.hero-gallery-container .hero-oreos-img[data-animate="true"] .img-hq{
+		background-position: 100%;
+	}
+	.hero-gallery-container .hero-boneless-img[data-animate="true"] .img-hq{
+		background-position: 100%;
+	}
+	.hero-gallery-container .img-load-check {
+		display: none;
+	}
+	.hero-gallery-container .img-hq {
+		overflow: hidden;
+		transition: background-position 3500ms cubic-bezier(0.29, 0.01, 0.44, 0.99),opacity 300ms;
+		background-position: 0%;
+		background-size: cover;
+		background-repeat: no-repeat;
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-		object-position: 0%;
+		opacity: 0;
+
 	}
-	.hero-gallery-container img[data-animate-right = 'true'] {
-		object-position: 100%;
-	}
-	.hero-gallery-container img[data-animate-right = 'false'] {
-		object-position: 0%;
-	}
+
 
 	@media (max-width: 992px) {
 		.hero-container {

@@ -4,49 +4,50 @@
 
 
 const heroImgsContainer = document.querySelector('.hero-gallery-container')
-const transitionDuration = 1800
+const transitionDuration = 3500
 const delay = 1000
 
 
 if (heroImgsContainer != null) {
     const heroImgs = heroImgsContainer.querySelectorAll('img')
-
+    const pictures = heroImgsContainer.querySelectorAll('picture')
     // Start once images are loaded
     let loadedImgs = 0
     heroImgs.forEach(img => {
-        img.style.transition = `object-position ${transitionDuration}ms ease-in-out`
         if (img.complete) {
             loadedImgs++
-            startAnimation()
+            loadImgs()
         }
         else {
             img.addEventListener('load', () =>{
                 loadedImgs++
-                startAnimation()
+                loadImgs()
             })
         }
     })
 
     // Initiate fixed animation
-    function startAnimation() {
+    
+    function loadImgs() {
         if (loadedImgs == heroImgs.length) {
-            setTimeout(() => {
-                heroImgs.forEach(img => {
-                    heroImgAnimationStart(img)
-                })
-            }, 1000)
+            
+            pictures.forEach(picture => {
+                heroImgHQLoad(picture)
+            })
         }
     }
     
 
     // Once animation is finished, activate interactivity
 }
-
-function heroImgAnimationStart(img: HTMLImageElement) {
-    img.setAttribute('data-animate-right', 'true')
-    setTimeout(() => heroImgAnimationReturn(img), transitionDuration + delay)
+function heroImgHQLoad(picture) {
+    picture.setAttribute('data-hq', 'true')
+    setTimeout(() => heroImgAnimationStart(picture), delay)
 }
-
-function heroImgAnimationReturn(img: HTMLImageElement) {
-    img.setAttribute('data-animate-right', 'false')
+function heroImgAnimationStart(picture) {
+    picture.setAttribute('data-animate', 'true')
+    setTimeout(() => heroImgAnimationReturn(picture), transitionDuration + delay)
+}
+function heroImgAnimationReturn(picture) {
+    picture.setAttribute('data-animate', 'false')
 }
