@@ -14,6 +14,7 @@ import hero_boneless_hq_img from '../assets/Hero-images/boneless-buffalo-sauce-1
 import hero_oreos_hq_img from '../assets/Hero-images/oreos-fried-glass-1000-1446-hq.webp'
 import hero_fries_hq_img from '../assets/Hero-images/fries-paprika-1500-2169-hq.webp'
 import boneless_fries_combo_hq_img from '../assets/Food-images/boneless-fries-combo-1000-hq.webp' 
+import transparent_bg from '../assets/Hero-images/transparent-bg.webp'
 
 import boneless_crave_location_img from '../assets/Location-images/boneless-crave-location.webp'
 
@@ -48,16 +49,16 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 				</div>
 				<div class="hero-gallery-container">
 					<picture class="hero-img-background hero-fries-img" data-hq ="false" data-animate="false">
-						<div class="img-hq"></div>
-						<img src={hero_fries_hq_img.src} class="img-load-check" alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco"></img>
+						<img src={transparent_bg.src} alt="Imagen de deliciosas papas a la francesa sazonadas con paprika, sal y pimienta, atras de las papas se muestra un fondo blanco" class="img-hq"></img>
+						<img aria-hidden="true" src={hero_fries_hq_img.src} class="img-load-check" ></img>
 					</picture>
 					<picture class="hero-img-background hero-oreos-img" data-hq="false" data-animate="false">
-						<div class="img-hq"></div>
-						<img src={hero_oreos_hq_img.src} class="img-load-check" alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco"></img>
+						<img src={transparent_bg.src} alt="Imagen de deliciosos oreos fritos, espolvoreados con azucar glass, atras de los oreos se muestra un fondo blanco" class="img-hq"></img>
+						<img aria-hidden="true" src={hero_oreos_hq_img.src} class="img-load-check" ></img>
 					</picture>
 					<picture class="hero-img-background hero-boneless-img" data-hq="false" data-animate="false">
-						<div class="img-hq"></div>
-						<img src={hero_boneless_hq_img.src} class="img-load-check" alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco"></img>
+						<img src={transparent_bg.src} alt="Imagen de boneless deliciosos, cubiertos en salsa buffalo, atras de los boneless se muestra un fondo blanco" class="img-hq"></img>
+						<img aria-hidden="true" src={hero_boneless_hq_img.src} class="img-load-check" ></img>
 					</picture>
 				</div>	
 			</section>
