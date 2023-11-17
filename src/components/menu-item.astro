@@ -21,13 +21,18 @@ const { itemTitle, itemDescription, itemQtyPrice, itemImage, itemImageAlt, isIma
 <div class="item" data-imageLeft={isImageLeft}>
     <Image src={itemImage} class="img-transition" data-visible="false" alt={itemImageAlt}></Image>
     <section class="item-info">
-        <h3>{itemTitle}</h3>
-        <p>{itemDescription}</p>
-        {
-            itemQtyPrice.map((item) => 
-                <p class="quantity-price">{item.itemQuantity} - <span class="price">${item.itemPrice}</span></p>
-            )
-        }
+        <hgroup>
+            <h3>{itemTitle}</h3>
+            <p>{itemDescription}</p>
+        </hgroup>
+        <div class="quantities-container">
+            {
+                itemQtyPrice.map((item) => 
+                    <p class="quantity-price">{item.itemQuantity} - <span class="price">${item.itemPrice}</span></p>
+                )
+            }
+        </div>
+        
     </section>
 </div>
 
@@ -56,7 +61,11 @@ const { itemTitle, itemDescription, itemQtyPrice, itemImage, itemImageAlt, isIma
 	}
 
     .item .item-info {
-        width: 45%;  
+        width: 45%; 
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
 	}
     .item[data-imageLeft = 'true'] .item-info {
         text-align: end;
@@ -88,11 +97,11 @@ const { itemTitle, itemDescription, itemQtyPrice, itemImage, itemImageAlt, isIma
             gap: var(--spacing-100);
         }
         .item[data-imageLeft = 'false'] {
-        flex-direction: column;
-        }
-        .item[data-imageLeft = 'true'] .item-info, .item[data-imageLeft = 'false'] .item-info{
-        text-align: center;
-        }
+            flex-direction: column;
+            }
+        .item[data-imageLeft = 'true'] .item-info {
+            text-align: start;
+            }
         .item img {
             width: 90%;
         } 

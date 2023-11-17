@@ -382,6 +382,7 @@ const { title, themeColor } = Astro.props;
 	}
 	.primary-nav-toggle {
 		display: none;
+		
 	}
 	@media (max-width: 992px) {
 		.primary-nav ul{
@@ -412,6 +413,7 @@ const { title, themeColor } = Astro.props;
 			border: none;
 			background-color: var(--background-color-500);
 			cursor: pointer;
+			width: 35px;
 		}
 		.primary-nav-toggle[aria-expanded='true'] {
 			background-image: url('../assets/MenuLogoClose.svg');
@@ -437,14 +439,25 @@ const { title, themeColor } = Astro.props;
 
 
 	/* Footer */
+	.main-footer {
+		width: 100%;
+		background-color: var(--background-color-900);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 	.footer-content {
 		padding-block: var(--section-half-spacing);
 
 		color: var(--text-color);
-		background-color: var(--background-color-900);
 
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
+		gap: calc(var(--section-elements-spacing)/2);
+
+		width: var(--min-content-width);
 		
 	}
 	.footer-content h2{
@@ -496,6 +509,13 @@ const { title, themeColor } = Astro.props;
 		.footer-content {
 			grid-template-columns: 1fr;
 			gap: var(--section-elements-spacing);
+		}
+		.footer-content .nav-logo {
+			justify-self: start;
+		}
+		.footer-content > * {
+			align-items: start;
+			text-align: start;
 		}
 	
 	}

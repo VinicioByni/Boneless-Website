@@ -247,22 +247,25 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 
 	/* Hero */
 	.hero-container {
-		--min-padding-top: 20px;
+		--min-padding: 20px;
+		--border-offset: 25px;
+		--elements-spacing: 2rem;
 
 		width: 100%;
-		min-height: calc(100vh - var(--nav-height) - var(--min-padding-top));
+
+		min-height: calc(100vh - var(--nav-height) - var(--min-padding));
+		min-height: calc(100svh - var(--nav-height) - var(--min-padding));
 	
 		position: relative;
 
-		padding-top: calc(var(--nav-height) + var(--min-padding-top));
+		padding-top: calc(var(--nav-height) + var(--min-padding));
 		
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 	.hero-section {
-		--border-offset: 25px;
-		--elements-spacing: 2rem;
+		
 		width: var(--min-content-width);
 
 		display: grid;
@@ -401,11 +404,9 @@ import female_reviewer_1_img from '../assets/Review-images/young-review-woman-1.
 	}
 	@media (max-width: 992px) {
 		.hero-container {
-			height: auto;
-		}
-		.hero-section {
 			--border-offset: 15px;
-			
+			height: auto;
+			padding-bottom: calc(var(--min-padding) + var(--border-offset));
 		}
 		.headline-container {
 			align-items: center;
